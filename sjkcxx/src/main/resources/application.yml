@@ -1,0 +1,52 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+#  servlet:
+#    context-path: /sjkxx
+
+#mybatis:
+#  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+#  type-aliases-package: com.xiaobawang.springcloud.entities    # 所有Entity别名类所在包
+#  mapper-locations:
+#    - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+#开启驼峰命名
+#  configuration:
+#    map-underscore-to-camel-case: true
+
+#  thymeleaf:
+#    prefix:
+#      classpath: /templates   # 访问template下的html文件需要配置模板，映射
+#    cache: false # 开发时关闭缓存,不然没法看到实时页面
+Spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver              # mysql驱动包
+    url: jdbc:mysql://123.206.64.22:3306/sjkxx?useUnicode=true&characterEncoding=utf-8&useSSL=false              # 数据库名称
+    username: work
+    password: 123456
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.sjkcxx.entity
+
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+    configuration:
+      map-underscore-to-camel-case: true
+      cache-enabled: false
+
