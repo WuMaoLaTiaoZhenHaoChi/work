@@ -20,24 +20,26 @@ import java.util.Date;
 @Data
 public class PracticeSubject implements Serializable {
     @TableId
-    private String subjectNum;
+    private String subjectNum;              //课程编号
 
-    private String subjectName;
+    private String subjectName;             //课程名称
 
-    private String subjectType;
+    private String subjectType;             //课程类别
 
-    private String subjectCheck;
+    private String subjectCheck;            //是否审核0：未审核 1：已审核
 
-    private String subjectMain;
+    private String subjectMain;             //课程简介
 
-    private Integer subjectPeopleMax;
+    private Integer subjectPeopleMax;       //课程人数
 
-    private Date subjectStartTime;
+    private String subjectStartTime;        //课程开始时间
 
-    private String subjectRequire;
+    private String subjectRequire;          //课程要求
 
-    private Float subjectScore;
+    private Float subjectScore;             //课程评分
 
-    private String teacherNum;
+    private String teacherNum;              //教师编号
+
+    private String inputTime;               //录入时间
 
 }
