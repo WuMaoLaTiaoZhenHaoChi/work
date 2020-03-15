@@ -117,15 +117,14 @@
     // var user = sessionStorage.getItem("user");
     // var user = localStorage.getItem("user");
 
-
     layui.use(['element', 'layer', 'layuimini'], function () {
         var $ = layui.jquery,
             element = layui.element,
             layer = layui.layer;
 
         // layuimini.init('layuimini/api/student.json');
-        // layuimini.init('layuimini/api/admin.json');
-        layuimini.init('layuimini/api/teacher.json');
+        layuimini.init('layuimini/api/admin.json');
+        // layuimini.init('layuimini/api/teacher.json');
 
         $('.login-out').on("click", function () {
             layer.msg('退出登录成功', function () {

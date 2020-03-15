@@ -1,5 +1,6 @@
 package com.sjkcxx.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -19,7 +20,7 @@ import java.io.Serializable;
 @Data
 public class Teacher implements Serializable {
 
-    @TableId
+    @TableId(type = IdType.INPUT)
     private String teacherNum;
 
     private String teacherPhone;

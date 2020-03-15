@@ -1,5 +1,6 @@
 package com.sjkcxx.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 public class StudentSubject implements Serializable {
-    @TableId
+
+    @TableId(type = IdType.INPUT)
     private String studentSubjectNum;
 
     private String studentNum;

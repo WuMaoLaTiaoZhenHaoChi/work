@@ -1,5 +1,6 @@
 package com.sjkcxx.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -19,7 +20,8 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class PracticeSubject implements Serializable {
-    @TableId
+
+    @TableId(type = IdType.INPUT)
     private String subjectNum;              //课程编号
 
     private String subjectName;             //课程名称

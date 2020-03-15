@@ -17,7 +17,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 public class Student implements Serializable {
-    @TableId
+
+    @TableId(type = IdType.INPUT)
     private String studentNum;
 
     private String studentSpecialtyNum;

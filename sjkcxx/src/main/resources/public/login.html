@@ -127,12 +127,12 @@
             <div>
                 <i class="layui-icon layui-icon-username admin-icon"></i>
                 <input type="text" name="userNum" placeholder="请输入用户名" autocomplete="off"
-                       class="layui-input admin-input admin-input-username" value="000">
+                       class="layui-input admin-input admin-input-username" value="111">
             </div>
             <div>
                 <i class="layui-icon layui-icon-password admin-icon"></i>
                 <input type="password" name="userPwd" placeholder="请输入密码" autocomplete="off"
-                       class="layui-input admin-input" value="000">
+                       class="layui-input admin-input" value="111">
             </div>
             <div>
                 <select name="userType" lay-filter="type">
@@ -185,7 +185,6 @@
                 },
                 success:function(res){
                     console.log(res);
-                    var resData = res.data;
                     if (res.code == 200){
                         window.location.href = "/index";
                     } else {

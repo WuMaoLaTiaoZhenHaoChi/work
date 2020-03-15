@@ -1,5 +1,6 @@
 package com.sjkcxx.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ import lombok.NoArgsConstructor;
 @TableName("user_info")
 public class UserInfo {
 
-    @TableId
+    @TableId(type = IdType.INPUT)
     private String userNum;
 
     private String userPwd;

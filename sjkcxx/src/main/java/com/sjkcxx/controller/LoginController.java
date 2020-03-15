@@ -1,11 +1,15 @@
 package com.sjkcxx.controller;
 
 import com.sjkcxx.entity.Student;
+import com.sjkcxx.entity.UserInfo;
 import com.sjkcxx.mapper.StudentMapper;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * @Author: duant
@@ -16,11 +20,20 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
 
     /**
-     * 主页
+     * 转发首页
      * @return
      */
     @RequestMapping(value = "/index")
-    public String index(){
+    public String index(HttpSession session){
+        UserInfo user = (UserInfo) session.getAttribute("user");
+        String userType = user.getUserType();
+        if (userType.equals("0")){
+            return "index_student";
+        }else if (userType.equals("1")){
+            return "index_teacher";
+        }else if (userType.equals("2")){
+            return "index_admin";
+        }
         return "index";
     }
 
