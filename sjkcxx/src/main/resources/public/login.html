@@ -136,8 +136,8 @@
             </div>
             <div>
                 <select name="userType" lay-filter="type">
-                    <option value="0" selected="">学生</option>
-                    <option value="1" >教师</option>
+                    <option value="0" >学生</option>
+                    <option value="1" selected="">教师</option>
                     <option value="2">管理员</option>
                 </select>
             </div>
@@ -151,6 +151,7 @@
 </div>
 <script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
 <script src="/layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
 
         layui.use(['form','layer'], function () {
@@ -186,6 +187,7 @@
                 success:function(res){
                     console.log(res);
                     if (res.code == 200){
+                        sessionStorage.setItem("userName",res.data.userNum);
                         window.location.href = "/index";
                     } else {
                         layer.msg(res.msg);

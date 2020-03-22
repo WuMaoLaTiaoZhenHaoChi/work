@@ -19,19 +19,19 @@
       "child": [
         {
           "title": "我的课程",
-          "href": "layuimini/page/teacher/table_myproject.html",
+          "href": "layuimini/page/teacher/table_mysubject.html",
           "icon": "fa fa-tachometer",
           "target": "_self"
         },
         {
           "title": "所有课程",
-          "href": "layuimini/page/teacher/table_allproject.html",
+          "href": "layuimini/page/teacher/table_allsubject.html",
           "icon": "fa fa-tachometer",
           "target": "_self"
         },
         {
           "title": "录入课程",
-          "href": "layuimini/page/teacher/table_inputproject.html",
+          "href": "layuimini/page/teacher/table_inputsubject.html",
           "icon": "fa fa-tachometer",
           "target": "_self"
         }

@@ -42,9 +42,9 @@
                     <div class="layui-input-inline">
                         <select name="subjectType" lay-verify="required" lay-search="">
                             <option value="">直接选择或搜索选择</option>
-                            <option value="1">公益服务类</option>
-                            <option value="2">专业技能考核类</option>
-                            <option value="3">专业见习类</option>
+                            <option value="公益服务类">公益服务类</option>
+                            <option value="专业技能考核类">专业技能考核类</option>
+                            <option value="专业见习类">专业见习类</option>
                         </select>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
             // })
 
             $.ajax({
-                url:"/project/teacher/insertProject",
+                url:"/subject/teacher/insertSubject",
                 method:"post",
                 data:{
                     subjectNum: data.subjectNum,
@@ -157,7 +157,7 @@
                 success:function(res){
                     var resData = res.data;
                     if (res.code == 200){
-                        layer.alert("新增实践科目成功");
+                        layer.alert("新增学科信息成功");
                     } else {
                         layer.alert(res.msg);
                     }
