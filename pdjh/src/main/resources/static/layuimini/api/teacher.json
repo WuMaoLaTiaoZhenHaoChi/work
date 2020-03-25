@@ -1,0 +1,55 @@
+{
+  "clearInfo": {
+    "clearUrl": "api/clear.json"
+  },
+  "homeInfo": {
+    "title": "首页",
+    "icon": "fa fa-home",
+    "href": "layuimini/page/teacher/welcome.html"
+  },
+  "logoInfo": {
+    "title": "实践课管理系统",
+    "image": "layuimini/images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "课程管理",
+      "icon": "fa fa-address-book",
+      "child": [
+        {
+          "title": "我的课程",
+          "href": "layuimini/page/teacher/table_mysubject.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
+        },
+        {
+          "title": "所有课程",
+          "href": "layuimini/page/teacher/table_allsubject.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
+        },
+        {
+          "title": "录入课程",
+          "href": "layuimini/page/teacher/table_inputsubject.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
+        }
+      ]
+    },
+    {
+      "title": "学生管理",
+      "href": "",
+      "icon": "fa fa-window-maximize",
+      "target": "_self",
+      "child": [
+        {
+          "title": "我的学生",
+          "href": "layuimini/page/teacher/table_mystudent.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
+        }
+      ]
+    }
+  ]
+}
