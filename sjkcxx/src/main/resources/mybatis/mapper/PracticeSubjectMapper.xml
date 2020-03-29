@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjkcxx.mapper.PracticeSubjectMapper">
+
+    <select id="selectSubjectBySubject" resultType="com.sjkcxx.entity.PracticeSubject">
+        select * from practice_subject
+        <where>
+            <if test=" teacherNum != null and teacherNum != '' " >
+                and teacher_num=#{teacherNum}
+            </if>
+            <if test=" subjectName != null and subjectName != '' ">
+                and subject_name=#{subjectName}
+            </if>
+            <if test=" subjectType != null and subjectType != '' ">
+                and subject_type=#{subjectType}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

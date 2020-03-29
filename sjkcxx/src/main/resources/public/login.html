@@ -127,12 +127,12 @@
             <div>
                 <i class="layui-icon layui-icon-username admin-icon"></i>
                 <input type="text" name="userNum" placeholder="请输入用户名" autocomplete="off"
-                       class="layui-input admin-input admin-input-username" value="111">
+                       class="layui-input admin-input admin-input-username" value="101">
             </div>
             <div>
                 <i class="layui-icon layui-icon-password admin-icon"></i>
                 <input type="password" name="userPwd" placeholder="请输入密码" autocomplete="off"
-                       class="layui-input admin-input" value="111">
+                       class="layui-input admin-input" value="101">
             </div>
             <div>
                 <select name="userType" lay-filter="type">
@@ -187,7 +187,7 @@
                 success:function(res){
                     console.log(res);
                     if (res.code == 200){
-                        sessionStorage.setItem("userName",res.data.userNum);
+                        sessionStorage.setItem("userNum",res.data.userNum);
                         window.location.href = "/index";
                     } else {
                         layer.msg(res.msg);

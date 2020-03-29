@@ -46,33 +46,22 @@ public class SubjectController {
     //查询所有学科
     @GetMapping("/teacher/listAllSubject")
     public ResultVo queryAllsubject( PracticeSubject practiceSubject) {
+        List<PracticeSubject> subjectList = practiceSubjectService.querySubjectLike(practiceSubject);
 
-//        HashMap<String, Object> columnMap = new HashMap<>();
-//        columnMap.put("teacher_num", practiceSubject.getTeacherNum());
-//        columnMap.put("subject_name", practiceSubject.getSubjectNum());
-//        columnMap.put("subject_type", practiceSubject.getSubjectType());
-//        List<PracticeSubject> subjectList = practiceSubjectService.listByMap(columnMap);
-
-
-        List<PracticeSubject> subjectList = practiceSubjectService.list();
         int count = subjectList.size();
-        return ResultVo.build("0", "", count, subjectList);
+        return ResultVo.build("0", "success", count, subjectList);
     }
 
     //查询教师自己的学科
     @GetMapping("/teacher/listMySubject")
-    public ResultVo querysubjectByTeachehNum(HttpSession session) {
-        HashMap<String, Object> columnMap = new HashMap<>();
-
-        UserInfo user = (UserInfo) session.getAttribute("user");
-        String teacherNum = user.getUserNum();
-        columnMap.put("teacher_num", teacherNum);
-
-        List<PracticeSubject> subjectList = practiceSubjectService.listByMap(columnMap);
+    public ResultVo querysubjectByTeachehNum(HttpSession session,PracticeSubject practiceSubject) {
+        UserInfo userinfo = (UserInfo) session.getAttribute("user");
+        if (practiceSubject.getSubjectNum() == null || practiceSubject.getSubjectNum().equals("")){
+            practiceSubject.setTeacherNum(userinfo.getUserNum());
+        }
+        List<PracticeSubject> subjectList = practiceSubjectService.querySubjectLike(practiceSubject);
         int count = subjectList.size();
-        return ResultVo.build("0", "", count, subjectList);
-
-
+        return ResultVo.build("0", "success", count, subjectList);
     }
 
     //修改学科

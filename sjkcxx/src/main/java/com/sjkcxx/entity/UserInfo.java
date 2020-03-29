@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @Author: duant
  * @Date: 2020/3/1 16:22
@@ -16,10 +18,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("user_info")
-public class UserInfo {
+public class UserInfo implements Serializable {
 
     @TableId(type = IdType.INPUT)
     private String userNum;
+
+    private String userName;
 
     private String userPwd;
 

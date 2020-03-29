@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @Author: duant
  * @Date: 2020/3/1 16:22
@@ -16,13 +18,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("user_info")
-public class UserInfo {
+public class UserInfo implements Serializable {
 
     @TableId(type = IdType.INPUT)
-    private String userNum;
+    private String userNum;     //用户编号
 
-    private String userPwd;
+    private String userName;    //用户姓名
 
-    private String userType;
+    private String userPwd;     //用户密码
+
+    private String userType;    //用户权限（0：客户，1：银行员工，2：管理员）
 
 }

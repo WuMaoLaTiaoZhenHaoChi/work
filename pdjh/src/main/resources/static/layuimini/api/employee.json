@@ -1,0 +1,49 @@
+{
+  "clearInfo": {
+    "clearUrl": "api/clear.json"
+  },
+  "homeInfo": {
+    "title": "首页",
+    "icon": "fa fa-home",
+    "href": "layuimini/page/employee/welcome.html"
+  },
+  "logoInfo": {
+    "title": "长安银行排队叫号系统",
+    "image": "layuimini/images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "叫号管理",
+      "icon": "fa fa-address-book",
+      "child": [
+        {
+          "title": "我的待办",
+          "href": "layuimini/page/employee/table_myorder.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
+        },
+        {
+          "title": "所有业务",
+          "href": "layuimini/page/employee/table_allorder.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
+        }
+      ]
+    },
+    {
+      "title": "客户管理",
+      "href": "",
+      "icon": "fa fa-window-maximize",
+      "target": "_self",
+      "child": [
+        {
+          "title": "客户管理",
+          "href": "layuimini/page/employee/table_consumer.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
+        }
+      ]
+    }
+  ]
+}

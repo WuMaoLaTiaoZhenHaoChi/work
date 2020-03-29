@@ -23,9 +23,9 @@ public class LoginController {
         UserInfo user = (UserInfo) session.getAttribute("user");
         String userType = user.getUserType();
         if (userType.equals("0")){
-            return "index_student";
+            return "index_consumer";
         }else if (userType.equals("1")){
-            return "index_teacher";
+            return "index_employee";
         }else if (userType.equals("2")){
             return "index_admin";
         }

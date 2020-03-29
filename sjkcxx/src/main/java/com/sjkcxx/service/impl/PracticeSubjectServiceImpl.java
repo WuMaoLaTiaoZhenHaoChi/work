@@ -19,17 +19,12 @@ import java.util.List;
 @Service
 public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMapper, PracticeSubject> implements PracticeSubjectService {
 
-    @Resource
+    @Autowired(required = false)
     private PracticeSubjectMapper practiceSubjectMapper;
 
     @Override
     public List<PracticeSubject> querySubjectLike(PracticeSubject practiceSubject) {
-        QueryWrapper<PracticeSubject> subjectQueryWrapper = new QueryWrapper<>();
-        subjectQueryWrapper.like("teacher_num", practiceSubject.getTeacherNum());
-        subjectQueryWrapper.like("subject_name", practiceSubject.getSubjectNum());
-        subjectQueryWrapper.like("subject_type", practiceSubject.getSubjectType());
-        practiceSubjectMapper.selectMaps(subjectQueryWrapper);
-
-        return null;
+        List<PracticeSubject> practiceSubjects = practiceSubjectMapper.selectSubjectBySubject(practiceSubject);
+        return practiceSubjects;
     }
 }

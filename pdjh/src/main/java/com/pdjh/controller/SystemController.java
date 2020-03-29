@@ -25,9 +25,7 @@ public class SystemController {
 
     @PostMapping("/login")
     public ResultVo verifyLogin(UserInfo userInfo, HttpServletRequest request){
-        System.out.println( "userinfo:" + userInfo);
         UserInfo user = userService.getById(userInfo.getUserNum());
-        System.out.println( "user" + user);
         if (user != null && user.getUserPwd().equals(userInfo.getUserPwd()) && user.getUserType().equals(userInfo.getUserType())){
             request.getSession().setAttribute("user",user);
             return ResultVo.success(user);
