@@ -18,13 +18,13 @@
       "icon": "fa fa-address-book",
       "child": [
         {
-          "title": "叫号记录",
+          "title": "预约叫号",
           "href": "layuimini/page/consumer/table_inputorder.html",
           "icon": "fa fa-tachometer",
           "target": "_self"
         },
         {
-          "title": "我的叫号",
+          "title": "预约记录",
           "href": "layuimini/page/consumer/table_myorder.html",
           "icon": "fa fa-tachometer",
           "target": "_self"

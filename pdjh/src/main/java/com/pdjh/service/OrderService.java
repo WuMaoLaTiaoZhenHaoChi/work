@@ -1,7 +1,11 @@
 package com.pdjh.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.pdjh.base.PageDto;
 import com.pdjh.entity.Order;
+import com.sun.tools.corba.se.idl.constExpr.Or;
+
+import java.util.List;
 
 /**
  * @Author: duant
@@ -9,4 +13,26 @@ import com.pdjh.entity.Order;
  * @Description:
  */
 public interface OrderService extends IService<Order> {
+
+    /**
+     * 客户取消预约
+     * @param order
+     * @return
+     */
+    boolean consumerCancelOrder(Order order);
+
+    /**
+     * 客户预约单子
+     * @param order
+     * @return
+     */
+    boolean inputOrderByOrder(Order order);
+
+    /**
+     * 客户订单记录
+     * @param order
+     * @return
+     */
+    PageDto<Order> listConsumerMyOrder(Order order, PageDto<Order> pageDto);
+
 }

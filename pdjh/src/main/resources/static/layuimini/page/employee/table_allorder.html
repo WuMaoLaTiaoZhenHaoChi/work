@@ -19,114 +19,28 @@
                 <form class="layui-form layui-form-pane" action="">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">教师编号</label>
+                            <label class="layui-form-label">业务类型</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="teacherNum" autocomplete="off" class="layui-input">
+                                <input type="text" name="businessType" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-label">课程名称</label>
-                            <div class="layui-input-inline">
-                                <input type="text" name="subjectName" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-inline">
-                            <label class="layui-form-label">课程类别</label>
-                            <div class="layui-input-inline">
-                                <input type="text" name="subjectType" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-inline">
-                            <button type="submit" class="layui-btn layui-btn-primary" lay-submit
-                                    lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索
-                            </button>
+                            <button type="submit" class="layui-btn layui-btn-primary" lay-submit  lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索</button>
                         </div>
                     </div>
                 </form>
             </div>
         </fieldset>
 
-        <!--查看学科详情信息-->
-        <div style="display: none;padding: 0.3125rem" id="selectSubject">
-            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-                <legend>编辑学科信息</legend>
-            </fieldset>
+        <!--列表-->
+        <table class="layui-hide" id="orderTableId" lay-filter="orderTableFilter"></table>
 
-            <form method="post" class="layui-form layui-form-pane" lay-filter="dataFrmSelectFilter" id="dataFrmSelect">
-
-                <div class="layui-form-item">
-                    <label class="layui-form-label">课程编号</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="subjectNum" lay-verify="title" autocomplete="off"
-                               readonly="readonly" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">课程名称</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="subjectName" lay-verify="title" autocomplete="off"
-                               readonly="readonly" class="layui-input">
-                    </div>
-                </div>
-
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">课程类型</label>
-                        <div class="layui-input-inline" readonly="readonly">
-                            <select name="subjectType" lay-verify="required" lay-search="">
-                                <option value="">直接选择或搜索选择</option>
-                                <option value="公益服务类">公益服务类</option>
-                                <option value="专业技能考核类">专业技能考核类</option>
-                                <option value="专业见习类">专业见习类</option>
-                            </select>
-                            <input type="text" name="subjectType" lay-verify="title" autocomplete="off"
-                                   readonly="readonly" class="layui-input">
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">课程简介</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="subjectMain" lay-verify="required" lay-reqtext="课程简介岂能为空？"
-                               readonly="readonly" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-
-                <div class="layui-form-item">
-                    <label class="layui-form-label">课程人数</label>
-                    <div class="layui-input-inline">
-                        <input type="number" name="subjectPeopleMax" lay-verify="subjectPeopleMax"
-                               readonly="readonly" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">请输入课程人数（1-999）</div>
-                </div>
-
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">开始日期</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="subjectStartTime" id="" lay-verify="date"
-                                   readonly="readonly" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">课程要求</label>
-                    <div class="layui-input-block">
-                        <textarea readonly="readonly" name="subjectRequire" class="layui-textarea"></textarea>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
-
+        <!--操作-->
         <script type="text/html" id="currentTableBar">
-            <a class="layui-btn layui-btn-xs" lay-event="select" >查看详情</a>
-<!--            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>-->
-<!--            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>-->
+            <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="view">查看</a>
+            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">受理</a>
+            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">取消</a>
         </script>
-
     </div>
 </div>
 <script src="/layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
@@ -139,34 +53,37 @@
             layuimini = layui.layuimini;
 
         table.render({
-            elem: '#currentTableId',
-            url: '/subject/teacher/listAllSubject',
-            toolbar: '#toolbarSubject',
+            elem: '#orderTableId',
+            url: '/order/consumer/listMyOrder',
+            toolbar: '#toolbarDemo',
             defaultToolbar: ['filter', 'exports', 'print', {
                 title: '提示',
                 layEvent: 'LAYTABLE_TIPS',
                 icon: 'layui-icon-tips'
             }],
             parseData: function (res) { //res 即为原始返回的数据
+                var data = res.data;
+                console.log(data)
                 return {
                     "code": res.code, //解析接口状态
                     "msg": res.msg, //解析提示文本
-                    "count": res.count, //解析数据长度
-                    "data": res.data //解析数据列表
+                    "count": data.count, //解析数据长度
+                    "data": data.data //解析数据列表
                 };
             },
             cols: [[
                 {type: "checkbox", width: 50, fixed: "left"},
-                {field: 'subjectNum', width: 150, title: '课程编号'},
-                {field: 'subjectName', width: 150, title: '课程名称'},
-                {field: 'subjectType', width: 150, title: '课程类别'},
-                {field: 'subjectPeopleMax',width: 150, title: '课程人数'},
+                {field: 'orderNum', width: 250, title: '订单编号', sort: true},
+                {field: 'orderCreatTime', width: 150, title: '预约时间'},
+                {field: 'orderFlag', width: 150, title: '订单状态'},
+                {field: 'employeeNum',width: 150, title: '受理员工'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,
             page: true
         });
+
 
         // 监听搜索操作
         form.on('submit(data-search-btn)', function (data) {

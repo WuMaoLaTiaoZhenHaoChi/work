@@ -3,9 +3,7 @@ package com.pdjh.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
  * @Author: duant
@@ -15,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("order")
+@TableName("order_info")
 public class Order {
 
     @TableId(type = IdType.INPUT)
@@ -27,7 +25,7 @@ public class Order {
 
     private String orderEndTime;      //订单结束时间
 
-    private String orderFlag;          //订单状态（0：已预约，1：已受理，2：已结束）
+    private String orderFlag;          //订单状态（未受理：已受理：已结束；已取消）
 
     private Float orderGrade;          //客户评分
 
@@ -36,5 +34,7 @@ public class Order {
     private String customerNum;        //预约客户编号
 
     private String employeeNum;        //受理员工编号
+
+    private String businessType;         //业务类型
 
 }

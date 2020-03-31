@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>实践课信息管理系统</title>
+    <title>排队取号系统</title>
     <meta name="keywords" content="layuimini,layui,layui模板,layui后台,后台模板,layui mini">
     <meta name="description" content="layuimini基于layui的轻量级前端后台管理框架，最简洁、易用的后台框架模板，面向所有层次的前后端程序,只需提供一个接口就直接初始化整个框架，无需复杂操作。">
     <meta name="renderer" content="webkit">
@@ -12,7 +12,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="layuimini/images/favicon.ico">
     <link rel="stylesheet" href="layuimini/lib/layui-v2.5.5/css/layui.css" media="all">
     <link rel="stylesheet" href="layuimini/css/layuimini.css" media="all">
     <link rel="stylesheet" href="layuimini/lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
@@ -55,7 +55,7 @@
                 <a href="javascript:;" data-check-screen="full"><i class="fa fa-arrows-alt"></i></a>
             </li>
             <li class="layui-nav-item layuimini-setting">
-                <a href="javascript:;">admin</a>
+                <a href="javascript:;" id="userName">admin</a>
                 <dl class="layui-nav-child">
                     <dd>
                         <a href="javascript:;" data-iframe-tab="page/user-setting.html" data-title="基本资料" data-icon="fa fa-gears">基本资料</a>
@@ -102,16 +102,10 @@
 
 </div>
 
-<!--百度统计代码-开始 正式使用请删除-->
-<script>
-    var _hmt = _hmt || [];
-    (function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?d97abf6d61c21d773f97835defbdef4e";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();
-</script>
-<!--百度统计代码-结束-->
-
 <script src="/layuimini/lib/layui-v2.5.5/layui.js?v=1.0.4" charset="utf-8"></script>
 <script src="/layuimini/js/lay-config.js?v=1.0.4" charset="utf-8"></script>
 <script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
 
     // var user = sessionStorage.getItem("user");
@@ -132,6 +126,7 @@
                 window.location = '/login.html';
             });
         });
+        $("#userName").html(sessionStorage.getItem("userName"));
     });
 </script>
 </body>
