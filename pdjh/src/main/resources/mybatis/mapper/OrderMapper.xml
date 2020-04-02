@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pdjh.mapper.OrderMapper">
 
+    <!--查询结果-->
     <select id="selectOrderByOrder" resultType="com.pdjh.entity.Order">
         SELECT * FROM order_info
         <where>
@@ -18,10 +19,33 @@
         ORDER BY order_creat_time LIMIT #{pageDto.current},#{pageDto.limit};
     </select>
 
-    <update id="updateConsumerOrderFlag" parameterType="String">
+    <!--统计数量-->
+    <select id="countOrderByOrder" resultType="Integer">
+        SELECT count(1) FROM order_info
+        <where>
+            <if test=" order.customerNum != null and order.customerNum != '' ">
+                AND customer_num = #{order.customerNum}
+            </if>
+            <if test=" order.businessType != null and order.businessType != '' ">
+                AND business_type = #{order.businessType}
+            </if>
+            <if test=" order.employeeNum != null and order.employeeNum != '' ">
+                AND employee_num = #{order.employeeNum}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateConsumerOrderFlag" parameterType="com.pdjh.entity.Order">
         UPDATE order_info
-        SET order_flag = #{orderFlag}
-        WHERE order_num = #{orderNum}
+        <set>
+            <if test="order.orderFlag != null and order.orderFlag != '' ">
+                order_flag = #{order.orderFlag},
+            </if>
+            <if test="order.employeeNum != null and order.employeeNum != '' ">
+                employee_num = #{order.employeeNum},
+            </if>
+        </set>
+        WHERE order_num = #{order.orderNum}
     </update>
 
 

@@ -1,5 +1,8 @@
 package com.pdjh.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.pdjh.base.OrderFlag;
 import com.pdjh.base.PageDto;
@@ -27,18 +30,27 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     @Autowired
     private OrderMapper orderMapper;
 
+    //员工受理订单
+    @Override
+    public int employeeAcceptOrder(Order order) {
+        String orderFlag = order.getOrderFlag();
+        if (orderFlag == null || !orderFlag.equals(OrderFlag.ORDER_FLAG_0))
+            return -1;
+        order.setOrderFlag(OrderFlag.ORDER_FLAG_1);
+        int i = orderMapper.updateById(order);
+        return i;
+    }
+
     //客户取消预约
     @Override
-    public boolean consumerCancelOrder(Order order) {
+    public int consumerCancelOrder(Order order) {
         //只有客户订单状态为未受理的时候才能取消
+        int i = -1;
         if (order != null && order.getOrderFlag().equals(OrderFlag.ORDER_FLAG_0)){
-            boolean b = orderMapper.updateConsumerOrderFlag(order.getOrderNum(),OrderFlag.ORDER_FLAG_3);
-            if (b){
-                return true;
-            }
-            return false;
+            order.setOrderFlag(OrderFlag.ORDER_FLAG_3);
+            i = orderMapper.updateConsumerOrderFlag(order);
         }
-        return false;
+        return i;
     }
 
     //客户预约单子
@@ -58,11 +70,26 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     //客户订单列表
+//    @Override
+//    public PageDto<Order> listConsumerMyOrder(Order order, PageDto<Order> pageDto) {
+//        pageDto.calculateCurrent();
+//        IPage<Order> iPage = new Page<>(pageDto.getCurrent(),pageDto.getLimit());
+//        QueryWrapper<Order> orderQueryWrapper = new QueryWrapper<>();
+//        orderQueryWrapper.isNull("customer_num").like("customer_num",order.getCustomerNum())
+//                .or().isNull("business_type").like("business_type",order.getBusinessType())
+//                .or().isNull("employee_num").like("employee_num",order.getEmployeeNum());
+//        IPage<Order> iPage1 = orderMapper.selectPage(iPage, orderQueryWrapper);
+//
+//        return pageDto;
+//    }
+
+    //客户订单列表
     @Override
     public PageDto<Order> listConsumerMyOrder(Order order, PageDto<Order> pageDto) {
         pageDto.calculateCurrent();
         List<Order> orderList = orderMapper.selectOrderByOrder(order,pageDto);
-        int count = this.count();
+        int count = orderMapper.countOrderByOrder(order);
+//        int count = this.count();
         pageDto.setCount(count);
         pageDto.setData(orderList);
         return pageDto;

@@ -22,15 +22,24 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @PutMapping("/employee/accpeptOrder")
+    public ResultVo employeeAcceptOrder(Order order){
+        int i = orderService.employeeAcceptOrder(order);
+        if (i >= 0){
+            return ResultVo.success();
+        }
+        return ResultVo.build("400","受理失败，此订单已被取消或订单已结束");
+    }
+
     /**
      * 取消订单，不是删除，只更改状态
      * @param order
      * @return
      */
     @PutMapping("/consumer/removeMyOrder")
-    public ResultVo consumerDeleteMyOrder( Order order){
-        boolean b = orderService.consumerCancelOrder(order);
-        if (b){
+    public ResultVo consumerDeleteMyOrder(Order order){
+        int b = orderService.consumerCancelOrder(order);
+        if (b >= 0){
             return ResultVo.success();
         }
         return ResultVo.build("400","取消失败，订单已受理或订单已结束");

@@ -15,11 +15,18 @@ import java.util.List;
 public interface OrderService extends IService<Order> {
 
     /**
+     * 员工受理预约
+     * @param order
+     * @return
+     */
+    int employeeAcceptOrder(Order order);
+
+    /**
      * 客户取消预约
      * @param order
      * @return
      */
-    boolean consumerCancelOrder(Order order);
+    int consumerCancelOrder(Order order);
 
     /**
      * 客户预约单子

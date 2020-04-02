@@ -14,7 +14,7 @@
     <div class="layuimini-main">
 
         <fieldset class="table-search-fieldset">
-            <legend>搜索信息</legend>
+            <legend>搜索客户预约信息</legend>
             <div style="margin: 10px 10px 10px 10px">
                 <form class="layui-form layui-form-pane" action="">
                     <div class="layui-form-item">
@@ -25,32 +25,37 @@
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <button type="submit" class="layui-btn layui-btn-primary" lay-submit  lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索</button>
+                            <button type="submit" class="layui-btn layui-btn-primary" lay-submit
+                                    lay-filter="order-data-search-btm"><i class="layui-icon"></i> 搜 索
+                            </button>
                         </div>
                     </div>
                 </form>
             </div>
         </fieldset>
 
-        <!--列表-->
+        <!--预约列表-->
         <table class="layui-hide" id="orderTableId" lay-filter="orderTableFilter"></table>
 
         <!--操作-->
         <script type="text/html" id="currentTableBar">
-            <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="view">查看</a>
-            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">受理</a>
-            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">取消</a>
+            <!--            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>-->
+            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="accept">受理</a>
+            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">取消预约</a>
         </script>
     </div>
 </div>
-<script src="/layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="/layuimini/lib/layui-v2.5.5/layui.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/js/lay-config.js?v=1.0.4" charset="utf-8"></script>
 <script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
     layui.use(['form', 'table'], function () {
         var $ = layui.jquery,
             form = layui.form,
             table = layui.table,
-            layuimini = layui.layuimini;
+            layuimini = layui.layuimini,
+            employeeNum = sessionStorage.getItem("userNum");
 
         table.render({
             elem: '#orderTableId',
@@ -75,8 +80,9 @@
                 {type: "checkbox", width: 50, fixed: "left"},
                 {field: 'orderNum', width: 250, title: '订单编号', sort: true},
                 {field: 'orderCreatTime', width: 150, title: '预约时间'},
+                {field: 'businessType', width: 150, title: '业务类型'},
                 {field: 'orderFlag', width: 150, title: '订单状态'},
-                {field: 'employeeNum',width: 150, title: '受理员工'},
+                {field: 'employeeNum', width: 150, title: '受理员工'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
@@ -86,47 +92,40 @@
 
 
         // 监听搜索操作
-        form.on('submit(data-search-btn)', function (data) {
+        form.on('submit(order-data-search-btm)', function (data) {
             // var result = JSON.stringify(data.field);
-            data = data.field;
-            var teacherNum = data.teacherNum;
-            var subjectName = data.subjectName;
-            var subjectType = data.subjectType;
             // layer.alert(result, {
             //     title: '最终的搜索信息'
             // });
-            console.log(data)
+            var data = data.field;
+            var businessType = data.businessType;
+            //搜索订单
             $.ajax({
-                url:"/subject/teacher/listAllSubject",
-                method:"post",
-                data:{
-                    teacherNum: data.teacherNum,
-                    subjectName: data.subjectName,
-                    subjectType: data.subjectType,
+                url: "/order/consumer/listMyOrder",
+                method: "get",
+                data: {
+                    businessType: businessType
                 },
-                success:function(res){
+                success: function (res) {
                     var resData = res.data;
-                    if (res.code == 200){
-                        layer.alert("查询学科信息成功");
+                    if (res.code == 0) {
+                        layer.msg("查询成功");
                     } else {
-                        layer.alert(res.msg);
+                        layer.msg(res.msg);
                     }
                 },
-                error:function(){
+                error: function () {
                     layer.msg("error");
                 }
             });
 
-
             //执行搜索重载
-            table.reload('currentTableId', {
+            table.reload('orderTableId', {
                 page: {
                     curr: 1
                 }
                 , where: {
-                    teacherNum: teacherNum,
-                    subjectName: subjectName,
-                    subjectType: subjectType,
+                    businessType: businessType,
                 }
             }, 'data');
 
@@ -154,20 +153,21 @@
 
         // 监听删除操作
         $(".data-delete-btn").on("click", function () {
-            var checkStatus = table.checkStatus('currentTableId')
+            var checkStatus = table.checkStatus('orderTableId')
                 , data = checkStatus.data;
             layer.alert(JSON.stringify(data));
         });
 
         //监听表格复选框选择
-        table.on('checkbox(currentTableFilter)', function (obj) {
+        table.on('checkbox(orderTableFilter)', function (obj) {
             console.log(obj)
         });
 
-        table.on('tool(currentTableFilter)', function (obj) {
+        //监听操作
+        table.on('tool(orderTableFilter)', function (obj) {
             var data = obj.data;
+            // var order = JSON.stringify(data);
             if (obj.event === 'edit') {
-
                 var index = layer.open({
                     title: '编辑用户',
                     type: 2,
@@ -182,12 +182,58 @@
                 });
                 return false;
             } else if (obj.event === 'delete') {
-                layer.confirm('真的删除行么', function (index) {
-                    obj.del();
+                layer.confirm('真的取消此客户预约么', function (index) {
+                    //取消预约
+                    $.ajax({
+                        url: "/order/consumer/removeMyOrder",
+                        method: "put",
+                        data: {
+                            orderNum: data.orderNum,
+                            orderFlag: data.orderFlag
+                        },
+                        success: function (res) {
+                            if (res.code == 200) {
+                                layer.msg("取消预约成功")
+                            } else {
+                                layer.msg(res.msg);
+                            }
+
+                        },
+                        error: function () {
+                            layer.msg("error");
+                        },
+                    });
                     layer.close(index);
                 });
+
             } else if (obj.event === 'select') {    //查看详情
                 openSelectLayer(data)
+            } else if (obj.event === 'accept') {   //受理订单
+                layer.confirm('确定受理此预约么', function (index) {
+                    //受理预约
+                    $.ajax({
+                        url: "/order/employee/accpeptOrder",
+                        method: "put",
+                        data: {
+                            orderNum: data.orderNum,
+                            orderFlag: data.orderFlag,
+                            employeeNum: employeeNum
+                        },
+                        success: function (res) {
+                            if (res.code == 200) {
+                                layer.msg("受理成功")
+                            } else {
+                                layer.msg(res.msg);
+                            }
+
+                        },
+                        error: function () {
+                            layer.msg("error");
+                        },
+                    });
+                    layer.close(index);
+                });
+
             }
         });
 

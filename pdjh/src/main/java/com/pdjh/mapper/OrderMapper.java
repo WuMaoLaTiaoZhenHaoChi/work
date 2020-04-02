@@ -15,6 +15,13 @@ import java.util.List;
 public interface OrderMapper extends BaseMapper<Order> {
 
     /**
+     * 统计数量
+     * @param order
+     * @return
+     */
+    int countOrderByOrder(@Param("order") Order order);
+
+    /**
      * 自定义查询自己订单记录
      * @param order
      * @return
@@ -23,9 +30,10 @@ public interface OrderMapper extends BaseMapper<Order> {
 
     /**
      * 通过订单号更改订单状态
-     * @param orderNum
+     * @param order
      * @return
      */
-    Boolean updateConsumerOrderFlag(@Param("orderNum") String orderNum,@Param("orderFlag") String orderFlag);
+//    Boolean updateConsumerOrderFlag(@Param("orderNum") String orderNum,@Param("orderFlag") String orderFlag);
+    int updateConsumerOrderFlag(@Param("order") Order order);
 
 }
