@@ -25,14 +25,64 @@
                             </div>
                         </div>
                         <div class="layui-inline">
+                            <label class="layui-form-label">订单状态</label>
+                            <div class="layui-input-inline">
+                                <select name="orderFlag" lay-search="">
+                                    <option value="">直接选择或搜索选择</option>
+                                    <option value="未受理">未受理</option>
+                                    <option value="已取消">已受理</option>
+                                    <option value="已结束">已结束</option>
+                                    <option value="已取消">已取消</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
                             <button type="submit" class="layui-btn layui-btn-primary" lay-submit
                                     lay-filter="order-data-search-btm"><i class="layui-icon"></i> 搜 索
                             </button>
+                            <button type="reset" class="layui-btn layui-btn-primary">清空</button>
                         </div>
                     </div>
                 </form>
             </div>
         </fieldset>
+
+        <!--提交评价-->
+        <div style="display: none;padding: 0.3125rem" id="submitRate">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend>评价订单</legend>
+            </fieldset>
+
+            <form method="post" class="layui-form layui-form-pane" lay-filter="dataFrmUpdateFilter" id="dataFrmUpdate">
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">订单编号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="orderNum" lay-verify="title" autocomplete="off"
+                               readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">评分</label>
+                    <div class="layui-input-block" id="orderGrade_div"></div>
+                    <input type="hidden" id="orderGrade" name="orderGrade"/>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">其他备注</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" name="subjectRequire" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit="" lay-filter="edit_rate_submit">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
 
         <script type="text/html" id="toolbarDemo">
             <div class="layui-btn-container">
@@ -44,8 +94,8 @@
         <table class="layui-hide" id="orderTableId" lay-filter="orderTableFilter"></table>
 
         <script type="text/html" id="currentTableBar">
-            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
-            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">取消</a>
+            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">取消订单</a>
+            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="editRate">评价订单</a>
         </script>
 
     </div>
@@ -55,7 +105,7 @@
 <script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
 <script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
-    layui.use(['form', 'table'], function () {
+    layui.use(['form', 'table','rate'], function () {
         var $ = layui.jquery,
             form = layui.form,
             table = layui.table,
@@ -63,7 +113,7 @@
             customerNum = sessionStorage.getItem("userNum");
 
 
-        table.render({
+        var tableIns = table.render({
             elem: '#orderTableId',
             url: '/order/consumer/listMyOrder',
             toolbar: '#toolbarDemo',
@@ -104,23 +154,25 @@
             // });
             var data = data.field;
             var businessType = data.businessType;
+            var orderFlag = data.orderFlag;
             //搜索订单
             $.ajax({
-                url:"/order/consumer/listMyOrder",
-                method:"get",
-                data:{
+                url: "/order/consumer/listMyOrder",
+                method: "get",
+                data: {
                     customerNum: customerNum,
-                    businessType: businessType
+                    businessType: businessType,
+                    orderFlag: orderFlag,
                 },
-                success:function(res){
+                success: function (res) {
                     var resData = res.data;
-                    if (res.code == 0){
+                    if (res.code == 0) {
                         layer.msg("查询成功");
                     } else {
                         layer.msg(res.msg);
                     }
                 },
-                error:function(){
+                error: function () {
                     layer.msg("error");
                 }
             });
@@ -134,11 +186,13 @@
                 , where: {
                     businessType: businessType,
                     customerNum: customerNum,
+                    orderFlag: orderFlag,
                 }
             }, 'data');
 
             return false;
         });
+
 
         // 监听添加操作
         $(".data-add-btn").on("click", function () {
@@ -150,7 +204,7 @@
                 maxmin: true,
                 shadeClose: true,
                 area: ['100%', '100%'],
-                content: '../../page/table/add.html',
+                content: '../../page/table/consumer/table_inputorder.html',
             });
             $(window).on("resize", function () {
                 layer.full(index);
@@ -173,21 +227,14 @@
 
         table.on('tool(orderTableFilter)', function (obj) {
             var data = obj.data;
-            if (obj.event === 'edit') {
+            if (obj.event === 'editRate') {
+                if (data.orderFlag === "已结束"){
+                    openUpdateLayer(data);
+                } else {
+                    layer.alert("此订单还未结束，或者已被异常取消，无法评价哦")
+                }
+                
 
-                var index = layer.open({
-                    title: '编辑用户',
-                    type: 2,
-                    shade: 0.2,
-                    maxmin: true,
-                    shadeClose: true,
-                    area: ['100%', '100%'],
-                    content: '../../page/table/edit.html',
-                });
-                $(window).on("resize", function () {
-                    layer.full(index);
-                });
-                return false;
             } else if (obj.event === 'delete') {
                 layer.confirm('真的取消行么', function (index) {
                     // obj.del();
@@ -217,6 +264,67 @@
                 });
             }
         });
+
+        //评价订单
+        function openUpdateLayer(data) {
+            mainIndex = layer.open({
+                type: 1,
+                title: '提交订单 [' + data.orderNum + '] 评价',
+                content: $("#submitRate"),
+                area: ['65%', '65%'],
+                shade: 0.3, //不显示遮罩
+                skin: 'layui-layer-molv',
+                maxmin: true,
+                success: function (index) {
+                    url = "/order/consumer/rateOrder";
+                    //装载数据表格
+                    form.val("dataFrmUpdateFilter", data);
+                }
+            });
+        }
+
+        //星星
+        var rate = layui.rate;
+        rate.render({
+            elem: '#orderGrade_div',       //绑定元素
+            length: 5,            //星星个数
+            value: 5,             //初始化值
+            theme: '#999999',     //颜色
+            half: true,          //支持半颗星
+            text: true,          //显示文本，默认显示 '3.5星'
+            readonly: false,      //只读
+            //自定义文本，点击后文本显示的内容
+            setText: function (value) {
+                if (value < 2) {
+                    this.span.text("差")
+                } else if (value <= 4) {
+                    this.span.text("一般")
+                } else {
+                    this.span.text("好")
+                }
+            }
+            //选定时调用，评分时发送一个ajax,readonly设为true
+            , choose: function (value) {
+                $("#orderGrade").val(value);
+            }
+        });
+
+
+        //提交数据
+        form.on("submit(edit_rate_submit)", function (data) {
+            console.log(data)
+
+            var params = $("#dataFrmUpdate").serialize();
+            $.post(url, params, function (res) {
+                layer.msg(res.msg);
+                if (res.code == 200) {
+                    tableIns.reload();
+                }
+                layer.close(mainIndex);
+            })
+            return false;
+        });
+
 
     });
 </script>

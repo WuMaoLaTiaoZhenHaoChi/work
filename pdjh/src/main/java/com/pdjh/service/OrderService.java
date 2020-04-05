@@ -15,6 +15,20 @@ import java.util.List;
 public interface OrderService extends IService<Order> {
 
     /**
+     * 客户进行订单评级
+     * @param order
+     * @return
+     */
+    int consumberRateOrder(Order order);
+
+    /**
+     * 员工已处理并关闭订单
+     * @param order
+     * @return
+     */
+    int employeeEndOrder(Order order);
+
+    /**
      * 员工受理预约
      * @param order
      * @return

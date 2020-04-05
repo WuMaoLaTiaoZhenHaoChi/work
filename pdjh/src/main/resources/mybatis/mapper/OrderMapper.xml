@@ -12,6 +12,9 @@
             <if test=" order.businessType != null and order.businessType != '' ">
                 AND business_type = #{order.businessType}
             </if>
+            <if test=" order.orderFlag != null and order.orderFlag != '' ">
+                AND order_flag = #{order.orderFlag}
+            </if>
             <if test=" order.employeeNum != null and order.employeeNum != '' ">
                 AND employee_num = #{order.employeeNum}
             </if>
@@ -35,6 +38,7 @@
         </where>
     </select>
 
+    <!--更新订单信息-->
     <update id="updateConsumerOrderFlag" parameterType="com.pdjh.entity.Order">
         UPDATE order_info
         <set>
@@ -43,6 +47,12 @@
             </if>
             <if test="order.employeeNum != null and order.employeeNum != '' ">
                 employee_num = #{order.employeeNum},
+            </if>
+            <if test="order.orderGrade != null and order.orderGrade != '' ">
+                order_grade = #{order.orderGrade},
+            </if>
+            <if test="order.orderRemark != null and order.orderRemark != '' ">
+                order_remark = #{order.orderRemark},
             </if>
         </set>
         WHERE order_num = #{order.orderNum}

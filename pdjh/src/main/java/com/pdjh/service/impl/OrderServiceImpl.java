@@ -30,6 +30,26 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     @Autowired
     private OrderMapper orderMapper;
 
+    @Override
+    public int consumberRateOrder(Order order) {
+        if (order.getOrderGrade() == null || order.getOrderGrade().equals(""))
+            return -1;
+        int i = orderMapper.updateConsumerOrderFlag(order);
+        return i;
+    }
+
+    //员工已处理并关闭订单
+    @Override
+    public int employeeEndOrder(Order order) {
+        String orderFlag = order.getOrderFlag();
+        if (order == null || orderFlag.equals(OrderFlag.ORDER_FLAG_2)){
+            return -1;
+        }
+        order.setOrderFlag(OrderFlag.ORDER_FLAG_2);
+        int i = orderMapper.updateConsumerOrderFlag(order);
+        return i;
+    }
+
     //员工受理订单
     @Override
     public int employeeAcceptOrder(Order order) {

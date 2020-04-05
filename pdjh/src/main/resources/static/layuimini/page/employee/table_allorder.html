@@ -24,10 +24,25 @@
                                 <input type="text" name="businessType" autocomplete="off" class="layui-input">
                             </div>
                         </div>
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">业务类型</label>
+                            <div class="layui-input-inline">
+                                <select name="orderFlag" lay-search="">
+                                    <option value="">直接选择或搜索选择</option>
+                                    <option value="未受理">未受理</option>
+                                    <option value="已取消">已受理</option>
+                                    <option value="已结束">已结束</option>
+                                    <option value="已取消">已取消</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="layui-inline">
                             <button type="submit" class="layui-btn layui-btn-primary" lay-submit
                                     lay-filter="order-data-search-btm"><i class="layui-icon"></i> 搜 索
                             </button>
+                            <button type="reset" class="layui-btn layui-btn-primary">清空</button>
                         </div>
                     </div>
                 </form>
@@ -57,7 +72,7 @@
             layuimini = layui.layuimini,
             employeeNum = sessionStorage.getItem("userNum");
 
-        table.render({
+        var allTable = table.render({
             elem: '#orderTableId',
             url: '/order/consumer/listMyOrder',
             toolbar: '#toolbarDemo',
@@ -68,7 +83,6 @@
             }],
             parseData: function (res) { //res 即为原始返回的数据
                 var data = res.data;
-                console.log(data)
                 return {
                     "code": res.code, //解析接口状态
                     "msg": res.msg, //解析提示文本
@@ -93,18 +107,16 @@
 
         // 监听搜索操作
         form.on('submit(order-data-search-btm)', function (data) {
-            // var result = JSON.stringify(data.field);
-            // layer.alert(result, {
-            //     title: '最终的搜索信息'
-            // });
             var data = data.field;
             var businessType = data.businessType;
+            var orderFlag = data.orderFlag;
             //搜索订单
             $.ajax({
                 url: "/order/consumer/listMyOrder",
                 method: "get",
                 data: {
-                    businessType: businessType
+                    businessType: businessType,
+                    orderFlag: orderFlag,
                 },
                 success: function (res) {
                     var resData = res.data;
@@ -126,6 +138,7 @@
                 }
                 , where: {
                     businessType: businessType,
+                    orderFlag: orderFlag,
                 }
             }, 'data');
 
@@ -194,6 +207,7 @@
                         success: function (res) {
                             if (res.code == 200) {
                                 layer.msg("取消预约成功")
+                                allTable.reload();
                             } else {
                                 layer.msg(res.msg);
                             }
@@ -209,31 +223,41 @@
             } else if (obj.event === 'select') {    //查看详情
                 openSelectLayer(data)
             } else if (obj.event === 'accept') {   //受理订单
-                layer.confirm('确定受理此预约么', function (index) {
-                    //受理预约
-                    $.ajax({
-                        url: "/order/employee/accpeptOrder",
-                        method: "put",
-                        data: {
-                            orderNum: data.orderNum,
-                            orderFlag: data.orderFlag,
-                            employeeNum: employeeNum
-                        },
-                        success: function (res) {
-                            if (res.code == 200) {
-                                layer.msg("受理成功")
-                            } else {
-                                layer.msg(res.msg);
-                            }
+                if (data.orderFlag === "未受理") {
+                    //订单状态未未受理
+                    if (data.employeeNum === null) {
+                        layer.confirm('确定受理此预约么', function (index) {
+                            //受理预约
+                            $.ajax({
+                                url: "/order/employee/accpeptOrder",
+                                method: "put",
+                                data: {
+                                    orderNum: data.orderNum,
+                                    orderFlag: data.orderFlag,
+                                    employeeNum: employeeNum
+                                },
+                                success: function (res) {
+                                    if (res.code == 200) {
+                                        layer.msg("受理成功")
+                                        allTable.reload();
+                                    } else {
+                                        layer.msg(res.msg);
+                                    }
 
-                        },
-                        error: function () {
-                            layer.msg("error");
-                        },
-                    });
-                    layer.close(index);
-                });
-
+                                },
+                                error: function () {
+                                    layer.msg("error");
+                                },
+                            });
+                            layer.close(index);
+                        });
+                    } else {
+                        //已经被受理过的不能被受理
+                        layer.alert("此订单已被员工 [" + data.employeeNum + "] 受理,无法再次受理");
+                    }
+                } else {
+                    layer.alert("此订单已结束，无法受理");
+                }
             }
         });
 

@@ -4,10 +4,12 @@ import com.pdjh.base.OrderFlag;
 import com.pdjh.base.PageDto;
 import com.pdjh.base.ResultVo;
 import com.pdjh.entity.Order;
+import com.pdjh.entity.UserInfo;
 import com.pdjh.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -22,13 +24,59 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @PostMapping("/consumer/rateOrder")
+    public ResultVo rateOrder(Order order){
+        int i = orderService.consumberRateOrder(order);
+        if (i >= 0){
+            return ResultVo.success();
+        }
+        return ResultVo.build("500","评价失败，评分不符合规则");
+    }
+
+    /**
+     * 员工结束订单
+     * @param order
+     * @return
+     */
+    @PutMapping("/employee/endMyOrder")
+    public ResultVo endMyOrder(Order order){
+        int i = orderService.employeeEndOrder(order);
+        if (i >= 0){
+            return ResultVo.success();
+        }
+        return ResultVo.build("500","关闭订单失败，此订单已被关闭");
+    }
+
+    /**
+     * 员工查看自己的订单
+     * @param order
+     * @param pageDto
+     * @param session
+     * @return
+     */
+    @GetMapping("/employee/listMyOrder")
+    public ResultVo employeeMyOrder(Order order, PageDto pageDto,HttpSession session){
+        if (order.getCustomerNum() == null || order.getCustomerNum().equals("")){
+            UserInfo user = (UserInfo) session.getAttribute("user");
+            String employeeNum = user.getUserNum();
+            order.setEmployeeNum(employeeNum);
+            pageDto = orderService.listConsumerMyOrder(order, pageDto);
+        }
+        return ResultVo.build("0","success",pageDto);
+    }
+
+    /**
+     * 受理订单
+     * @param order
+     * @return
+     */
     @PutMapping("/employee/accpeptOrder")
     public ResultVo employeeAcceptOrder(Order order){
         int i = orderService.employeeAcceptOrder(order);
         if (i >= 0){
             return ResultVo.success();
         }
-        return ResultVo.build("400","受理失败，此订单已被取消或订单已结束");
+        return ResultVo.build("500","受理失败，此订单已被取消或订单已结束");
     }
 
     /**
@@ -42,7 +90,7 @@ public class OrderController {
         if (b >= 0){
             return ResultVo.success();
         }
-        return ResultVo.build("400","取消失败，订单已受理或订单已结束");
+        return ResultVo.build("500","取消失败，订单已受理或订单已结束");
 
     }
 
