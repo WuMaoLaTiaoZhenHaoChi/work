@@ -1,8 +1,10 @@
 package com.sjkcxx.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.sjkcxx.base.PageDto;
 import com.sjkcxx.base.ResultVo;
 import com.sjkcxx.entity.PracticeSubject;
+import com.sjkcxx.entity.StudentSubject;
 import com.sjkcxx.entity.UserInfo;
 import com.sjkcxx.mapper.PracticeSubjectMapper;
 import com.sjkcxx.service.PracticeSubjectService;
@@ -27,6 +29,15 @@ public class SubjectController {
     @Autowired
     private PracticeSubjectService practiceSubjectService;
 
+    @PostMapping("/student/studentSelectSubject")
+    public ResultVo studentSelectSubject(PracticeSubject subject, StudentSubject studentSubject){
+        int i = practiceSubjectService.studentSelectSubject(subject, studentSubject);
+        if (i >= 0){
+            return ResultVo.success();
+        }
+        return ResultVo.build("500","课程人数已满，选课失败！");
+    }
+
     //插入课程
     @RequestMapping("/teacher/insertSubject")
     public ResultVo inserPrtoject(PracticeSubject practiceSubject, HttpSession session) {
@@ -45,23 +56,20 @@ public class SubjectController {
 
     //查询所有学科
     @GetMapping("/teacher/listAllSubject")
-    public ResultVo queryAllsubject( PracticeSubject practiceSubject) {
-        List<PracticeSubject> subjectList = practiceSubjectService.querySubjectLike(practiceSubject);
-
-        int count = subjectList.size();
-        return ResultVo.build("0", "success", count, subjectList);
+    public ResultVo queryAllsubject( PracticeSubject practiceSubject,PageDto pageDto) {
+        PageDto<PracticeSubject> practiceSubjectPageDto = practiceSubjectService.querySubjectLike(practiceSubject, pageDto);
+        return ResultVo.build("0", "success", practiceSubjectPageDto);
     }
 
     //查询教师自己的学科
     @GetMapping("/teacher/listMySubject")
-    public ResultVo querysubjectByTeachehNum(HttpSession session,PracticeSubject practiceSubject) {
+    public ResultVo querysubjectByTeachehNum(HttpSession session, PracticeSubject practiceSubject, PageDto pageDto) {
         UserInfo userinfo = (UserInfo) session.getAttribute("user");
         if (practiceSubject.getSubjectNum() == null || practiceSubject.getSubjectNum().equals("")){
             practiceSubject.setTeacherNum(userinfo.getUserNum());
         }
-        List<PracticeSubject> subjectList = practiceSubjectService.querySubjectLike(practiceSubject);
-        int count = subjectList.size();
-        return ResultVo.build("0", "success", count, subjectList);
+        PageDto<PracticeSubject> practiceSubjectPageDto = practiceSubjectService.querySubjectLike(practiceSubject, pageDto);
+        return ResultVo.build("0", "success", practiceSubjectPageDto);
     }
 
     //修改学科

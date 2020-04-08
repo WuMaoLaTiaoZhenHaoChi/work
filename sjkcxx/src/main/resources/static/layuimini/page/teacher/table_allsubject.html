@@ -40,6 +40,7 @@
                             <button type="submit" class="layui-btn layui-btn-primary" lay-submit
                                     lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索
                             </button>
+                            <button type="reset" class="layui-btn layui-btn-primary">清空</button>
                         </div>
                     </div>
                 </form>
@@ -115,15 +116,17 @@
         <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
 
         <script type="text/html" id="currentTableBar">
-            <a class="layui-btn layui-btn-xs" lay-event="select" >查看详情</a>
+            <a class="layui-btn layui-btn-xs" lay-event="view" >查看详情</a>
 <!--            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>-->
 <!--            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>-->
         </script>
 
     </div>
 </div>
-<script src="/layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="/layuimini/lib/layui-v2.5.5/layui.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/js/lay-config.js?v=1.0.4" charset="utf-8"></script>
 <script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
     layui.use(['form', 'table'], function () {
         var $ = layui.jquery,
@@ -131,7 +134,7 @@
             table = layui.table,
             layuimini = layui.layuimini;
 
-        table.render({
+        var tableIns = table.render({
             elem: '#currentTableId',
             url: '/subject/teacher/listAllSubject',
             toolbar: '#toolbarSubject',
@@ -141,11 +144,12 @@
                 icon: 'layui-icon-tips'
             }],
             parseData: function (res) { //res 即为原始返回的数据
+                data = res.data;
                 return {
                     "code": res.code, //解析接口状态
                     "msg": res.msg, //解析提示文本
-                    "count": res.count, //解析数据长度
-                    "data": res.data //解析数据列表
+                    "count": data.count, //解析数据长度
+                    "data": data.data //解析数据列表
                 };
             },
             cols: [[
@@ -153,12 +157,13 @@
                 {field: 'subjectNum', width: 150, title: '课程编号'},
                 {field: 'subjectName', width: 150, title: '课程名称'},
                 {field: 'subjectType', width: 150, title: '课程类别'},
-                {field: 'subjectPeopleMax',width: 150, title: '课程人数'},
+                {field: 'subjectPeopleNow', width: 150, title: '已选人数'},
+                {field: 'subjectPeopleMax', width: 150, title: '总人数'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,
-            page: true
+            page: 1
         });
 
         // 监听搜索操作
@@ -262,7 +267,7 @@
                     obj.del();
                     layer.close(index);
                 });
-            } else if (obj.event === 'select') {    //查看详情
+            } else if (obj.event === 'view') {    //查看详情
                 openSelectLayer(data)
             }
         });

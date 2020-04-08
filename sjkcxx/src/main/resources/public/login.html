@@ -127,17 +127,17 @@
             <div>
                 <i class="layui-icon layui-icon-username admin-icon"></i>
                 <input type="text" name="userNum" placeholder="请输入用户名" autocomplete="off"
-                       class="layui-input admin-input admin-input-username" value="101">
+                       class="layui-input admin-input admin-input-username" value="001">
             </div>
             <div>
                 <i class="layui-icon layui-icon-password admin-icon"></i>
                 <input type="password" name="userPwd" placeholder="请输入密码" autocomplete="off"
-                       class="layui-input admin-input" value="101">
+                       class="layui-input admin-input" value="001">
             </div>
             <div>
                 <select name="userType" lay-filter="type">
-                    <option value="0" >学生</option>
-                    <option value="1" selected="">教师</option>
+                    <option value="0" selected="">学生</option>
+                    <option value="1" >教师</option>
                     <option value="2">管理员</option>
                 </select>
             </div>
@@ -187,6 +187,7 @@
                 success:function(res){
                     console.log(res);
                     if (res.code == 200){
+                        sessionStorage.setItem("userName",res.data.userName);
                         sessionStorage.setItem("userNum",res.data.userNum);
                         window.location.href = "/index";
                     } else {

@@ -32,6 +32,8 @@ public class PracticeSubject implements Serializable {
 
     private String subjectMain;             //课程简介
 
+    private Integer subjectPeopleNow;       //课程现有人数
+
     private Integer subjectPeopleMax;       //课程人数
 
     private String subjectStartTime;        //课程开始时间

@@ -60,46 +60,75 @@
 
     </div>
 </div>
-<script src="/layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="/layuimini/lib/layui-v2.5.5/layui.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
     layui.use(['form', 'table'], function () {
         var $ = layui.jquery,
             form = layui.form,
             table = layui.table,
             layuimini = layui.layuimini;
-
-        table.render({
+        var url;
+        var tableIns = table.render({
             elem: '#currentTableId',
-            url: '../../api/table.json',
+            url: '/subject/teacher/listMySubject',
             toolbar: '#toolbarDemo',
             defaultToolbar: ['filter', 'exports', 'print', {
                 title: '提示',
                 layEvent: 'LAYTABLE_TIPS',
                 icon: 'layui-icon-tips'
             }],
+            parseData: function (res) { //res 即为原始返回的数据
+                var data = res.data;
+                return {
+                    "code": res.code, //解析接口状态
+                    "msg": res.msg, //解析提示文本
+                    "count": data.count, //解析数据长度
+                    "data": data.data //解析数据列表
+                };
+            },
             cols: [[
                 {type: "checkbox", width: 50, fixed: "left"},
-                {field: 'id', width: 80, title: 'ID', sort: true},
-                {field: 'username', width: 80, title: '用户名'},
-                {field: 'sex', width: 80, title: '性别', sort: true},
-                {field: 'city', width: 80, title: '城市'},
-                {field: 'sign', title: '签名', minWidth: 150},
-                {field: 'experience', width: 80, title: '积分', sort: true},
-                {field: 'score', width: 80, title: '评分', sort: true},
-                {field: 'classify', width: 80, title: '职业'},
-                {field: 'wealth', width: 135, title: '财富', sort: true},
+                {field: 'subjectNum', width: 150, title: '课程编号'},
+                {field: 'subjectName', width: 150, title: '课程名称'},
+                {field: 'subjectType', width: 150, title: '课程类别'},
+                {field: 'subjectPeopleNow', width: 150, title: '已选人数'},
+                {field: 'subjectPeopleMax', width: 150, title: '总人数'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,
-            page: true
+            page: 1
         });
 
         // 监听搜索操作
         form.on('submit(data-search-btn)', function (data) {
-            var result = JSON.stringify(data.field);
-            layer.alert(result, {
-                title: '最终的搜索信息'
+            // var result = JSON.stringify(data.field);
+            data = data.field;
+            var teacherNum = sessionStorage.getItem("userNum");
+            var subjectName = data.subjectName;
+            var subjectType = data.subjectType;
+            $.ajax({
+                url:"/subject/teacher/listMySubject",
+                method:"get",
+                data:{
+                    teacherNum: teacherNum,
+                    subjectName: subjectName,
+                    subjectType: subjectType,
+                },
+                success:function(res){
+                    var resData = res.data;
+                    if (res.code == 0){
+                        layer.msg_success();
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                },
+                error:function(){
+                    layer.msg("error");
+                }
             });
 
             //执行搜索重载
@@ -108,7 +137,9 @@
                     curr: 1
                 }
                 , where: {
-                    searchParams: result
+                    teacherNum: teacherNum,
+                    subjectName: subjectName,
+                    subjectType: subjectType,
                 }
             }, 'data');
 
@@ -117,15 +148,14 @@
 
         // 监听添加操作
         $(".data-add-btn").on("click", function () {
-
             var index = layer.open({
                 title: '添加用户',
                 type: 2,
                 shade: 0.2,
-                maxmin:true,
+                maxmin: true,
                 shadeClose: true,
                 area: ['100%', '100%'],
-                content: '../../page/table/add.html',
+                content: '../../page/teacher/table_inputsubject.html',
             });
             $(window).on("resize", function () {
                 layer.full(index);
@@ -146,33 +176,74 @@
             console.log(obj)
         });
 
+        //监听表格操作
         table.on('tool(currentTableFilter)', function (obj) {
             var data = obj.data;
+            console.log(data)
             if (obj.event === 'edit') {
-
-                var index = layer.open({
-                    title: '编辑用户',
-                    type: 2,
-                    shade: 0.2,
-                    maxmin:true,
-                    shadeClose: true,
-                    area: ['100%', '100%'],
-                    content: '../../page/table/edit.html',
-                });
-                $(window).on("resize", function () {
-                    layer.full(index);
-                });
-                return false;
+                openUpdateLayer(data);
             } else if (obj.event === 'delete') {
+                console.log(data);
                 layer.confirm('真的删除行么', function (index) {
                     obj.del();
                     layer.close(index);
                 });
+            } else if (obj.event === 'select') {
+                layer.msg("查看详情");
+                openSelectLayer(data)
             }
         });
 
+        //编辑学科信息
+        function openUpdateLayer(data) {
+            mainIndex = layer.open({
+                type: 1,
+                title: '修改[' + data.subjectName + ']课程信息',
+                content: $("#updateSubject"),
+                area: ['65%', '85%'],
+                shade: 0.3, //不显示遮罩
+                skin: 'layui-layer-molv',
+                maxmin: true,
+                success: function (index) {
+                    url = "/subject/teacher/updateMySubject";
+                    //装载数据表格
+                    form.val("dataFrmUpdateFilter", data);
+                }
+            });
+        }
+        //提交数据
+        form.on("submit(edit_subject_submit)", function (data) {
+            var params = $("#dataFrmUpdate").serialize();
+            $.post(url, params, function (res) {
+                layer.msg(res.msg);
+                if (res.code == 200) {
+                    tableIns.reload();
+                }
+                layer.close(mainIndex);
+            })
+            return false;
+        });
+
+        //查看学科信息
+        function openSelectLayer(data) {
+            mainIndex = layer.open({
+                type: 1,
+                title: '查看[' + data.subjectName + ']课程详情',
+                content: $("#selectSubject"),
+                area: ['65%', '85%'],
+                shade: 0.3, //不显示遮罩
+                skin: 'layui-layer-molv',
+                maxmin: true,
+                success: function (index) {
+                    //装载数据表格
+                    form.val("dataFrmSelectFilter", data);
+                }
+            });
+        }
+
     });
 </script>
+
 <script>
 
 </script>

@@ -1,7 +1,9 @@
 package com.sjkcxx.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.sjkcxx.base.PageDto;
 import com.sjkcxx.entity.PracticeSubject;
+import com.sjkcxx.entity.StudentSubject;
 
 import java.util.List;
 
@@ -13,10 +15,18 @@ import java.util.List;
 public interface PracticeSubjectService extends IService<PracticeSubject> {
 
     /**
-     * 模糊查询学科信息
+     * 学生选课
+     * @param practiceSubject
+     * @param studentSubject
+     * @return
+     */
+    int studentSelectSubject(PracticeSubject practiceSubject, StudentSubject studentSubject);
+
+    /**
+     * 多条件查询学科信息
      * @param practiceSubject
      * @return
      */
-    List<PracticeSubject> querySubjectLike(PracticeSubject practiceSubject);
+    PageDto<PracticeSubject> querySubjectLike(PracticeSubject practiceSubject, PageDto pageDto);
 
 }

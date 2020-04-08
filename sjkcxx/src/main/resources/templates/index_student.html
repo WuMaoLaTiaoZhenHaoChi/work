@@ -55,7 +55,7 @@
                 <a href="javascript:;" data-check-screen="full"><i class="fa fa-arrows-alt"></i></a>
             </li>
             <li class="layui-nav-item layuimini-setting">
-                <a href="javascript:;">admin</a>
+                <a href="javascript:;" id="userName">admin</a>
                 <dl class="layui-nav-child">
                     <dd>
                         <a href="javascript:;" data-iframe-tab="page/user-setting.html" data-title="基本资料" data-icon="fa fa-gears">基本资料</a>
@@ -132,6 +132,7 @@
                 window.location = '/login.html';
             });
         });
+        $("#userName").html(sessionStorage.getItem("userName"));
     });
 </script>
 </body>
