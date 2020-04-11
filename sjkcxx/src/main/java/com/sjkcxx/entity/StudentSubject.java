@@ -23,18 +23,24 @@ public class StudentSubject implements Serializable {
     @TableId(type = IdType.INPUT)
     private String studentSubjectNum;
 
-    private String studentNum;
+    private String teacherNum;      //老师编号
 
-    private String subjectNum;
+    private String teacherName;     //教师姓名
 
-    private String subjectEnd;
+    private String studentNum;      //学生编号
 
-    private Float subjectGrade;
+    private String subjectNum;      //课程编号
 
-    private Float subjectWork;
+    private String subjectName;     //课程名称
 
-    private Float subjectScore;
+    private String subjectStatic;      //课程状态(未修完/已修完)
 
-    private Float subjectRemark;
+    private Float subjectGrade;     //课程成绩
+
+    private String subjectWork;      //课程作业（路径）
+
+    private Float subjectScore;     //课程评分
+
+    private String subjectRemark;      //课程评价
 
 }

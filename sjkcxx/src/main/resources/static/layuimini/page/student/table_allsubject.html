@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>layui</title>
+    <title>所有课程</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -130,6 +130,9 @@
     </div>
 </div>
 <script src="/layuimini/lib/layui-v2.5.5/layui.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
     layui.use(['form', 'table'], function () {
             var $ = layui.jquery,
@@ -159,11 +162,12 @@
                 },
                 cols: [[
                     {type: "checkbox", width: 50, fixed: "left"},
-                    {field: 'subjectNum', width: 150, title: '课程编号'},
                     {field: 'subjectName', width: 150, title: '课程名称'},
                     {field: 'subjectType', width: 150, title: '课程类别'},
                     {field: 'subjectPeopleNow', width: 150, title: '已选人数'},
                     {field: 'subjectPeopleMax', width: 150, title: '总人数'},
+                    {field: 'teacherName', width: 150, title: '教师姓名'},
+                    {field: 'subjectMain', width: 150, title: '课程简介'},
                     {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
                 ]],
                 limits: [10, 15, 20, 25, 50, 100],
@@ -248,8 +252,11 @@
 
             table.on('tool(currentTableFilter)', function (obj) {
                 var data = obj.data;
+                console.log(obj)
                 var teacherNum = data.teacherNum;
+                var teacherName = data.teacherName;
                 var subjectNum = data.subjectNum;
+                var subjectName = data.subjectName;
                 var subjectPeopleNow = data.subjectPeopleNow;
                 if (obj.event === 'view') {    //查看详情
                     openSelectLayer(data)
@@ -257,27 +264,31 @@
                     if (subjectPeopleNow >= data.subjectPeopleMax) {
                         layer.alert("课程人数已达上限，请选择其他课程")
                     } else {
-                        layer.confirm('确定选择此学科么，选定之后除非开课人数不足自动取消，否则无法取消', function (index) {
+                        layer.confirm('确定选择此学科么，选定之后将无法取消', function (index) {
                             //
                             $.ajax({
                                 url: "/subject/student/studentSelectSubject",
                                 method: "post",
                                 data: {
                                     teacherNum: teacherNum,
+                                    teacherName: teacherName,
                                     subjectNum: subjectNum,
                                     studentNum: studentNum,
                                     subjectPeopleNow: subjectPeopleNow,
+                                    subjectName: subjectName,
                                 },
                                 success: function (res) {
-                                    var resData = res.data;
-                                    if (res.code == 0) {
-                                        layer.msg_success();
+
+                                    console.log(res.code)
+                                    if (res.code === '200') {
+                                        layer.alert("选择 [" + subjectName+ "] 成功");
                                     } else {
-                                        layer.msg(res.msg);
+                                        layer.alert(res.msg);
                                     }
+                                    tableIns.reload();
                                 },
                                 error: function () {
-                                    layer.msg("error");
+                                    layer.alert("你已经选过 [" + subjectName + "] 学科，不能重复选择");
                                 }
                             });
                             layer.close(index);
@@ -308,13 +319,6 @@
 
         }
     );
-</script>
-<script src="/layuimini/js/lay-config.js?v=1.0.4" charset="utf-8"></script>
-<script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
-<script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
-
-<script>
-
 </script>
 
 </body>

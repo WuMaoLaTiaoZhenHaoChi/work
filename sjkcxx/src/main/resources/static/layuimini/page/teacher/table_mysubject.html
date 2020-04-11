@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>layui</title>
+    <title>我的课程</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -187,8 +187,8 @@
             <!--表格相关-->
             <script type="text/html" id="toolbarDemo">
                 <div class="layui-btn-container">
-                    <button class="layui-btn layui-btn-sm data-add-btn"> 添加用户</button>
-                    <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn"> 删除用户</button>
+                    <button class="layui-btn layui-btn-sm data-add-btn"> 添加课程</button>
+<!--                    <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn"> 删除用户</button>-->
                 </div>
             </script>
 
@@ -233,11 +233,12 @@
             },
             cols: [[
                 {type: "checkbox", width: 50, fixed: "left"},
-                {field: 'subjectNum', width: 150, title: '课程编号'},
                 {field: 'subjectName', width: 150, title: '课程名称'},
                 {field: 'subjectType', width: 150, title: '课程类别'},
                 {field: 'subjectPeopleNow', width: 150, title: '已选人数'},
                 {field: 'subjectPeopleMax', width: 150, title: '总人数'},
+                {field: 'teacherName', width: 150, title: '教师姓名'},
+                {field: 'subjectMain', width: 150, title: '课程简介'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
@@ -262,8 +263,8 @@
                 },
                 success:function(res){
                     var resData = res.data;
-                    if (res.code == 0){
-                        layer.msg_success();
+                    if (res.code == '0'){
+                        layer.msg("查询成功");
                     } else {
                         layer.msg(res.msg);
                     }

@@ -66,7 +66,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">评分</label>
                     <div class="layui-input-block" id="orderGrade_div"></div>
-                    <input type="hidden" id="orderGrade" name="orderGrade"/>
+                    <input type="hidden" id="orderGrade" name="orderGrade" value="5" />
                 </div>
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">其他备注</label>
@@ -233,8 +233,6 @@
                 } else {
                     layer.alert("此订单还未结束，或者已被异常取消，无法评价哦")
                 }
-                
-
             } else if (obj.event === 'delete') {
                 layer.confirm('真的取消行么', function (index) {
                     // obj.del();

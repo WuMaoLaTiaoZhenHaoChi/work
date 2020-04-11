@@ -98,7 +98,8 @@
         var form = layui.form
             , layer = layui.layer
             , layedit = layui.layedit
-            , laydate = layui.laydate;
+            , laydate = layui.laydate,
+        teacherName = sessionStorage.getItem("userName");
 
         //日期
         laydate.render({
@@ -153,6 +154,7 @@
                     subjectPeopleMax: data.subjectPeopleMax,
                     subjectStartTime: data.subjectStartTime,
                     subjectRequire: data.subjectRequire,
+                    teacherName:teacherName,
                 },
                 success:function(res){
                     var resData = res.data;

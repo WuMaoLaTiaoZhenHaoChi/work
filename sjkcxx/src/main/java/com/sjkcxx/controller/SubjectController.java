@@ -8,6 +8,7 @@ import com.sjkcxx.entity.StudentSubject;
 import com.sjkcxx.entity.UserInfo;
 import com.sjkcxx.mapper.PracticeSubjectMapper;
 import com.sjkcxx.service.PracticeSubjectService;
+import com.sjkcxx.service.StudentSubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,14 +29,39 @@ public class SubjectController {
 
     @Autowired
     private PracticeSubjectService practiceSubjectService;
+    @Autowired
+    private StudentSubjectService studentSubjectService;
 
+    //学生打分
+    @PostMapping("/student/studentRateSubject")
+    public ResultVo studentRateSubject(StudentSubject studentSubject){
+        int i = studentSubjectService.studentScoreRate(studentSubject);
+        if (i > 0){
+            return ResultVo.success();
+        }
+        return ResultVo.build("400","打分失败，信息有误");
+    }
+    
+    //学生自己的课程列表
+    @GetMapping("/student/listMySubject")
+    public ResultVo listStudentMySubject(StudentSubject studentSubject,PageDto pageDto,HttpSession session){
+        String studentNum = studentSubject.getStudentNum();
+        if (studentNum == null || studentNum.equals("")){
+            UserInfo user = (UserInfo) session.getAttribute("user");
+            studentSubject.setStudentNum(user.getUserNum());
+        }
+        PageDto<StudentSubject> studentSubjectPageDto = studentSubjectService.queryStudentSubjectLike(studentSubject, pageDto);
+        return ResultVo.build("0", "success", studentSubjectPageDto);
+    }
+
+    //选课
     @PostMapping("/student/studentSelectSubject")
     public ResultVo studentSelectSubject(PracticeSubject subject, StudentSubject studentSubject){
         int i = practiceSubjectService.studentSelectSubject(subject, studentSubject);
         if (i >= 0){
             return ResultVo.success();
         }
-        return ResultVo.build("500","课程人数已满，选课失败！");
+        return ResultVo.build("400","课程人数已满，选课失败！");
     }
 
     //插入课程

@@ -44,6 +44,8 @@ public class PracticeSubject implements Serializable {
 
     private String teacherNum;              //教师编号
 
+    private String teacherName;             //教师姓名
+
     private String inputTime;               //录入时间
 
 }

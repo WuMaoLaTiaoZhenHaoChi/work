@@ -28,6 +28,7 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
     @Autowired
     private StudentSubjectMapper studentSubjectMapper;
 
+    //学生选课
     @Transactional
     @Override
     public int studentSelectSubject(PracticeSubject subject, StudentSubject studentSubject) {
@@ -45,7 +46,9 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
         //更新学科信息
         int i = practiceSubjectMapper.updateSubjectPeopleNow(subject);
         //插入
-        studentSubject.setStudentSubjectNum(subjectNum + studentSubject.getStudentNum() + subjectPeopleNow);
+        studentSubject.setSubjectName(studentSubject.getSubjectName());
+        studentSubject.setTeacherNum(teacherNum);
+        studentSubject.setStudentSubjectNum(subjectNum + studentSubject.getStudentNum());
         studentSubject.setSubjectNum(subjectNum);
         int insert = studentSubjectMapper.insert(studentSubject);
         return i & insert;
