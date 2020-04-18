@@ -5,7 +5,7 @@
   "homeInfo": {
     "title": "首页",
     "icon": "fa fa-home",
-    "href": "layuimini/page/teacher/welcome.html"
+    "href": "layuimini/page/admin/table_allproject.html"
   },
   "logoInfo": {
     "title": "实践课管理系统",
@@ -18,14 +18,8 @@
       "icon": "fa fa-address-book",
       "child": [
         {
-          "title": "所有课程",
+          "title": "课程列表",
           "href": "layuimini/page/admin/table_allproject.html",
-          "icon": "fa fa-tachometer",
-          "target": "_self"
-        },
-        {
-          "title": "待审核课程",
-          "href": "layuimini/page/admin/table_checkproject.html",
           "icon": "fa fa-tachometer",
           "target": "_self"
         }

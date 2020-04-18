@@ -1,0 +1,1196 @@
+2020-04-11 09:39:18.932 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 14568 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 09:39:18.932 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 09:39:19.742 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 09:39:19.742 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 09:39:19.742 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 09:39:19.742 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 09:39:19.898 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 09:39:19.898 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 09:39:19.898 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 919 ms
+2020-04-11 09:39:20.721 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 09:39:20.768 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 09:39:20.862 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 09:39:20.893 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 09:39:20.893 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.249 seconds (JVM running for 3.057)
+2020-04-11 09:39:27.296 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586351355,1586437412,1586440773] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 09:39:27.302 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 09:39:27.302 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 09:39:27.305 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 09:39:33.365 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 09:42:18.439 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 18064 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 09:42:18.439 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 09:42:19.307 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 09:42:19.307 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 09:42:19.307 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 09:42:19.307 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 09:42:19.463 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 09:42:19.463 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 09:42:19.463 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 978 ms
+2020-04-11 09:42:20.190 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 09:42:20.222 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 09:42:20.317 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 09:42:20.332 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 09:42:20.348 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.193 seconds (JVM running for 2.884)
+2020-04-11 09:42:25.441 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586351355,1586437412,1586440773; JSESSIONID=FFEBE2A1500141A1B9C71C39F3519A60] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 09:42:25.445 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 09:42:25.445 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 09:42:25.448 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 09:42:31.131 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 09:43:49.250 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 11980 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 09:43:49.250 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 09:43:49.985 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 09:43:49.985 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 09:43:49.985 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 09:43:49.985 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 09:43:50.143 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 09:43:50.143 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 09:43:50.143 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 846 ms
+2020-04-11 09:43:50.885 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 09:43:50.916 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 09:43:51.010 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 09:43:51.025 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 09:43:51.025 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.027 seconds (JVM running for 2.715)
+2020-04-11 09:43:52.645 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586351355,1586437412,1586440773; JSESSIONID=8D2AF72BA1D4A33F53C1D2479E693000] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 09:43:52.649 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 09:43:52.649 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 09:43:52.652 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 09:43:53.571 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:08:44.314 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 14720 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:08:44.316 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:08:44.988 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:08:44.993 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:08:44.993 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:08:44.993 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:08:45.147 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:08:45.149 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:08:45.149 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 804 ms
+2020-04-11 10:08:45.887 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:08:45.928 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:08:46.023 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:08:46.042 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:08:46.044 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.989 seconds (JVM running for 2.641)
+2020-04-11 10:08:55.485 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:08:55.488 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:08:55.488 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:08:55.491 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 10:08:58.264 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:10:26.952 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 12828 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:10:26.954 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:10:27.648 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:10:27.653 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:10:27.654 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:10:27.654 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:10:27.801 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:10:27.803 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:10:27.803 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 818 ms
+2020-04-11 10:10:28.544 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:10:28.583 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:10:28.674 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:10:28.692 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:10:28.694 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.994 seconds (JVM running for 2.652)
+2020-04-11 10:10:33.144 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=B8662946C60354273485DC01E63D3A38] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:10:33.148 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:10:33.148 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:10:33.152 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 10:10:34.016 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:20:49.094 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 18304 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:20:49.094 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:20:49.824 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:20:49.824 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:20:49.824 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:20:49.824 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:20:49.981 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:20:49.981 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:20:49.981 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 840 ms
+2020-04-11 10:20:50.753 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:20:50.792 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:20:50.886 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:20:50.905 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:20:50.908 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.055 seconds (JVM running for 2.704)
+2020-04-11 10:20:51.831 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=A30CEEBB66DC92189DBB6046378BC2D8] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:20:51.835 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:20:51.835 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:20:51.839 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 10:20:58.256 [http-nio-8080-exec-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:22:21.617 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 2324 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:22:21.617 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:22:22.298 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:22:22.298 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:22:22.298 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:22:22.298 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:22:22.438 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:22:22.454 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:22:22.454 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 806 ms
+2020-04-11 10:22:23.203 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:22:23.250 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:22:23.329 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:22:23.360 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:22:23.360 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.979 seconds (JVM running for 2.636)
+2020-04-11 10:22:25.345 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=91C65AC8A5C6975E90DE6583BE85C3FF] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:22:25.349 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:22:25.350 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:22:25.353 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 10:22:30.798 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:42:52.666 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 18040 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:42:52.666 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:42:53.360 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:42:53.376 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:42:53.376 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:42:53.376 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:42:53.528 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:42:53.530 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:42:53.530 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 833 ms
+2020-04-11 10:42:54.234 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:42:54.281 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:42:54.359 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:42:54.391 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:42:54.391 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.986 seconds (JVM running for 2.66)
+2020-04-11 10:42:58.201 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=6B2A2D86C652129F0F10256214A2C0E8] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:42:58.205 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:42:58.206 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:42:58.209 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 10:42:59.202 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:46:57.576 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 5548 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:46:57.576 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:46:58.273 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:46:58.273 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:46:58.273 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:46:58.273 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:46:58.413 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:46:58.429 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:46:58.429 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 821 ms
+2020-04-11 10:46:59.149 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:46:59.180 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:46:59.274 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:46:59.290 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:46:59.290 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.952 seconds (JVM running for 2.607)
+2020-04-11 10:47:02.594 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=9524260220152F1B999F899E2686DC5C] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:47:02.598 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:47:02.598 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:47:02.601 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 10:47:03.965 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:47:34.356 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 18128 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:47:34.356 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:47:35.178 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:47:35.178 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:47:35.178 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:47:35.194 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:47:35.365 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:47:35.365 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:47:35.365 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 962 ms
+2020-04-11 10:47:36.139 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:47:36.186 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:47:36.296 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:47:36.311 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:47:36.311 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.212 seconds (JVM running for 3.413)
+2020-04-11 10:47:57.388 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=B0021A79C08F8586944CA9A28AD92629] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:47:57.393 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:47:57.393 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:47:57.397 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 10:47:58.533 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:48:50.051 [http-nio-8080-exec-9] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'sstudentSubject' not found. Available parameters are [studentSubject, pageDto, param1, param2]] with root cause
+org.apache.ibatis.binding.BindingException: Parameter 'sstudentSubject' not found. Available parameters are [studentSubject, pageDto, param1, param2]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:120)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2719)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTChain.getValueBody(ASTChain.java:141)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:61)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:493)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:457)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:46)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode$$Lambda$465/34150451.accept(Unknown Source)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.TrimSqlNode.apply(TrimSqlNode.java:55)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode$$Lambda$465/34150451.accept(Unknown Source)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:297)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy69.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:177)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:78)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96)
+	at com.sun.proxy.$Proxy71.selectStudentSubjectBySS(Unknown Source)
+	at com.sjkcxx.service.impl.StudentSubjectServiceImpl.queryStudentSubjectLike(StudentSubjectServiceImpl.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
+	at com.sun.proxy.$Proxy73.queryStudentSubjectLike(Unknown Source)
+	at com.sjkcxx.controller.SubjectController.listStudentMySubject(SubjectController.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2020-04-11 10:48:50.069 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:48:50.072 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 10:51:12.295 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 7700 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:51:12.311 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:51:13.126 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:51:13.126 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:51:13.126 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:51:13.126 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:51:13.305 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:51:13.305 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:51:13.305 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 963 ms
+2020-04-11 10:51:14.074 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:51:14.113 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:51:14.222 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:51:14.238 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:51:14.238 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.242 seconds (JVM running for 3.029)
+2020-04-11 10:51:16.130 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=7338FF9112AFCE8822330439851FE0D3] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:51:16.135 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:51:16.135 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:51:16.141 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-04-11 10:51:17.324 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:51:46.369 [http-nio-8080-exec-9] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'sstudentSubject' not found. Available parameters are [studentSubject, pageDto, param1, param2]] with root cause
+org.apache.ibatis.binding.BindingException: Parameter 'sstudentSubject' not found. Available parameters are [studentSubject, pageDto, param1, param2]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:120)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2719)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTChain.getValueBody(ASTChain.java:141)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:61)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:493)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:457)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:46)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode$$Lambda$465/722764585.accept(Unknown Source)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.TrimSqlNode.apply(TrimSqlNode.java:55)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode$$Lambda$465/722764585.accept(Unknown Source)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:297)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy69.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:177)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:78)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96)
+	at com.sun.proxy.$Proxy71.selectStudentSubjectBySS(Unknown Source)
+	at com.sjkcxx.service.impl.StudentSubjectServiceImpl.queryStudentSubjectLike(StudentSubjectServiceImpl.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
+	at com.sun.proxy.$Proxy73.queryStudentSubjectLike(Unknown Source)
+	at com.sjkcxx.controller.SubjectController.listStudentMySubject(SubjectController.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2020-04-11 10:52:34.902 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:52:34.902 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 10:52:37.612 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 4436 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:52:37.612 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:52:38.387 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:52:38.387 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:52:38.387 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:52:38.387 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:52:38.573 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:52:38.573 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:52:38.573 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 930 ms
+2020-04-11 10:52:39.348 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:52:39.395 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:52:39.489 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:52:39.520 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:52:39.529 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.212 seconds (JVM running for 3.036)
+2020-04-11 10:53:03.141 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=4404E8812F1F1BE9B170A335C20A19E8] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:53:03.146 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:53:03.146 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:53:03.150 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 10:53:04.133 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:53:19.634 [http-nio-8080-exec-8] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'studentSubject' not found. Available parameters are [sstudentSubject, param1]] with root cause
+org.apache.ibatis.binding.BindingException: Parameter 'studentSubject' not found. Available parameters are [sstudentSubject, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:120)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2719)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTChain.getValueBody(ASTChain.java:141)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:61)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:493)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:457)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:46)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode$$Lambda$465/1211827856.accept(Unknown Source)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.TrimSqlNode.apply(TrimSqlNode.java:55)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode$$Lambda$465/1211827856.accept(Unknown Source)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:297)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy69.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:108)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96)
+	at com.sun.proxy.$Proxy71.countStudentSubjectBySS(Unknown Source)
+	at com.sjkcxx.service.impl.StudentSubjectServiceImpl.queryStudentSubjectLike(StudentSubjectServiceImpl.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
+	at com.sun.proxy.$Proxy73.queryStudentSubjectLike(Unknown Source)
+	at com.sjkcxx.controller.SubjectController.listStudentMySubject(SubjectController.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2020-04-11 10:53:42.363 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:53:42.363 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 10:53:45.556 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 17876 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:53:45.556 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:53:46.230 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:53:46.230 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:53:46.230 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:53:46.230 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:53:46.371 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:53:46.371 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:53:46.371 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 784 ms
+2020-04-11 10:53:47.103 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:53:47.151 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:53:47.229 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:53:47.260 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:53:47.260 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.974 seconds (JVM running for 2.65)
+2020-04-11 10:53:51.969 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=BE0D43934AFE809C5F45DC994AFA8C32] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:53:51.973 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:53:51.973 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:53:51.976 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 10:53:52.719 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:58:26.280 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 15220 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:58:26.280 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:58:26.959 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:58:26.959 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:58:26.959 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:58:26.959 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:58:27.115 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:58:27.115 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:58:27.115 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 803 ms
+2020-04-11 10:58:27.847 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:58:27.878 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:58:27.972 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:58:27.987 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:58:28.003 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.96 seconds (JVM running for 2.63)
+2020-04-11 10:58:37.538 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=59682A8F50A930A72894D6C324DAE67E] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 10:58:37.542 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 10:58:37.542 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 10:58:37.546 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 10:58:41.498 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 10:59:15.289 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 2456 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 10:59:15.289 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 10:59:15.982 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 10:59:15.982 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:59:15.982 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 10:59:15.982 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 10:59:16.124 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 10:59:16.139 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 10:59:16.139 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 819 ms
+2020-04-11 10:59:16.897 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 10:59:16.938 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 10:59:17.031 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 10:59:17.047 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 10:59:17.047 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.012 seconds (JVM running for 2.669)
+2020-04-11 11:00:42.590 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 14544 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 11:00:42.590 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 11:00:43.287 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 11:00:43.287 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 11:00:43.287 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 11:00:43.287 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 11:00:43.427 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 11:00:43.427 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 11:00:43.427 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 806 ms
+2020-04-11 11:00:44.160 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 11:00:44.191 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 11:00:44.285 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 11:00:44.300 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 11:00:44.300 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.953 seconds (JVM running for 2.618)
+2020-04-11 11:00:47.283 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=B9DEE0E35420BDB26EE405729F26A3E5] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 11:00:47.288 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 11:00:47.288 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 11:00:47.292 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 11:00:48.367 [http-nio-8080-exec-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 11:01:11.842 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 14136 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 11:01:11.845 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 11:01:12.608 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 11:01:12.623 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 11:01:12.623 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 11:01:12.623 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 11:01:12.803 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 11:01:12.818 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 11:01:12.818 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 938 ms
+2020-04-11 11:01:13.600 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 11:01:13.666 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 11:01:13.773 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 11:01:13.798 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 11:01:13.800 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.255 seconds (JVM running for 3.009)
+2020-04-11 11:01:19.376 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=68B3606A2885285DF7904511A10717A3] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 11:01:19.382 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 11:01:19.383 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 11:01:19.388 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-04-11 11:01:20.263 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 11:01:48.101 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 11:01:48.103 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 11:02:38.559 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 17128 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 11:02:38.559 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 11:02:39.247 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 11:02:39.263 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 11:02:39.263 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 11:02:39.263 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 11:02:39.404 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 11:02:39.404 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 11:02:39.404 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 798 ms
+2020-04-11 11:02:40.129 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 11:02:40.160 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 11:02:40.254 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 11:02:40.270 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 11:02:40.285 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.962 seconds (JVM running for 2.625)
+2020-04-11 11:02:43.160 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=E3649D5F6292F34D93DB6B3E0799261F] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 11:02:43.164 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 11:02:43.164 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 11:02:43.167 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 11:02:43.966 [http-nio-8080-exec-9] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 11:03:09.507 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 12684 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 11:03:09.509 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 11:03:10.185 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 11:03:10.200 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 11:03:10.200 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 11:03:10.200 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 11:03:10.341 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 11:03:10.341 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 11:03:10.341 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 814 ms
+2020-04-11 11:03:11.056 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 11:03:11.087 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 11:03:11.181 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 11:03:11.203 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 11:03:11.205 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.955 seconds (JVM running for 2.598)
+2020-04-11 11:03:13.500 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586569435; JSESSIONID=2549679E85DE768EA108406B72C0E276] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 11:03:13.504 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 11:03:13.504 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 11:03:13.508 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 11:03:14.157 [http-nio-8080-exec-10] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:06:27.058 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 13028 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:06:27.058 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:06:27.761 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:06:27.761 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:06:27.761 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:06:27.761 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:06:27.918 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:06:27.918 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:06:27.918 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 828 ms
+2020-04-11 17:06:28.629 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:06:28.661 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:06:28.754 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:06:28.774 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:06:28.774 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.968 seconds (JVM running for 2.678)
+2020-04-11 17:06:33.093 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:06:33.100 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:06:33.100 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:06:33.103 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 17:06:34.896 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:07:46.043 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 10896 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:07:46.043 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:07:46.855 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:07:46.871 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:07:46.871 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:07:46.871 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:07:47.043 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:07:47.043 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:07:47.043 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 953 ms
+2020-04-11 17:07:47.831 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:07:47.878 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:07:47.972 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:07:48.003 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:07:48.003 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.248 seconds (JVM running for 3.513)
+2020-04-11 17:08:06.837 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; JSESSIONID=7A3FD68FBBCFF98A063C83B8E1F46BF0] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:08:06.842 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:08:06.842 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:08:06.846 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:08:07.916 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:08:43.009 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:08:43.010 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 17:10:15.642 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 3676 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:10:15.642 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:10:16.345 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:10:16.345 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:10:16.345 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:10:16.345 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:10:16.493 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:10:16.493 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:10:16.493 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 820 ms
+2020-04-11 17:10:17.206 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:10:17.237 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:10:17.332 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:10:17.347 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:10:17.347 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.945 seconds (JVM running for 2.645)
+2020-04-11 17:10:20.390 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; JSESSIONID=21D399F509862BE95DBABF52C6627640] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:10:20.394 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:10:20.394 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:10:20.398 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:10:21.244 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:11:55.320 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 12940 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:11:55.320 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:11:56.111 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:11:56.111 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:11:56.111 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:11:56.111 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:11:56.283 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:11:56.283 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:11:56.283 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 916 ms
+2020-04-11 17:11:57.048 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:11:57.109 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:11:57.229 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:11:57.245 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:11:57.245 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.211 seconds (JVM running for 3.05)
+2020-04-11 17:11:58.861 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; JSESSIONID=98C44B1194E970A8ECE41E5C143AB6E8] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:11:58.866 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:11:58.866 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:11:58.871 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:11:59.728 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:12:27.716 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:12:27.717 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 17:13:22.818 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 14544 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:13:22.834 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:13:23.523 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:13:23.523 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:13:23.523 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:13:23.523 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:13:23.681 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:13:23.681 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:13:23.681 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 832 ms
+2020-04-11 17:13:24.394 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:13:24.425 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:13:24.503 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:13:24.519 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:13:24.519 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.962 seconds (JVM running for 2.625)
+2020-04-11 17:13:27.278 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; JSESSIONID=4775291506FE371AC7566102F19DC4C1] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:13:27.282 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:13:27.282 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:13:27.286 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:13:27.991 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:13:49.381 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 15592 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:13:49.381 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:13:50.171 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:13:50.171 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:13:50.171 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:13:50.171 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:13:50.342 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:13:50.342 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:13:50.342 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 914 ms
+2020-04-11 17:13:51.101 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:13:51.148 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:13:51.257 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:13:51.273 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:13:51.273 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.19 seconds (JVM running for 2.962)
+2020-04-11 17:13:52.451 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; JSESSIONID=EA55F01AC69419C782489B8C2243ABFC] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:13:52.457 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:13:52.458 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:13:52.462 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:13:53.255 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:14:57.268 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:14:57.269 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 17:14:59.754 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 1540 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:14:59.754 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:15:00.453 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:15:00.459 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:15:00.459 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:15:00.459 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:15:00.602 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:15:00.602 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:15:00.602 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 817 ms
+2020-04-11 17:15:01.308 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:15:01.355 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:15:01.441 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:15:01.457 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:15:01.457 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.953 seconds (JVM running for 2.627)
+2020-04-11 17:15:03.607 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; JSESSIONID=BAA0D70FC7DD7F10B6AB75C1F46A6F56] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:15:03.611 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:15:03.611 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:15:03.615 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:15:04.394 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:17:07.513 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 17428 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:17:07.529 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:17:08.195 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:17:08.211 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:17:08.211 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:17:08.211 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:17:08.351 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:17:08.351 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:17:08.351 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 791 ms
+2020-04-11 17:17:09.187 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:17:09.218 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:17:09.312 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:17:09.327 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:17:09.327 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.046 seconds (JVM running for 2.729)
+2020-04-11 17:17:09.417 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; JSESSIONID=EF414C3848634784FA467D8CCC3EBD37] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:17:09.421 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:17:09.421 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:17:09.425 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:17:10.199 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:28:53.983 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 7956 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:28:53.985 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:28:54.694 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:28:54.699 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:28:54.700 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:28:54.700 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:28:54.850 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:28:54.853 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:28:54.853 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 830 ms
+2020-04-11 17:28:55.654 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:28:55.692 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:28:55.781 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:28:55.800 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:28:55.802 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.095 seconds (JVM running for 2.755)
+2020-04-11 17:29:39.876 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; JSESSIONID=022FD5BF1AD61FAED265CAAD3ECDEC03] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:29:39.880 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:29:39.880 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:29:39.884 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:29:40.857 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:30:44.261 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 14332 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:30:44.263 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:30:44.940 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:30:44.945 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:30:44.945 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:30:44.945 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:30:45.106 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:30:45.108 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:30:45.108 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 811 ms
+2020-04-11 17:30:45.829 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:30:45.866 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:30:45.955 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:30:45.974 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:30:45.976 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.966 seconds (JVM running for 2.622)
+2020-04-11 17:30:53.021 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586437412,1586440773,1586569435; JSESSIONID=C871120BDF6F377309BF9797FABE5C6B] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:30:53.025 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:30:53.025 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:30:53.028 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-04-11 17:30:55.782 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:47:03.146 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 13628 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:47:03.148 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:47:03.865 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:47:03.870 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:47:03.870 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:47:03.870 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:47:04.031 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:47:04.033 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:47:04.034 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 842 ms
+2020-04-11 17:47:04.762 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:47:04.800 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:47:04.891 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:47:04.910 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:47:04.912 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.077 seconds (JVM running for 2.722)
+2020-04-11 17:47:05.018 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=3668977A97A20D0B4B68BD5C56C404B4] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:47:05.022 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:47:05.023 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:47:05.026 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 17:47:06.217 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:47:17.212 [http-nio-8080-exec-9] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'studentSubject' on field 'subjectRemark': rejected value [好]; codes [typeMismatch.studentSubject.subjectRemark,typeMismatch.subjectRemark,typeMismatch.java.lang.Float,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentSubject.subjectRemark,subjectRemark]; arguments []; default message [subjectRemark]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Float' for property 'subjectRemark'; nested exception is java.lang.NumberFormatException: For input string: "好"]]
+2020-04-11 17:49:12.574 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 12616 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:49:12.576 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:49:13.377 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:49:13.383 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:49:13.384 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:49:13.384 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:49:13.567 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:49:13.569 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:49:13.569 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 957 ms
+2020-04-11 17:49:14.340 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:49:14.384 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:49:14.485 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:49:14.507 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:49:14.509 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.207 seconds (JVM running for 2.958)
+2020-04-11 17:49:16.074 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=37EDE1055964EA4A1CBC350DC1F88612] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:49:16.082 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:49:16.082 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:49:16.087 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-04-11 17:49:16.854 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:49:34.490 [http-nio-8080-exec-2] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'studentSubject' on field 'subjectRemark': rejected value [好]; codes [typeMismatch.studentSubject.subjectRemark,typeMismatch.subjectRemark,typeMismatch.java.lang.Float,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentSubject.subjectRemark,subjectRemark]; arguments []; default message [subjectRemark]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Float' for property 'subjectRemark'; nested exception is java.lang.NumberFormatException: For input string: "好"]]
+2020-04-11 17:55:14.077 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:55:14.080 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 17:55:26.485 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 16748 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:55:26.487 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:55:27.251 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:55:27.258 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:55:27.258 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:55:27.259 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:55:27.435 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:55:27.438 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:55:27.438 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 910 ms
+2020-04-11 17:55:28.207 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:55:28.253 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:55:28.354 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:55:28.376 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:55:28.379 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.163 seconds (JVM running for 3.416)
+2020-04-11 17:55:30.752 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=BAD4107FB87471B1009ACC85210FCDFA] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:55:30.757 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:55:30.757 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:55:30.761 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:55:33.816 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:56:18.937 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:56:18.942 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 17:57:05.248 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 3624 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:57:05.250 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:57:06.016 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:57:06.022 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:57:06.023 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:57:06.023 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:57:06.198 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:57:06.200 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:57:06.201 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 918 ms
+2020-04-11 17:57:06.998 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:57:07.057 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:57:07.156 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:57:07.178 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:57:07.180 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.225 seconds (JVM running for 2.97)
+2020-04-11 17:57:10.763 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=852DF1FD54783E01A703D6E8FE12BD72] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:57:10.768 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:57:10.768 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:57:10.772 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 17:57:11.716 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 17:57:30.131 [http-nio-8080-exec-10] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'studentSubject' on field 'subjectRemark': rejected value [好]; codes [typeMismatch.studentSubject.subjectRemark,typeMismatch.subjectRemark,typeMismatch.java.lang.Float,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentSubject.subjectRemark,subjectRemark]; arguments []; default message [subjectRemark]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Float' for property 'subjectRemark'; nested exception is java.lang.NumberFormatException: For input string: "好"]]
+2020-04-11 17:59:11.157 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:59:11.160 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-04-11 17:59:13.558 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 13672 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:59:13.560 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:59:14.231 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:59:14.236 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:59:14.236 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:59:14.236 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:59:14.387 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:59:14.390 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:59:14.390 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 797 ms
+2020-04-11 17:59:15.104 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:59:15.142 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:59:15.229 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:59:15.248 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:59:15.250 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.929 seconds (JVM running for 2.573)
+2020-04-11 17:59:50.653 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 18140 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 17:59:50.655 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 17:59:51.315 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 17:59:51.320 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:59:51.321 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 17:59:51.321 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 17:59:51.470 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 17:59:51.472 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 17:59:51.472 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 786 ms
+2020-04-11 17:59:52.219 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 17:59:52.256 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 17:59:52.342 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 17:59:52.362 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 17:59:52.364 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.95 seconds (JVM running for 2.611)
+2020-04-11 17:59:54.470 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=FA6EF370CE4EC1FDF590D05F675DB3A1] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 17:59:54.473 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 17:59:54.474 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 17:59:54.477 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 17:59:55.335 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 18:00:09.389 [http-nio-8080-exec-10] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'studentSubject' on field 'subjectRemark': rejected value [qwe]; codes [typeMismatch.studentSubject.subjectRemark,typeMismatch.subjectRemark,typeMismatch.java.lang.Float,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentSubject.subjectRemark,subjectRemark]; arguments []; default message [subjectRemark]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Float' for property 'subjectRemark'; nested exception is java.lang.NumberFormatException: For input string: "qwe"]]
+2020-04-11 18:00:30.204 [http-nio-8080-exec-8] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'studentSubject' on field 'subjectRemark': rejected value [好]; codes [typeMismatch.studentSubject.subjectRemark,typeMismatch.subjectRemark,typeMismatch.java.lang.Float,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentSubject.subjectRemark,subjectRemark]; arguments []; default message [subjectRemark]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Float' for property 'subjectRemark'; nested exception is java.lang.NumberFormatException: For input string: "好"]]
+2020-04-11 18:01:59.042 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 15748 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 18:01:59.045 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 18:01:59.747 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 18:01:59.752 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:01:59.752 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 18:01:59.752 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 18:01:59.893 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 18:01:59.893 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 18:01:59.893 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 808 ms
+2020-04-11 18:02:00.622 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 18:02:00.660 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 18:02:00.750 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:02:00.769 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 18:02:00.771 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.98 seconds (JVM running for 2.625)
+2020-04-11 18:02:04.727 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=FECF007D07E6BDBCE5F64847E6205306] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 18:02:04.731 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 18:02:04.731 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 18:02:04.734 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 18:02:05.798 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 18:03:12.820 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 1396 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 18:03:12.827 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 18:03:13.674 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 18:03:13.679 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:03:13.680 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 18:03:13.680 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 18:03:13.827 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 18:03:13.829 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 18:03:13.829 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 951 ms
+2020-04-11 18:03:14.564 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 18:03:14.602 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 18:03:14.693 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:03:14.713 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 18:03:14.713 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.137 seconds (JVM running for 2.784)
+2020-04-11 18:03:14.738 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=9D1E99F34068B8DFEAE9CCEDE80DE50D] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 18:03:14.742 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 18:03:14.742 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 18:03:14.745 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 18:03:15.743 [http-nio-8080-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 18:04:45.407 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 3308 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 18:04:45.409 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 18:04:46.094 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 18:04:46.099 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:04:46.100 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 18:04:46.100 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 18:04:46.257 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 18:04:46.259 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 18:04:46.260 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 817 ms
+2020-04-11 18:04:46.978 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 18:04:47.017 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 18:04:47.104 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:04:47.122 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 18:04:47.124 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.952 seconds (JVM running for 2.598)
+2020-04-11 18:04:49.803 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=37426E84C721A3180F1EC0767A3FACED] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 18:04:49.807 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 18:04:49.807 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 18:04:49.810 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 18:04:50.894 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 18:16:28.558 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 14260 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 18:16:28.560 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 18:16:29.236 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 18:16:29.241 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:16:29.241 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 18:16:29.241 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 18:16:29.383 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 18:16:29.386 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 18:16:29.386 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 793 ms
+2020-04-11 18:16:30.104 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 18:16:30.141 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 18:16:30.231 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:16:30.250 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 18:16:30.252 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.93 seconds (JVM running for 2.587)
+2020-04-11 18:16:37.228 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=4F4AB60B6DCAB88F6BA83480C7CB5A7A] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 18:16:37.232 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 18:16:37.232 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 18:16:37.236 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 18:16:38.475 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 18:17:33.451 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 3516 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 18:17:33.453 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 18:17:34.120 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 18:17:34.126 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:17:34.126 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 18:17:34.126 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 18:17:34.269 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 18:17:34.271 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 18:17:34.271 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 786 ms
+2020-04-11 18:17:35.024 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 18:17:35.063 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 18:17:35.150 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:17:35.169 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 18:17:35.170 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.951 seconds (JVM running for 2.605)
+2020-04-11 18:17:35.809 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=C3292D96D77B797866297B04CDB51BF5] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 18:17:35.815 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 18:17:35.816 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 18:17:35.819 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 18:17:36.848 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 18:18:07.892 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 13944 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 18:18:07.894 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 18:18:08.564 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 18:18:08.569 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:18:08.569 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 18:18:08.569 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 18:18:08.712 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 18:18:08.714 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 18:18:08.715 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 788 ms
+2020-04-11 18:18:09.424 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 18:18:09.465 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 18:18:09.556 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:18:09.575 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 18:18:09.577 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.933 seconds (JVM running for 2.58)
+2020-04-11 18:18:12.390 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=82F3C865DA692E85C2B70B5F866C1F5F] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 18:18:12.393 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 18:18:12.393 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 18:18:12.397 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 18:18:13.614 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 18:26:54.877 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 17660 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 18:26:54.879 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 18:26:55.550 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 18:26:55.555 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:26:55.555 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 18:26:55.555 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 18:26:55.699 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 18:26:55.701 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 18:26:55.701 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 790 ms
+2020-04-11 18:26:56.413 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 18:26:56.450 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 18:26:56.539 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:26:56.558 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 18:26:56.560 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 1.915 seconds (JVM running for 2.586)
+2020-04-11 18:27:01.309 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=70FE7462F5D0CE7363484FB9D0A1748A] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 18:27:01.313 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 18:27:01.313 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 18:27:01.317 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-04-11 18:27:06.172 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-11 18:30:34.733 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 14000 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-04-11 18:30:34.736 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-04-11 18:30:35.422 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 18:30:35.427 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:30:35.427 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 18:30:35.427 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-11 18:30:35.574 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-11 18:30:35.576 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 18:30:35.576 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 805 ms
+2020-04-11 18:30:36.309 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 18:30:36.347 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-11 18:30:36.437 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 18:30:36.456 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 18:30:36.458 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 2.04 seconds (JVM running for 2.696)
+2020-04-11 18:30:36.626 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1586440773,1586569435,1586597622; Hm_lpvt_d97abf6d61c21d773f97835defbdef4e=1586597622; JSESSIONID=DD9B3DD3D20A5DBA864453F744128E9C] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-04-11 18:30:36.630 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 18:30:36.630 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 18:30:36.633 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-04-11 18:30:42.141 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited

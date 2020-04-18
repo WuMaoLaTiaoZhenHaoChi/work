@@ -15,12 +15,26 @@ import java.util.List;
 public interface PracticeSubjectService extends IService<PracticeSubject> {
 
     /**
+     * 审核课程
+     * @param practiceSubject
+     * @return
+     */
+    int adminCheckSubject(PracticeSubject practiceSubject);
+
+    /**
      * 学生选课
      * @param practiceSubject
      * @param studentSubject
      * @return
      */
     int studentSelectSubject(PracticeSubject practiceSubject, StudentSubject studentSubject);
+
+    /**
+     * 学生多条件查询已审核学科信息
+     * @param practiceSubject
+     * @return
+     */
+    PageDto<PracticeSubject> studentQuerySubjectLike(PracticeSubject practiceSubject, PageDto pageDto);
 
     /**
      * 多条件查询学科信息

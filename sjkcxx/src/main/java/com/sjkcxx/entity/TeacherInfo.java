@@ -23,6 +23,8 @@ public class TeacherInfo extends UserInfo {
     @TableId(type = IdType.INPUT)
     private String userNum;
 
+    private String userName;
+
     private String teacherPhone;
 
     private String teacherRank;

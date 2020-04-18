@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>layui</title>
+    <title>所有课程</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,48 +19,126 @@
                 <form class="layui-form layui-form-pane" action="">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">教师姓名</label>
+                            <label class="layui-form-label">教师编号</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="username" autocomplete="off" class="layui-input">
+                                <input type="text" name="teacherNum" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
                             <label class="layui-form-label">课程名称</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="sex" autocomplete="off" class="layui-input">
+                                <input type="text" name="subjectName" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-label">所属专业</label>
+                            <label class="layui-form-label">课程类别</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="city" autocomplete="off" class="layui-input">
+                                <input type="text" name="subjectType" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <button type="submit" class="layui-btn layui-btn-primary" lay-submit  lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索</button>
+                            <label class="layui-form-label">课程审核状态</label>
+                            <div class="layui-input-inline">
+                                <select name="subjectCheck" lay-search="">
+                                    <option value="">直接选择或搜索选择</option>
+                                    <option value="未审核">未审核</option>
+                                    <option value="已通过">已通过</option>
+                                    <option value="未通过">未通过</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <button type="submit" class="layui-btn layui-btn-primary" lay-submit
+                                    lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索
+                            </button>
+                            <button type="reset" class="layui-btn layui-btn-primary">清空</button>
                         </div>
                     </div>
                 </form>
             </div>
         </fieldset>
 
-        <script type="text/html" id="toolbarDemo">
-            <div class="layui-btn-container">
-                <button class="layui-btn layui-btn-sm data-add-btn"> 添加用户 </button>
-                <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn"> 删除用户 </button>
-            </div>
-        </script>
+        <!--查看学科详情信息-->
+        <div style="display: none;padding: 0.3125rem" id="selectSubject">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend>查看学科信息</legend>
+            </fieldset>
+
+            <form method="post" class="layui-form layui-form-pane" lay-filter="dataFrmSelectFilter" id="dataFrmSelect">
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">课程编号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="subjectNum" lay-verify="title" autocomplete="off"
+                               readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">课程名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="subjectName" lay-verify="title" autocomplete="off"
+                               readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">课程类型</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="subjectType" lay-verify="title" autocomplete="off"
+                                   readonly="readonly" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">课程简介</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="subjectMain" lay-verify="required" lay-reqtext="课程简介岂能为空？"
+                               readonly="readonly" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">课程人数</label>
+                    <div class="layui-input-inline">
+                        <input type="number" name="subjectPeopleMax" lay-verify="subjectPeopleMax"
+                               readonly="readonly" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">开始日期</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="subjectStartTime" id="" lay-verify="date"
+                                   readonly="readonly" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">课程要求</label>
+                    <div class="layui-input-block">
+                        <textarea readonly="readonly" name="subjectRequire" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
 
         <script type="text/html" id="currentTableBar">
-            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
-            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+            <a class="layui-btn layui-btn-xs" lay-event="view">查看详情</a>
+            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="checkOn">审核通过</a>
+            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="checkOff">审核不通过</a>
+            <!--            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>-->
         </script>
 
     </div>
 </div>
-<script src="/layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="/layuimini/lib/layui-v2.5.5/layui.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
     layui.use(['form', 'table'], function () {
         var $ = layui.jquery,
@@ -68,39 +146,69 @@
             table = layui.table,
             layuimini = layui.layuimini;
 
-        table.render({
+        var tableIns = table.render({
             elem: '#currentTableId',
-            url: '../../api/table.json',
-            toolbar: '#toolbarDemo',
+            url: '/subject/teacher/listAllSubject',
+            toolbar: '#toolbarSubject',
             defaultToolbar: ['filter', 'exports', 'print', {
                 title: '提示',
                 layEvent: 'LAYTABLE_TIPS',
                 icon: 'layui-icon-tips'
             }],
+            parseData: function (res) { //res 即为原始返回的数据
+                data = res.data;
+                return {
+                    "code": res.code, //解析接口状态
+                    "msg": res.msg, //解析提示文本
+                    "count": data.count, //解析数据长度
+                    "data": data.data //解析数据列表
+                };
+            },
             cols: [[
                 {type: "checkbox", width: 50, fixed: "left"},
-                {field: 'id', width: 80, title: 'ID', sort: true},
-                {field: 'username', width: 80, title: '用户名'},
-                {field: 'sex', width: 80, title: '性别', sort: true},
-                {field: 'city', width: 80, title: '城市'},
-                {field: 'sign', title: '签名', minWidth: 150},
-                {field: 'experience', width: 80, title: '积分', sort: true},
-                {field: 'score', width: 80, title: '评分', sort: true},
-                {field: 'classify', width: 80, title: '职业'},
-                {field: 'wealth', width: 135, title: '财富', sort: true},
+                {field: 'subjectName', width: 150, title: '课程名称'},
+                {field: 'subjectType', width: 150, title: '课程类别'},
+                {field: 'subjectPeopleMax', width: 150, title: '总人数'},
+                {field: 'subjectMain', width: 150, title: '课程简介'},
+                {field: 'teacherName', width: 150, title: '教师姓名'},
+                {field: 'subjectCheck', width: 150, title: '课程审核状态'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,
-            page: true
+            page: 1
         });
 
         // 监听搜索操作
         form.on('submit(data-search-btn)', function (data) {
-            var result = JSON.stringify(data.field);
-            layer.alert(result, {
-                title: '最终的搜索信息'
+            // var result = JSON.stringify(data.field);
+            data = data.field;
+            var teacherNum = data.teacherNum;
+            var subjectName = data.subjectName;
+            var subjectType = data.subjectType;
+            var subjectCheck = data.subjectCheck;
+            $.ajax({
+                url: "/subject/teacher/listAllSubject",
+                method: "get",
+                data: {
+                    teacherNum: teacherNum,
+                    subjectName: subjectName,
+                    subjectType: subjectType,
+                    subjectCheck:subjectCheck,
+                },
+                success: function (res) {
+                    var resData = res.data;
+                    if (res.code == '0') {
+                        layer.msg("查询成功");
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function () {
+                    layer.msg("error");
+                }
             });
+
 
             //执行搜索重载
             table.reload('currentTableId', {
@@ -108,7 +216,10 @@
                     curr: 1
                 }
                 , where: {
-                    searchParams: result
+                    teacherNum: teacherNum,
+                    subjectName: subjectName,
+                    subjectType: subjectType,
+                    subjectCheck:subjectCheck,
                 }
             }, 'data');
 
@@ -122,7 +233,7 @@
                 title: '添加用户',
                 type: 2,
                 shade: 0.2,
-                maxmin:true,
+                maxmin: true,
                 shadeClose: true,
                 area: ['100%', '100%'],
                 content: '../../page/table/add.html',
@@ -148,28 +259,81 @@
 
         table.on('tool(currentTableFilter)', function (obj) {
             var data = obj.data;
-            if (obj.event === 'edit') {
+            if (obj.event === 'checkOn' || obj.event === 'checkOff') {
+                //审核
+                var subjectNum = data.subjectNum;
+                var subjectName = data.subjectName;
+                var subjectCheck;
+                var msg;
+                //判断是否已经审核
+                if (data.subjectCheck === '已通过') {
+                    layer.alert('课程 [' + subjectName + '] 已经通过审核，无法再次操作');
+                    return false;
+                }
+                if (data.subjectCheck === '未通过') {
+                    layer.alert('课程 [' + subjectName + '] 未通过审核，请等待教师重新提交后再重新审核');
+                    return false;
+                }
+                //审核
+                if (obj.event === 'checkOn') {
+                    subjectCheck = '已通过';
+                    msg = '确定课程 [' + subjectName + '] 审核通过';
+                } else if (obj.event === 'checkOff') {
+                    subjectCheck = '未通过';
+                    msg = '确定课程 [' + subjectName + '] 审核不通过';
+                }
+                layer.confirm(msg, function (index) {
+                    $.ajax({
+                        url: "/subject/admin/checkSubject",
+                        method: "put",
+                        data: {
+                            subjectNum: subjectNum,
+                            subjectCheck: subjectCheck,
+                        },
+                        success: function (res) {
+                            tableIns.reload();
+                            var resData = res.data;
+                            if (res.code == '200') {
+                                layer.msg("操作成功");
+                            } else {
+                                layer.msg(res.msg);
+                            }
+                        },
+                        error: function () {
+                            layer.msg("error");
+                        }
+                    });
+                    layer.close(index);
+                });
 
-                var index = layer.open({
-                    title: '编辑用户',
-                    type: 2,
-                    shade: 0.2,
-                    maxmin:true,
-                    shadeClose: true,
-                    area: ['100%', '100%'],
-                    content: '../../page/table/edit.html',
-                });
-                $(window).on("resize", function () {
-                    layer.full(index);
-                });
                 return false;
             } else if (obj.event === 'delete') {
                 layer.confirm('真的删除行么', function (index) {
                     obj.del();
                     layer.close(index);
                 });
+            } else if (obj.event === 'view') {    //查看详情
+                openSelectLayer(data)
             }
         });
+
+
+        //查看学科信息
+        function openSelectLayer(data) {
+            mainIndex = layer.open({
+                type: 1,
+                title: '查看[' + data.subjectName + ']课程详情',
+                content: $("#selectSubject"),
+                area: ['65%', '85%'],
+                shade: 0.3, //不显示遮罩
+                skin: 'layui-layer-molv',
+                maxmin: true,
+                success: function (index) {
+                    //装载数据表格
+                    form.val("dataFrmSelectFilter", data);
+                }
+            });
+        }
 
     });
 </script>

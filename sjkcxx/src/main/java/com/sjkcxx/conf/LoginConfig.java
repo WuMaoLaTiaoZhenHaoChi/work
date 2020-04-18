@@ -18,11 +18,11 @@ public class LoginConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         //注册TestInterceptor拦截器
         InterceptorRegistration registration = registry.addInterceptor(new AdminInterceptor());
-        registration.addPathPatterns("/**");                      //所有路径都被拦截
-        registration.excludePathPatterns(                         //添加不拦截路径
+        registration.addPathPatterns("/**").excludePathPatterns(
+                "/user/registerUser",  //注册
                 "/sys/login",            //登录
                 "/login.html",
-                "/layuimini/**"
-        );
+                "/layuimini/**")     ;
+
     }
 }

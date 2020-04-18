@@ -28,6 +28,21 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
     @Autowired
     private StudentSubjectMapper studentSubjectMapper;
 
+    //审核课程
+    @Override
+    public int adminCheckSubject(PracticeSubject practiceSubject) {
+        String subjectNum = practiceSubject.getSubjectNum();
+        String subjectCheck = practiceSubject.getSubjectCheck();
+        if (subjectNum == null || subjectNum.equals(""))
+            return  -1;
+        if (subjectCheck == null || subjectCheck.equals(""))
+            return -1;
+        PracticeSubject practiceSubjectSelect = practiceSubjectMapper.selectById(subjectNum);
+        practiceSubjectSelect.setSubjectCheck(subjectCheck);
+        int i = practiceSubjectMapper.updateById(practiceSubjectSelect);
+        return i;
+    }
+
     //学生选课
     @Transactional
     @Override
@@ -52,6 +67,17 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
         studentSubject.setSubjectNum(subjectNum);
         int insert = studentSubjectMapper.insert(studentSubject);
         return i & insert;
+    }
+
+    //学生查询已审核的
+    @Override
+    public PageDto<PracticeSubject> studentQuerySubjectLike(PracticeSubject practiceSubject, PageDto pageDto) {
+        pageDto.calculateCurrent();
+        List<PracticeSubject> practiceSubjectList = practiceSubjectMapper.studentSelectSubjectBySubject(practiceSubject,pageDto);
+        int count = practiceSubjectMapper.studentCountSubjectBySubject(practiceSubject);
+        pageDto.setCount(count);
+        pageDto.setData(practiceSubjectList);
+        return pageDto;
     }
 
     //查询课程

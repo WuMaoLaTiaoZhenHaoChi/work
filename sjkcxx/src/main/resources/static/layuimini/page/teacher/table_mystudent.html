@@ -19,21 +19,9 @@
                 <form class="layui-form layui-form-pane" action="">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">教师姓名</label>
-                            <div class="layui-input-inline">
-                                <input type="text" name="username" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-inline">
                             <label class="layui-form-label">课程名称</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="sex" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-inline">
-                            <label class="layui-form-label">所属专业</label>
-                            <div class="layui-input-inline">
-                                <input type="text" name="city" autocomplete="off" class="layui-input">
+                                <input type="text" name="subjectName" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -44,62 +32,133 @@
             </div>
         </fieldset>
 
-        <script type="text/html" id="toolbarDemo">
-            <div class="layui-btn-container">
-                <button class="layui-btn layui-btn-sm data-add-btn"> 添加用户 </button>
-                <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn"> 删除用户 </button>
-            </div>
-        </script>
+        <!--查看详情信息-->
+        <div style="display: none;padding: 0.3125rem" id="selectSubject">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend>查看学科信息</legend>
+            </fieldset>
+
+            <form method="post" class="layui-form layui-form-pane" lay-filter="dataFrmSelectFilter" id="dataFrmSelect">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">课程名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="subjectName" lay-verify="title" autocomplete="off"
+                               readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">教师姓名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="teacherName" lay-verify="title" autocomplete="off"
+                               readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">课程状态</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="subjectStatic" lay-verify="title" autocomplete="off"
+                               readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">课程得分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="subjectGrade" lay-verify="title" autocomplete="off"
+                               readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">你的评分</label>
+                    <div class="layui-input-block">
+                        <div class="layui-input-block" id="subjectScoreView_div"></div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">你的意见</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" name="subjectRemark" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
 
         <script type="text/html" id="currentTableBar">
-            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
-            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+            <a class="layui-btn layui-btn-xs" lay-event="view" >查看详情</a>
+            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="editRate">评价</a>
         </script>
 
     </div>
 </div>
-<script src="/layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="/layuimini/lib/layui-v2.5.5/layui.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script src="/layuimini/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="/layuimini/lib/cookie/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
-    layui.use(['form', 'table'], function () {
+    layui.use(['form', 'table','rate'], function () {
         var $ = layui.jquery,
             form = layui.form,
             table = layui.table,
-            layuimini = layui.layuimini;
+            layuimini = layui.layuimini,
+            teacherNum = sessionStorage.getItem("userNum");
 
-        table.render({
+        var url;
+        var tableIns = table.render({
             elem: '#currentTableId',
-            url: '../../api/table.json',
+            url: '/subject/teacher/listMyStudent',
             toolbar: '#toolbarDemo',
             defaultToolbar: ['filter', 'exports', 'print', {
                 title: '提示',
                 layEvent: 'LAYTABLE_TIPS',
                 icon: 'layui-icon-tips'
             }],
+            parseData: function (res) { //res 即为原始返回的数据
+                var data = res.data;
+                return {
+                    "code": res.code, //解析接口状态
+                    "msg": res.msg, //解析提示文本
+                    "count": data.count, //解析数据长度
+                    "data": data.data //解析数据列表
+                };
+            },
             cols: [[
                 {type: "checkbox", width: 50, fixed: "left"},
-                {field: 'id', width: 80, title: 'ID', sort: true},
-                {field: 'username', width: 80, title: '用户名'},
-                {field: 'sex', width: 80, title: '性别', sort: true},
-                {field: 'city', width: 80, title: '城市'},
-                {field: 'sign', title: '签名', minWidth: 150},
-                {field: 'experience', width: 80, title: '积分', sort: true},
-                {field: 'score', width: 80, title: '评分', sort: true},
-                {field: 'classify', width: 80, title: '职业'},
-                {field: 'wealth', width: 135, title: '财富', sort: true},
+                {field: 'subjectName', width: 150, title: '课程名称'},
+                {field: 'teacherName', width: 150, title: '教师姓名'},
+                {field: 'subjectStatic', width: 150, title: '课程状态'},
+                {field: 'subjectGrade', width: 150, title: '分数'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,
-            page: true
+            page: 1
         });
 
         // 监听搜索操作
         form.on('submit(data-search-btn)', function (data) {
-            var result = JSON.stringify(data.field);
-            layer.alert(result, {
-                title: '最终的搜索信息'
+            // var result = JSON.stringify(data.field);
+            data = data.field;
+            var teacherNum = data.teacherNum;
+            var subjectName = data.subjectName;
+            $.ajax({
+                url:"/subject/teacher/listMyStudent",
+                method:"get",
+                data:{
+                    teacherNum: teacherNum,
+                    subjectName: subjectName,
+                },
+                success:function(res){
+                    var resData = res.data;
+                    if (res.code == 0){
+                        layer.success("查询成功");
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                },
+                error:function(){
+                    layer.msg("error");
+                }
             });
 
             //执行搜索重载
@@ -108,28 +167,10 @@
                     curr: 1
                 }
                 , where: {
-                    searchParams: result
+                    teacherNum: teacherNum,
+                    subjectName: subjectName,
                 }
             }, 'data');
-
-            return false;
-        });
-
-        // 监听添加操作
-        $(".data-add-btn").on("click", function () {
-
-            var index = layer.open({
-                title: '添加用户',
-                type: 2,
-                shade: 0.2,
-                maxmin:true,
-                shadeClose: true,
-                area: ['100%', '100%'],
-                content: '../../page/table/add.html',
-            });
-            $(window).on("resize", function () {
-                layer.full(index);
-            });
 
             return false;
         });
@@ -146,32 +187,127 @@
             console.log(obj)
         });
 
+        //监听表格操作
         table.on('tool(currentTableFilter)', function (obj) {
             var data = obj.data;
-            if (obj.event === 'edit') {
-
-                var index = layer.open({
-                    title: '编辑用户',
-                    type: 2,
-                    shade: 0.2,
-                    maxmin:true,
-                    shadeClose: true,
-                    area: ['100%', '100%'],
-                    content: '../../page/table/edit.html',
-                });
-                $(window).on("resize", function () {
-                    layer.full(index);
-                });
+            console.log(data)
+            if (obj.event === 'view') {
+                layer.msg("查看详情");
+                openSelectLayer(data)
                 return false;
-            } else if (obj.event === 'delete') {
-                layer.confirm('真的删除行么', function (index) {
-                    obj.del();
-                    layer.close(index);
-                });
+            }if (obj.event === 'editRate') {
+                if (data.subjectStatic === "已修完") {
+                    openUpdateLayer(data);
+                } else {
+                    layer.alert("此课程还未修完，无法评价哦")
+                }
+                return false;
             }
         });
 
+
+        //查看学科信息
+        function openSelectLayer(data) {
+            mainIndex = layer.open({
+                type: 1,
+                title: '查看[' + data.subjectName + ']课程详情',
+                content: $("#selectSubject"),
+                area: ['65%', '85%'],
+                shade: 0.3, //不显示遮罩
+                skin: 'layui-layer-molv',
+                maxmin: true,
+                success: function (index) {
+                    //装载数据表格
+                    form.val("dataFrmSelectFilter", data);
+                    rate.render({
+                        elem: '#subjectScoreView_div',       //绑定元素
+                        length: 5,            //星星个数
+                        value: data.subjectScore,             //初始化值
+                        theme: '#999999',     //颜色
+                        half: true,          //支持半颗星
+                        text: true,          //显示文本，默认显示 '3.5星'
+                        readonly: true,      //只读
+                        //自定义文本，点击后文本显示的内容
+                        setText: function (value) {
+                            if (value < 2) {
+                                this.span.text("差")
+                            } else if (value <= 4) {
+                                this.span.text("一般")
+                            } else {
+                                this.span.text("好")
+                            }
+                        }
+                        //选定时调用，评分时发送一个ajax,readonly设为true
+                        , choose: function (value) {
+                            if (value > 4) alert('么么哒')
+                        }
+                    });
+                }
+            });
+        }
+
+
+        //评价
+        function openUpdateLayer(data) {
+            mainIndex = layer.open({
+                type: 1,
+                title: '提交 [' + data.subjectName + '] 评价',
+                content: $("#submitRate"),
+                area: ['65%', '65%'],
+                shade: 0.3, //不显示遮罩
+                skin: 'layui-layer-molv',
+                maxmin: true,
+                success: function (index) {
+                    url = "/subject/student/studentRateSubject";
+                    //装载数据表格
+                    form.val("dataFrmUpdateFilter", data);
+                }
+            });
+        }
+
+        //星星
+        var rate = layui.rate;
+        rate.render({
+            elem: '#subjectScore_div',       //绑定元素
+            length: 5,            //星星个数
+            value: 5,             //初始化值
+            theme: '#999999',     //颜色
+            half: true,          //支持半颗星
+            text: true,          //显示文本，默认显示 '3.5星'
+            readonly: false,      //只读
+            //自定义文本，点击后文本显示的内容
+            setText: function (value) {
+                if (value < 2) {
+                    this.span.text("差")
+                } else if (value <= 4) {
+                    this.span.text("一般")
+                } else {
+                    this.span.text("好")
+                }
+            }
+            //选定时调用，评分时发送一个ajax,readonly设为true
+            , choose: function (value) {
+                $("#subjectScore").val(value);
+            }
+        });
+
+
+        //提交数据
+        form.on("submit(edit_rate_submit)", function (data) {
+            console.log(data)
+            var params = $("#dataFrmUpdate").serialize();
+            $.post(url, params, function (res) {
+                layer.msg(res.msg);
+                if (res.code == 200) {
+                    tableIns.reload();
+                }
+                layer.close(mainIndex);
+            })
+            return false;
+        });
+
     });
+
 </script>
 <script>
 

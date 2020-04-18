@@ -26,6 +26,20 @@ public interface PracticeSubjectMapper extends BaseMapper<PracticeSubject> {
      * @param subject
      * @return
      */
+    int studentCountSubjectBySubject(@Param("subject") PracticeSubject subject);
+
+    /**
+     * 多条件查询
+     * @param subject
+     * @return
+     */
+    List<PracticeSubject> studentSelectSubjectBySubject(@Param("subject") PracticeSubject subject, @Param("pageDto") PageDto pageDto);
+
+    /**
+     * 统计数量，分页
+     * @param subject
+     * @return
+     */
     int countSubjectBySubject(@Param("subject") PracticeSubject subject);
 
     /**

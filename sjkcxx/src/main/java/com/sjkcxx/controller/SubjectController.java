@@ -32,6 +32,27 @@ public class SubjectController {
     @Autowired
     private StudentSubjectService studentSubjectService;
 
+    @PutMapping("/admin/checkSubject")
+    public ResultVo checkSubject(PracticeSubject subject){
+        int i = practiceSubjectService.adminCheckSubject(subject);
+        if (i > 0){
+            return ResultVo.success();
+        }
+        return ResultVo.build("400","审核出错了，请重新操作");
+    }
+
+    //学生自己的课程列表
+    @GetMapping("/teacher/listMyStudent")
+    public ResultVo teacherListMyStudent(StudentSubject studentSubject,PageDto pageDto,HttpSession session){
+        String teacherNum = studentSubject.getTeacherNum();
+        if (teacherNum == null || teacherNum.equals("")){
+            UserInfo user = (UserInfo) session.getAttribute("user");
+            studentSubject.setTeacherNum(user.getUserNum());
+        }
+        PageDto<StudentSubject> studentSubjectPageDto = studentSubjectService.queryStudentSubjectLike(studentSubject, pageDto);
+        return ResultVo.build("0", "success", studentSubjectPageDto);
+    }
+
     //学生打分
     @PostMapping("/student/studentRateSubject")
     public ResultVo studentRateSubject(StudentSubject studentSubject){
@@ -80,9 +101,16 @@ public class SubjectController {
         return ResultVo.build("400", "新增课程失败");
     }
 
-    //查询所有学科
+    //学生查询所有学科
+    @GetMapping("/student/listAllSubject")
+    public ResultVo studentQueryAllsubject( PracticeSubject practiceSubject,PageDto pageDto) {
+        PageDto<PracticeSubject> practiceSubjectPageDto = practiceSubjectService.studentQuerySubjectLike(practiceSubject, pageDto);
+        return ResultVo.build("0", "success", practiceSubjectPageDto);
+    }
+
+    //教师查询所有学科
     @GetMapping("/teacher/listAllSubject")
-    public ResultVo queryAllsubject( PracticeSubject practiceSubject,PageDto pageDto) {
+    public ResultVo teacherQueryAllsubject( PracticeSubject practiceSubject,PageDto pageDto) {
         PageDto<PracticeSubject> practiceSubjectPageDto = practiceSubjectService.querySubjectLike(practiceSubject, pageDto);
         return ResultVo.build("0", "success", practiceSubjectPageDto);
     }
@@ -101,6 +129,7 @@ public class SubjectController {
     //修改学科
     @PostMapping("/teacher/updateMySubject")
     public ResultVo updatesubject(PracticeSubject practiceSubject) {
+        practiceSubject.setSubjectCheck("未审核");//修改过后状态为未审核
         boolean updateById = practiceSubjectService.updateById(practiceSubject);
         if (updateById) {
             return ResultVo.success();

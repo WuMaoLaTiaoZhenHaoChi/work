@@ -146,6 +146,58 @@
                 <div class="layui-form-item">
                     <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="login">登 入</button>
                 </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="register">注 册</button>
+                </div>
+            </form>
+        </div>
+
+        <!--添加用户-->
+        <div style="display: none;padding: 0.3125rem" id="insertUser">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend>客户注册</legend>
+            </fieldset>
+
+            <form method="post" class="layui-form layui-form-pane" lay-filter="dataFrmInserFilter" id="dataFrmInser">
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">你的账号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="userNum" lay-verify="required" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">你的密码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="userPwd" lay-verify="required" autocomplete="off"
+                               placeholder="请输入用户密码" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">你的姓名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="userName" lay-verify="required" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">用户类型</label>
+                        <div class="layui-input-inline">
+                            <select name="userType" lay-verify="required" lay-search="">
+                                <option value="0">客户</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit="" lay-filter="insert_user_submit">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -168,6 +220,42 @@
                 dotColor: '#5cbdaa',
                 lineColor: '#5cbdaa'
             });
+        });
+
+
+        //注册
+        form.on('submit(register)', function (data){
+            openInserUserLayer(data);
+            return false;
+        });
+        //添加用户
+        function openInserUserLayer(data) {
+            mainIndex = layer.open({
+                type: 1,
+                title: '添加用户',
+                content: $("#insertUser"),
+                area: ['65%', '85%'],
+                shade: 0.3, //不显示遮罩
+                skin: 'layui-layer-molv',
+                maxmin: true,
+                success: function (index) {
+                    url = "/user/registerUser";
+                    //装载数据表格
+                    form.val("dataFrmInserFilter", data);
+                }
+            });
+        }
+        //提交数据
+        form.on("submit(insert_user_submit)", function (data) {
+            var params = $("#dataFrmInser").serialize();
+            $.post(url, params, function (res) {
+                layer.msg(res.msg);
+                if (res.code == '200') {
+                    tableIns.reload();
+                }
+                layer.close(mainIndex);
+            })
+            return false;
         });
 
         // 进行登录操作

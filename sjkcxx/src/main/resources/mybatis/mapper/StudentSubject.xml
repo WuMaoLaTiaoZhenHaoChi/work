@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjkcxx.mapper.StudentSubjectMapper">
+
+    <!--查询，有条件-->
+    <select id="selectStudentSubjectBySS" resultType="com.sjkcxx.entity.StudentSubject">
+        select * from student_subject
+        <where>
+            <if test=" studentSubject.teacherNum != null and studentSubject.teacherNum != '' " >
+                and teacher_num=#{studentSubject.teacherNum}
+            </if>
+            <if test="studentSubject.subjectNum != null and studentSubject.subjectNum != '' ">
+                and subjectNum=#{studentSubject.subjectNum}
+            </if>
+            <if test="studentSubject.subjectName != null and studentSubject.subjectName != '' ">
+                and subject_name=#{studentSubject.subjectName}
+            </if>
+            <if test=" studentSubject.studentNum != null and studentSubject.studentNum != '' ">
+                and student_num=#{studentSubject.studentNum}
+            </if>
+        </where>
+        ORDER BY student_num LIMIT #{pageDto.current},#{pageDto.limit};
+    </select>
+    <!--分页统计数量-->
+    <select id="countStudentSubjectBySS" resultType="Integer">
+        select COUNT(1) from student_subject
+        <where>
+            <if test="studentSubject.teacherNum != null and studentSubject.teacherNum != '' " >
+                and teacher_num=#{studentSubject.teacherNum}
+            </if>
+            <if test="studentSubject.subjectNum != null and studentSubject.subjectNum != '' ">
+                and subjectNum=#{studentSubject.subjectNum}
+            </if>
+            <if test="studentSubject.subjectName != null and studentSubject.subjectName != '' ">
+                and subject_name=#{studentSubject.subjectName}
+            </if>
+            <if test="studentSubject.studentNum != null and studentSubject.studentNum != '' ">
+                and student_num=#{studentSubject.studentNum}
+            </if>
+        </where>
+    </select>
+
+    <!--更新已选学科人数-->
+    <update id="updateSubjectPeopleNow" parameterType="com.sjkcxx.entity.StudentSubject">
+
+        update practice_subject
+        <if test="subject.subjectPeopleNow != null and subject.subjectPeopleNow != '' ">
+            set subject_people_now = #{subject.subjectPeopleNow}
+        </if>
+        where subject_num = #{subject.subjectNum}
+    </update>
+
+
+</mapper>

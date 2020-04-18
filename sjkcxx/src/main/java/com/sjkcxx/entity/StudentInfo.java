@@ -21,6 +21,8 @@ public class StudentInfo extends UserInfo {
     @TableId(type = IdType.INPUT)
     private String userNum;
 
+    private String userName;
+
     private String studentSpecialtyNum;
 
 }

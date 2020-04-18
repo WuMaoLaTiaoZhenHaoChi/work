@@ -239,6 +239,7 @@
                 {field: 'subjectPeopleMax', width: 150, title: '总人数'},
                 {field: 'teacherName', width: 150, title: '教师姓名'},
                 {field: 'subjectMain', width: 150, title: '课程简介'},
+                {field: 'subjectCheck', width: 150, title: '课程审核状态'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
@@ -322,11 +323,13 @@
         //监听表格操作
         table.on('tool(currentTableFilter)', function (obj) {
             var data = obj.data;
-            console.log(data)
             if (obj.event === 'edit') {
+                if (data.subjectCheck === '已通过'){
+                    layer.alert('学科 [' + data.subjectName + '] 已被管理员审核通过，无法修改');
+                    return false;
+                }
                 openUpdateLayer(data);
             } else if (obj.event === 'delete') {
-                console.log(data);
                 layer.confirm('真的删除行么', function (index) {
                     obj.del();
                     layer.close(index);
