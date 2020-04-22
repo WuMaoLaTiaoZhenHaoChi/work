@@ -32,26 +32,16 @@ public class SubjectController {
     @Autowired
     private StudentSubjectService studentSubjectService;
 
+    //审核课程
     @PutMapping("/admin/checkSubject")
     public ResultVo checkSubject(PracticeSubject subject){
         int i = practiceSubjectService.adminCheckSubject(subject);
         if (i > 0){
             return ResultVo.success();
         }
-        return ResultVo.build("400","审核出错了，请重新操作");
+        return ResultVo.build("500","审核出错了，请重新操作");
     }
 
-    //学生自己的课程列表
-    @GetMapping("/teacher/listMyStudent")
-    public ResultVo teacherListMyStudent(StudentSubject studentSubject,PageDto pageDto,HttpSession session){
-        String teacherNum = studentSubject.getTeacherNum();
-        if (teacherNum == null || teacherNum.equals("")){
-            UserInfo user = (UserInfo) session.getAttribute("user");
-            studentSubject.setTeacherNum(user.getUserNum());
-        }
-        PageDto<StudentSubject> studentSubjectPageDto = studentSubjectService.queryStudentSubjectLike(studentSubject, pageDto);
-        return ResultVo.build("0", "success", studentSubjectPageDto);
-    }
 
     //学生打分
     @PostMapping("/student/studentRateSubject")
@@ -60,7 +50,7 @@ public class SubjectController {
         if (i > 0){
             return ResultVo.success();
         }
-        return ResultVo.build("400","打分失败，信息有误");
+        return ResultVo.build("500","打分失败，信息有误");
     }
     
     //学生自己的课程列表
@@ -75,6 +65,18 @@ public class SubjectController {
         return ResultVo.build("0", "success", studentSubjectPageDto);
     }
 
+    //学生自己的课程列表
+    @GetMapping("/teacher/listMyStudent")
+    public ResultVo teacherListMyStudent(StudentSubject studentSubject,PageDto pageDto,HttpSession session){
+        String teacherNum = studentSubject.getTeacherNum();
+        if (teacherNum == null || teacherNum.equals("")){
+            UserInfo user = (UserInfo) session.getAttribute("user");
+            studentSubject.setTeacherNum(user.getUserNum());
+        }
+        PageDto<StudentSubject> studentSubjectPageDto = studentSubjectService.queryStudentSubjectLike(studentSubject, pageDto);
+        return ResultVo.build("0", "success", studentSubjectPageDto);
+    }
+
     //选课
     @PostMapping("/student/studentSelectSubject")
     public ResultVo studentSelectSubject(PracticeSubject subject, StudentSubject studentSubject){
@@ -82,7 +84,7 @@ public class SubjectController {
         if (i >= 0){
             return ResultVo.success();
         }
-        return ResultVo.build("400","课程人数已满，选课失败！");
+        return ResultVo.build("500","课程人数已满，选课失败！");
     }
 
     //插入课程
@@ -90,7 +92,7 @@ public class SubjectController {
     public ResultVo inserPrtoject(PracticeSubject practiceSubject, HttpSession session) {
         PracticeSubject subject = practiceSubjectService.getById(practiceSubject.getSubjectNum());
         if (subject != null) {
-            return ResultVo.build("400", "课程编码不能重复");
+            return ResultVo.build("500", "课程编码不能重复");
         }
         UserInfo user = (UserInfo) session.getAttribute("user");
         practiceSubject.setTeacherNum(user.getUserNum());
@@ -98,7 +100,7 @@ public class SubjectController {
         if (b) {
             return ResultVo.success();
         }
-        return ResultVo.build("400", "新增课程失败");
+        return ResultVo.build("500", "新增课程失败");
     }
 
     //学生查询所有学科
@@ -106,6 +108,17 @@ public class SubjectController {
     public ResultVo studentQueryAllsubject( PracticeSubject practiceSubject,PageDto pageDto) {
         PageDto<PracticeSubject> practiceSubjectPageDto = practiceSubjectService.studentQuerySubjectLike(practiceSubject, pageDto);
         return ResultVo.build("0", "success", practiceSubjectPageDto);
+    }
+
+
+    //教师打分
+    @PostMapping("/teacher/putGrade")
+    public ResultVo setGrade(StudentSubject studentSubject){
+        int i = studentSubjectService.gradeToStudent(studentSubject);
+        if (i > 0){
+            return ResultVo.success();
+        }
+        return ResultVo.build("500","系统异常，打分失败");
     }
 
     //教师查询所有学科

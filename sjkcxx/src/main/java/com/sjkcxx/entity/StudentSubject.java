@@ -29,6 +29,8 @@ public class StudentSubject implements Serializable {
 
     private String studentNum;      //学生编号
 
+    private String studentName;     //学生姓名
+
     private String subjectNum;      //课程编号
 
     private String subjectName;     //课程名称
