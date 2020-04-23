@@ -95,7 +95,7 @@ public class OrderController {
     }
 
     /**
-     * 客户查询利是预约记录
+     * 客户查询历史预约记录
      * @param order
      * @return
      */

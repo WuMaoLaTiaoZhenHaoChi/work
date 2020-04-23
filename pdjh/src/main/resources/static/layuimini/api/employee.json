@@ -5,7 +5,7 @@
   "homeInfo": {
     "title": "首页",
     "icon": "fa fa-home",
-    "href": "layuimini/page/employee/welcome.html"
+    "href": "layuimini/page/employee/table_allorder.html"
   },
   "logoInfo": {
     "title": "排队叫号系统",

@@ -78,8 +78,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     public boolean inputOrderByOrder(Order order) {
         if (order == null)
             return false;
-        String dateNow = DateUtils.getDate("yyyyMMddHHmmss");
-        String orderNum = order.getCustomerNum().concat(dateNow);
+        String dateNow = DateUtils.getDate("yyyy-MM-dd HH:mm:ss");
+        String orderNum = order.getCustomerNum().concat(DateUtils.getDate("yyyyMMddHHmmss"));
 
         order.setOrderNum(orderNum);
         order.setOrderCreatTime(dateNow);

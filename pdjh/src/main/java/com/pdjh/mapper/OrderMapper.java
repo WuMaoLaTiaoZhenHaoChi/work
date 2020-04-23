@@ -15,6 +15,12 @@ import java.util.List;
 public interface OrderMapper extends BaseMapper<Order> {
 
     /**
+     * 清空数据
+     * @return
+     */
+    Integer clearData();
+
+    /**
      * 统计数量
      * @param order
      * @return
