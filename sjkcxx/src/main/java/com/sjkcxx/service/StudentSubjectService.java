@@ -14,6 +14,13 @@ import com.sjkcxx.mapper.StudentSubjectMapper;
 public interface StudentSubjectService extends IService<StudentSubject> {
 
     /**
+     * 上传作业
+     * @param studentSubject
+     * @return
+     */
+    int studentUpload(StudentSubject studentSubject);
+
+    /**
      * 教师打分
      * @param studentSubject
      * @return

@@ -21,6 +21,24 @@ public class StudentSubjectServiceImpl extends ServiceImpl<StudentSubjectMapper,
     @Autowired
     private StudentSubjectMapper studentSubjectMapper;
 
+    /**
+     * 上传作业
+     * @param studentSubject
+     * @return
+     */
+    @Override
+    public int studentUpload(StudentSubject studentSubject) {
+        int i = 0;
+        String studentSubjectNum = studentSubject.getStudentSubjectNum();
+        if (studentSubjectNum == null || studentSubjectNum.equals("")){
+            return i;
+        }
+        StudentSubject subject = studentSubjectMapper.selectById(studentSubjectNum);
+        subject.setSubjectWork(studentSubjectNum);
+        i = studentSubjectMapper.updateById(subject);
+        return i;
+    }
+
     //打成绩
     @Override
     public int gradeToStudent(StudentSubject studentSubject) {
