@@ -26,7 +26,7 @@
                 AND employee_num = #{order.employeeNum}
             </if>
         </where>
-        ORDER BY order_creat_time LIMIT #{pageDto.current},#{pageDto.limit};
+        ORDER BY order_creat_time desc LIMIT #{pageDto.current},#{pageDto.limit};
     </select>
 
     <!--统计数量-->
@@ -51,6 +51,9 @@
         <set>
             <if test="order.orderFlag != null and order.orderFlag != '' ">
                 order_flag = #{order.orderFlag},
+            </if>
+            <if test="order.orderEndTime != null and order.orderEndTime != '' ">
+                order_end_time = #{order.orderEndTime},
             </if>
             <if test="order.employeeNum != null and order.employeeNum != '' ">
                 employee_num = #{order.employeeNum},

@@ -30,6 +30,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     @Autowired
     private OrderMapper orderMapper;
 
+    //评价
     @Override
     public int consumberRateOrder(Order order) {
         if (order.getOrderGrade() == null || order.getOrderGrade().equals(""))
@@ -46,6 +47,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
             return -1;
         }
         order.setOrderFlag(OrderFlag.ORDER_FLAG_2);
+        order.setOrderEndTime(DateUtils.getDate("yyyy-MM-dd HH:mm:ss"));
         int i = orderMapper.updateConsumerOrderFlag(order);
         return i;
     }
