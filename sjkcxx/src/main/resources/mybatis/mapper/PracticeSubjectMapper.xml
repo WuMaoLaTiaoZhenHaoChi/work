@@ -17,7 +17,7 @@
             </if>
             and subject_check = '已通过'
         </where>
-        ORDER BY subject_num LIMIT #{pageDto.current},#{pageDto.limit};
+        ORDER BY subject_start_time desc LIMIT #{pageDto.current},#{pageDto.limit};
     </select>
     <!--学生分页统计数量 已审核 -->
     <select id="studentCountSubjectBySubject" resultType="Integer">
@@ -53,7 +53,7 @@
                 and subject_check=#{subject.subjectCheck}
             </if>
         </where>
-        ORDER BY subject_num LIMIT #{pageDto.current},#{pageDto.limit};
+        ORDER BY subject_start_time desc LIMIT #{pageDto.current},#{pageDto.limit};
     </select>
     <!--分页统计数量-->
     <select id="countSubjectBySubject" resultType="Integer">

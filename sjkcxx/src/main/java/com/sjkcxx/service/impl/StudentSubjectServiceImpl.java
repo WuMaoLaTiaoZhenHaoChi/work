@@ -35,6 +35,8 @@ public class StudentSubjectServiceImpl extends ServiceImpl<StudentSubjectMapper,
         }
         StudentSubject subject = studentSubjectMapper.selectById(studentSubjectNum);
         subject.setSubjectWork(studentSubjectNum);
+        subject.setSubjectWork(studentSubject.getSubjectWork());
+        subject.setSubjectStatic("已提交实践报告");
         i = studentSubjectMapper.updateById(subject);
         return i;
     }
@@ -66,6 +68,7 @@ public class StudentSubjectServiceImpl extends ServiceImpl<StudentSubjectMapper,
         StudentSubject studentSubjectTemp = studentSubjectMapper.selectById(studentSubjectNum);
         studentSubjectTemp.setSubjectScore(studentSubject.getSubjectScore());
         studentSubjectTemp.setSubjectRemark(studentSubject.getSubjectRemark());
+        studentSubjectTemp.setSubjectStatic("已结束，已评价");
         i = studentSubjectMapper.updateById(studentSubjectTemp);
         return i;
     }
