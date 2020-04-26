@@ -15,22 +15,22 @@ public interface UserService extends IService<UserInfo> {
 
     /**
      * 移除用户
-     * @param userNum
-     * @return
+     * @param userNum:用户账号
+     * @return  成功表示 0：失败，1：成功
      */
     int removeUser(String userNum);
 
     /**
      * 用户信息修改
-     * @param userInfo
-     * @return
+     * @param userInfo：用户信息
+     * @return  成功表示 0：失败，1：成功
      */
     int editUser(UserInfo userInfo);
 
     /**
      * 用户注册
-     * @param userInfo
-     * @return
+     * @param userInfo：用户信息
+     * @return 成功表示 0：失败，1：成功
      */
     int registerUser(UserInfo userInfo);
 
