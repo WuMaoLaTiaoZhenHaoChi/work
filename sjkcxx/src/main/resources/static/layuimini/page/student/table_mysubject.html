@@ -302,7 +302,7 @@
                     openUpdateLayer(data);
                 }else if (data.subjectStatic === "已结束，已评价")  {
                     layer.alert("此课程已经评价过，无法再次评价哦")
-                } else if (data.subjectStatic === "未修完") {
+                } else {
                     layer.alert("此课程还未修完或者教师还未打分，无法评价哦")
                 }
                 return false;

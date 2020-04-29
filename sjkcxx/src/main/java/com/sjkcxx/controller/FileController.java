@@ -36,7 +36,9 @@ public class FileController {
         response.setContentType("application/binary;charset=UTF-8");
         String filenames = studentSubject.getSubjectWork();
         String path = System.getProperty("user.dir");
-        String downloadFilePath = path + "/doc/" + filenames;//被下载的文件在服务器中的路径,
+//        String path = "./doc/";
+        String downloadFilePath = path + "./doc/" + filenames;//被下载的文件在服务器中的路径,
+//        String downloadFilePath = path + filenames;//被下载的文件在服务器中的路径,
         String fileName = filenames;//被下载文件的名称
 
         File file = new File(downloadFilePath);
@@ -112,7 +114,8 @@ public class FileController {
             return ResultVo.build("400", "上传失败");
         }
         String path = System.getProperty("user.dir");
-        String pathname = path + "/doc/" + filenames;
+//        String path = System.getProperty("user.dir");
+        String pathname = path + "./doc/" + filenames;
         try {
             File files = new File(pathname);
             file.transferTo(files);

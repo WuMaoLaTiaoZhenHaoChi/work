@@ -13,26 +13,31 @@ import com.sjkcxx.mapper.UserMapper;
  */
 public interface UserService extends IService<UserInfo> {
 
+    /**
+     * 用户列表
+     * @param pageDto:分页条件
+     * @return：用户分页数据集合
+     */
     PageDto<UserInfo> listUser(PageDto pageDto);
 
     /**
      * 移除用户
-     * @param userNum
-     * @return
+     * @param userNum:用户账号
+     * @return  成功表示 0：失败，1：成功
      */
     int removeUser(String userNum);
 
     /**
      * 用户信息修改
-     * @param userInfo
-     * @return
+     * @param userInfo：用户信息
+     * @return  成功表示 0：失败，1：成功
      */
     int editUser(UserInfo userInfo);
 
     /**
      * 用户注册
-     * @param userInfo
-     * @return
+     * @param userInfo：用户信息
+     * @return 成功表示 0：失败，1：成功
      */
     int registerUser(UserInfo userInfo);
 }
