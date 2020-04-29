@@ -4,6 +4,7 @@ import com.sjkcxx.base.ResultVo;
 import com.sjkcxx.entity.StudentSubject;
 import com.sjkcxx.service.StudentSubjectService;
 import com.sjkcxx.util.FileDownloadUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.velocity.shaded.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,7 @@ import java.util.UUID;
  * @Date: 2020/04/24 14:25
  * @Description:文件上传
  */
+@Slf4j
 @RestController
 @RequestMapping("file")
 public class FileController {
@@ -36,11 +38,10 @@ public class FileController {
         response.setContentType("application/binary;charset=UTF-8");
         String filenames = studentSubject.getSubjectWork();
         String path = System.getProperty("user.dir");
-//        String path = "./doc/";
-        String downloadFilePath = path + "./doc/" + filenames;//被下载的文件在服务器中的路径,
-//        String downloadFilePath = path + filenames;//被下载的文件在服务器中的路径,
+//        String downloadFilePath = path + "/doc/" + filenames;//被下载的文件在服务器中的路径,
+        String downloadFilePath = "/home/dtt/doc/" + filenames;//被下载的文件在服务器中的路径,linux
         String fileName = filenames;//被下载文件的名称
-
+        log.info("被下载的文件在路径 : " + downloadFilePath);
         File file = new File(downloadFilePath);
         if (file.exists()) {
             FileDownloadUtils.download(downloadFilePath,response);
@@ -49,6 +50,33 @@ public class FileController {
         return ResultVo.build("405","下载失败");
 
 
+    }
+
+
+
+    //上传
+    @PostMapping("/student/upload")
+    public ResultVo studentUpload(@RequestParam(value = "file") MultipartFile file, StudentSubject studentSubject) {
+        String filename = studentSubject.getStudentSubjectNum();
+        String ext = FilenameUtils.getExtension(file.getOriginalFilename());
+        String filenames = filename + "." + ext;
+
+        studentSubject.setSubjectWork(filenames);
+        int i = studentSubjectService.studentUpload(studentSubject);
+        if (i <= 0) {
+            return ResultVo.build("400", "上传失败");
+        }
+        //        String path = System.getProperty("user.dir");
+        String pathname = "/home/dtt/doc/" + filenames; //linux
+
+        log.info("被上传的文件路径 : " + pathname);
+        try {
+            File files = new File(pathname);
+            file.transferTo(files);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return ResultVo.success();
     }
 
     /*//下载
@@ -101,28 +129,5 @@ public class FileController {
 
     }*/
 
-    //上传
-    @PostMapping("/student/upload")
-    public ResultVo studentUpload(@RequestParam(value = "file") MultipartFile file, StudentSubject studentSubject) {
-        String filename = studentSubject.getStudentSubjectNum();
-        String ext = FilenameUtils.getExtension(file.getOriginalFilename());
-        String filenames = filename + "." + ext;
-
-        studentSubject.setSubjectWork(filenames);
-        int i = studentSubjectService.studentUpload(studentSubject);
-        if (i <= 0) {
-            return ResultVo.build("400", "上传失败");
-        }
-        String path = System.getProperty("user.dir");
-//        String path = System.getProperty("user.dir");
-        String pathname = path + "./doc/" + filenames;
-        try {
-            File files = new File(pathname);
-            file.transferTo(files);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return ResultVo.success();
-    }
 
 }
