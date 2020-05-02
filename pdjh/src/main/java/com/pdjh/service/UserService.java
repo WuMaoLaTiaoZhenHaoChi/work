@@ -11,7 +11,7 @@ import com.pdjh.entity.UserInfo;
  */
 public interface UserService extends IService<UserInfo> {
 
-    PageDto<UserInfo> listUser(PageDto pageDto);
+    PageDto<UserInfo> listUser(UserInfo userInfo,PageDto pageDto);
 
     /**
      * 移除用户

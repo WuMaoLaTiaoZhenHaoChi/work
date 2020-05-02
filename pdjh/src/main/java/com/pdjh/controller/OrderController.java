@@ -100,7 +100,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("/consumer/listMyOrder")
-    public ResultVo consumerListMyOrder(Order order, PageDto pageDto){
+    public ResultVo consumerListMyOrder(Order order, PageDto pageDto,HttpSession session){
+        UserInfo user = (UserInfo) session.getAttribute("user");
+        order.setCustomerNum(user.getUserNum());
         PageDto pageDtoR = orderService.listConsumerMyOrder(order, pageDto);
         return ResultVo.build("0","success",pageDtoR);
     }
@@ -111,12 +113,14 @@ public class OrderController {
      * @return
      */
     @PostMapping("/consumer/insertOrder")
-    public ResultVo insertOrder(Order order){
+    public ResultVo insertOrder(Order order,HttpSession session){
+        UserInfo user = (UserInfo) session.getAttribute("user");
+        int rankNum = orderService.qryCustomerRank(user);
         boolean save = orderService.inputOrderByOrder(order);
-        if (save)
-            return ResultVo.success();
-        else
-            return ResultVo.build("500","预约失败");
+        if (save){
+            return ResultVo.build("200",String.valueOf(rankNum),String.valueOf(rankNum));
+        }
+        return ResultVo.build("500","预约失败");
     }
 
 }

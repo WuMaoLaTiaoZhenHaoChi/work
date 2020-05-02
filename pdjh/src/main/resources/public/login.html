@@ -170,7 +170,14 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">你的密码</label>
                     <div class="layui-input-block">
-                        <input type="text" name="userPwd" lay-verify="required" autocomplete="off"
+                        <input type="password" name="userPwd" lay-verify="required" autocomplete="off"
+                               placeholder="请输入用户密码" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">确认密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="userPwd2" lay-verify="required" autocomplete="off"
                                placeholder="请输入用户密码" class="layui-input">
                     </div>
                 </div>
@@ -183,14 +190,12 @@
                 </div>
 
                 <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">用户类型</label>
                         <div class="layui-input-inline">
-                            <select name="userType" lay-verify="required" lay-search="">
-                                <option value="0">客户</option>
-                            </select>
+<!--                            <select name="userType" lay-verify="required" lay-search="">-->
+<!--                                <option value="0">客户</option>-->
+<!--                            </select>-->
+                            <input type="hidden" name="userType" value="0">
                         </div>
-                    </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
@@ -247,14 +252,22 @@
         }
         //提交数据
         form.on("submit(insert_user_submit)", function (data) {
-            var params = $("#dataFrmInser").serialize();
-            $.post(url, params, function (res) {
-                layer.msg(res.msg);
-                if (res.code == '200') {
-                    tableIns.reload();
-                }
-                layer.close(mainIndex);
-            })
+            var user = data.field;
+            if(user.userPwd != user.userPwd2){
+                layer.alert("两次输出的密码不一致，请重新输入");
+                return false;
+            }else {
+                var params = $("#dataFrmInser").serialize();
+                $.post(url, params, function (res) {
+                    if (res.code == '200') {
+                        layer.msg("注册成功");
+                        layer.close(mainIndex);
+                    }else {
+                        layer.alert("手机号已经被注册过了，请重新输入正确的手机号");
+                    }
+
+                })
+            }
             return false;
         });
 
@@ -269,10 +282,6 @@
                 layer.msg('密码不能为空');
                 return false;
             }
-            // if (data.captcha == '') {
-            //     layer.msg('验证码不能为空');
-            //     return false;
-            // }
             $.ajax({
                 url:"/sys/login",
                 method:"post",
@@ -283,10 +292,22 @@
                 },
                 success:function(res){
                     console.log(res);
-                    if (res.code == 200){
+                    if (res.code == '200'){
                         sessionStorage.setItem("userName",res.data.userName);
                         sessionStorage.setItem("userNum",res.data.userNum);
-                        window.location.href = "/index";
+                        if (data.userType === "0"){
+                            var rank = res.msg;
+                            console.log(rank)
+                            if (rank != '0'){
+                                alert("您前面还有 [" + (rank - 1)  + "] 位客户在等待");
+                                setTimeout(window.location.href = "/index",3000);
+                            } else {
+                                alert("请尽快前往业务中心办理您所需要的办理的业务，过期将需要重新叫号");
+                                setTimeout(window.location.href = "/index",3000);
+                            }
+                        } else {
+                            window.location.href = "/index";
+                        }
                     } else {
                         layer.msg(res.msg);
                     }

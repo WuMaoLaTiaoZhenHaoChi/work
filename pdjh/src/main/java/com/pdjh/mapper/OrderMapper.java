@@ -3,6 +3,7 @@ package com.pdjh.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.pdjh.base.PageDto;
 import com.pdjh.entity.Order;
+import com.pdjh.entity.UserInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -13,6 +14,28 @@ import java.util.List;
  * @Description:
  */
 public interface OrderMapper extends BaseMapper<Order> {
+
+
+    /**
+     * 移除未处理的订单
+     * @param order
+     * @return
+     */
+    int removeOrder(@Param("order") Order order);
+
+    /**
+     * 更心订单中用户等级
+     * @param user
+     * @return
+     */
+    int updataOrderCustomerLeave(@Param("user") UserInfo user);
+
+    /**
+     * 查询排位号
+     * @param user
+     * @return
+     */
+    int selectRankByUser(@Param("user") UserInfo user);
 
     /**
      * 清空数据

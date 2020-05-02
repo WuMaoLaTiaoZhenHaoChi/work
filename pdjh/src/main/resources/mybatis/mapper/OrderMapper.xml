@@ -3,11 +3,28 @@
 <mapper namespace="com.pdjh.mapper.OrderMapper">
 
     <!--查询结果-->
+    <update id="removeOrder" parameterType="com.pdjh.entity.Order">
+       UPDATE order_info
+       SET order_flag = '已取消'
+       WHERE customer_num = #{order.customerNum}
+    </update>
+
+
+    <!--查询结果-->
     <update id="clearData">
-       UPDATE order_info SET order_flag = '已关闭'
+       UPDATE order_info
+       SET order_flag = '已关闭'
        WHERE order_flag
        IN ('未受理','已受理','已取消')
     </update>
+
+    <!--更新订单中用户等级-->
+    <update id="updataOrderCustomerLeave" parameterType="com.pdjh.entity.UserInfo">
+       UPDATE order_info
+       SET customer_level = #{user.customerLevel}
+       WHERE customer_num = #{user.userNum}
+    </update>
+
 
     <!--查询结果-->
     <select id="selectOrderByOrder" resultType="com.pdjh.entity.Order">
@@ -24,6 +41,9 @@
             </if>
             <if test=" order.employeeNum != null and order.employeeNum != '' ">
                 AND employee_num = #{order.employeeNum}
+            </if>
+            <if test=" order.customerLevel != null and order.customerLevel != '' ">
+                AND customer_Level = #{order.customerLevel}
             </if>
         </where>
         ORDER BY order_creat_time desc LIMIT #{pageDto.current},#{pageDto.limit};
@@ -42,7 +62,27 @@
             <if test=" order.employeeNum != null and order.employeeNum != '' ">
                 AND employee_num = #{order.employeeNum}
             </if>
+            <if test=" order.orderFlag != null and order.orderFlag != '' ">
+                AND order_flag = #{order.orderFlag}
+            </if>
+            <if test=" order.customerLevel != null and order.customerLevel != '' ">
+                AND customer_Level = #{order.customerLevel}
+            </if>
         </where>
+    </select>
+
+    <!--查询排号-->
+    <select id="selectRankByUser" resultType="Integer" parameterType="com.pdjh.entity.UserInfo">
+        SELECT COUNT(*) + 1
+        FROM order_info
+        WHERE order_flag = '未受理'
+            AND order_creat_time <![CDATA[ > ]]> (SELECT CURDATE())
+            AND order_creat_time <![CDATA[ < ]]>
+            (
+                IF ((SELECT MAX(order_creat_time) FROM order_info WHERE customer_num = #{user.userNum} AND order_flag = '未受理' GROUP BY customer_num) IS NULL,
+                NOW(),
+                (SELECT MAX(order_creat_time) FROM order_info WHERE customer_num = #{user.userNum} AND order_flag = '未受理' GROUP BY customer_num))
+            )
     </select>
 
     <!--更新订单信息-->

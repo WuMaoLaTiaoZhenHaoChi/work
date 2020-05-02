@@ -7,7 +7,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.pdjh.base.OrderFlag;
 import com.pdjh.base.PageDto;
 import com.pdjh.base.ResultVo;
+import com.pdjh.entity.CustomerInfo;
 import com.pdjh.entity.Order;
+import com.pdjh.entity.UserInfo;
+import com.pdjh.mapper.CustomerMapper;
 import com.pdjh.mapper.OrderMapper;
 import com.pdjh.service.OrderService;
 import com.pdjh.util.DateUtils;
@@ -15,6 +18,7 @@ import com.sun.tools.corba.se.idl.constExpr.Or;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -29,6 +33,16 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
     @Autowired
     private OrderMapper orderMapper;
+
+    @Autowired
+    private CustomerMapper customerMapper;
+
+    //客户排的号
+    @Override
+    public int qryCustomerRank(UserInfo userInfo) {
+        int rankByUser = orderMapper.selectRankByUser(userInfo);
+        return rankByUser;
+    }
 
     //评价
     @Override
@@ -76,34 +90,28 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     //客户预约单子
+    @Transactional
     @Override
     public boolean inputOrderByOrder(Order order) {
         if (order == null)
             return false;
+
+        int i = orderMapper.removeOrder(order);//重复预约取消之前的订单
+
+        CustomerInfo customerInfo = customerMapper.selectById(order.getCustomerNum());
+        String customerLevel = customerInfo.getCustomerLevel();
+
         String dateNow = DateUtils.getDate("yyyy-MM-dd HH:mm:ss");
         String orderNum = order.getCustomerNum().concat(DateUtils.getDate("yyyyMMddHHmmss"));
 
         order.setOrderNum(orderNum);
         order.setOrderCreatTime(dateNow);
+        order.setCustomerLevel(customerLevel);
 
         int insert = orderMapper.insert(order);
 
         return insert > 0 ? true : false;
     }
-
-    //客户订单列表
-//    @Override
-//    public PageDto<Order> listConsumerMyOrder(Order order, PageDto<Order> pageDto) {
-//        pageDto.calculateCurrent();
-//        IPage<Order> iPage = new Page<>(pageDto.getCurrent(),pageDto.getLimit());
-//        QueryWrapper<Order> orderQueryWrapper = new QueryWrapper<>();
-//        orderQueryWrapper.isNull("customer_num").like("customer_num",order.getCustomerNum())
-//                .or().isNull("business_type").like("business_type",order.getBusinessType())
-//                .or().isNull("employee_num").like("employee_num",order.getEmployeeNum());
-//        IPage<Order> iPage1 = orderMapper.selectPage(iPage, orderQueryWrapper);
-//
-//        return pageDto;
-//    }
 
     //客户订单列表
     @Override

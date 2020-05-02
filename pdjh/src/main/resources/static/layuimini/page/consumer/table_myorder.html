@@ -105,6 +105,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
+
     layui.use(['form', 'table','rate'], function () {
         var $ = layui.jquery,
             form = layui.form,
@@ -246,7 +247,7 @@
                             orderFlag: data.orderFlag
                         },
                         success: function (res) {
-                            if (res.code == 200) {
+                            if (res.code == '200') {
                                 layer.msg("取消预约成功")
                             } else {
                                 layer.msg(res.msg);
@@ -315,7 +316,7 @@
             var params = $("#dataFrmUpdate").serialize();
             $.post(url, params, function (res) {
                 layer.msg(res.msg);
-                if (res.code == 200) {
+                if (res.code == '200') {
                     tableIns.reload();
                 }
                 layer.close(mainIndex);

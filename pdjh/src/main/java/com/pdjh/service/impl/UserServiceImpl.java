@@ -8,6 +8,7 @@ import com.pdjh.entity.EmployeeInfo;
 import com.pdjh.entity.UserInfo;
 import com.pdjh.mapper.CustomerMapper;
 import com.pdjh.mapper.EmployeeMapper;
+import com.pdjh.mapper.OrderMapper;
 import com.pdjh.mapper.UserMapper;
 import com.pdjh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +35,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
     @Autowired
     private CustomerMapper CustomerMapper;
 
+    @Autowired
+    private OrderMapper orderMapper;
+
     //用户列表
     @Override
-    public PageDto<UserInfo> listUser(PageDto pageDto) {
+    public PageDto<UserInfo> listUser(UserInfo userInfo,PageDto pageDto) {
         pageDto.calculateCurrent();
-        List<UserInfo> list = list();
-        int count = count();
+//        List<UserInfo> list = list();
+        List<UserInfo> list = userMapper.selectUserList(userInfo,pageDto);
+        int count = list.size();
         pageDto.setData(list);
         pageDto.setCount(count);
         return pageDto;
@@ -73,7 +78,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
         if (userType.equals("0")){
             CustomerInfo CustomerInfo = CustomerMapper.selectById(userNum);
             CustomerInfo.setUserName(userName);
+            CustomerInfo.setCustomerLevel(userInfo.getCustomerLevel());
             i = CustomerMapper.updateById(CustomerInfo);
+            int customerLeave = orderMapper.updataOrderCustomerLeave(userInfo);
         } else if (userType.equals("1")){
             EmployeeInfo EmployeeInfo = EmployeeMapper.selectById(userNum);
             EmployeeInfo.setUserName(userName);

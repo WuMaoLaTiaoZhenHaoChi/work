@@ -37,4 +37,6 @@ public class Order {
 
     private String businessType;         //业务类型
 
+    private String customerLevel;    //客户等级
+
 }

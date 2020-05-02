@@ -39,6 +39,17 @@
                         </div>
 
                         <div class="layui-inline">
+                            <label class="layui-form-label">客户等级</label>
+                            <div class="layui-input-inline">
+                                <select name="customerLevel" lay-search="">
+                                    <option value="">直接选择或搜索选择</option>
+                                    <option value="1">普通客户</option>
+                                    <option value="2">贵宾客户</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
                             <button type="submit" class="layui-btn layui-btn-primary" lay-submit
                                     lay-filter="order-data-search-btm"><i class="layui-icon"></i> 搜 索
                             </button>
@@ -95,7 +106,14 @@
                 {field: 'orderNum', width: 200, title: '订单编号', sort: true},
                 {field: 'orderCreatTime', width: 200, title: '预约时间'},
                 {field: 'businessType', width: 150, title: '业务类型'},
+                {field: 'customerNum', width: 150, title: '客户号码'},
                 {field: 'orderFlag', width: 100, title: '订单状态'},
+                {
+                    field: 'customerLevel', width: 100, title: '客户等级',
+                    templet: function (data) {
+                        return data.customerLevel === '1' ? '普通客户' : '贵宾客户'
+                    }
+                },
                 {field: 'employeeNum', width: 100, title: '受理员工'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
@@ -110,6 +128,7 @@
             var data = data.field;
             var businessType = data.businessType;
             var orderFlag = data.orderFlag;
+            var customerLevel = data.customerLevel;
             //搜索订单
             $.ajax({
                 url: "/order/consumer/listMyOrder",
@@ -117,10 +136,11 @@
                 data: {
                     businessType: businessType,
                     orderFlag: orderFlag,
+                    customerLevel: customerLevel,
                 },
                 success: function (res) {
                     var resData = res.data;
-                    if (res.code == 0) {
+                    if (res.code === '0') {
                         layer.msg("查询成功");
                     } else {
                         layer.msg(res.msg);
@@ -139,6 +159,7 @@
                 , where: {
                     businessType: businessType,
                     orderFlag: orderFlag,
+                    customerLevel: customerLevel,
                 }
             }, 'data');
 
@@ -205,7 +226,7 @@
                             orderFlag: data.orderFlag
                         },
                         success: function (res) {
-                            if (res.code == 200) {
+                            if (res.code == '200') {
                                 layer.msg("取消预约成功")
                                 allTable.reload();
                             } else {
@@ -237,8 +258,9 @@
                                     employeeNum: employeeNum
                                 },
                                 success: function (res) {
-                                    if (res.code == 200) {
-                                        layer.msg("受理成功")
+                                    if (res.code == '200') {
+                                        layer.alert("受理成功，已将受理短信发送至客户手机 [" + data.customerNum +"] ，" +
+                                            "若客户超时未来办理业务，请结束订单并继续叫号")
                                         allTable.reload();
                                     } else {
                                         layer.msg(res.msg);
@@ -252,11 +274,10 @@
                             layer.close(index);
                         });
                     }
-                }else if (data.orderFlag === '已受理'){
+                } else if (data.orderFlag === '已受理') {
                     //已经被受理过的不能被受理
                     layer.alert("此订单已被员工 [" + data.employeeNum + "] 受理,无法再次受理");
-                }
-                else {
+                } else {
                     layer.alert("此订单已结束，无法受理");
                 }
             }

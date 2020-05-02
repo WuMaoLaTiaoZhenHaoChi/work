@@ -14,7 +14,7 @@
     <div class="layuimini-main">
 
         <blockquote class="layui-elem-quote layui-text">
-            描述您所需要预约的业务
+            描述您所需要预约的业务，重复预约将会覆盖之前的取号
         </blockquote>
 
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
@@ -107,8 +107,13 @@
                 },
                 success:function(res){
                     var resData = res.data;
-                    if (res.code == 200){
-                        layer.alert("预约成功");
+                    if (res.code == '200'){
+                        var rank = res.msg;
+                        if (rank != '0'){
+                            layer.alert("取号成功，您前面还有 [" + (rank - 1)  + "] 位客户在等待");
+                        } else {
+
+                        }
                     } else {
                         layer.alert(res.msg);
                     }

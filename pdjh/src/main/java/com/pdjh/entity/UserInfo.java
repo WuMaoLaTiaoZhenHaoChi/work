@@ -29,4 +29,6 @@ public class UserInfo implements Serializable {
 
     private String userType;    //用户权限（0：客户，1：银行员工，2：管理员）
 
+    private String customerLevel;    //客户等级
+
 }

@@ -4,11 +4,14 @@ import com.pdjh.base.PageDto;
 import com.pdjh.base.ResultVo;
 import com.pdjh.entity.UserInfo;
 import com.pdjh.service.UserService;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * @Author: duant
@@ -22,6 +25,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    //编辑用户
     @PostMapping("/editUser")
     public ResultVo editUser(UserInfo userInfo){
         int i = userService.editUser(userInfo);
@@ -43,8 +47,10 @@ public class UserController {
 
     //用户列表
     @GetMapping("/listUser")
-    public ResultVo listUser(PageDto pageDto){
-        PageDto<UserInfo> userInfoPageDto = userService.listUser(pageDto);
+    public ResultVo listUser(UserInfo userInfo, PageDto pageDto, HttpSession session){
+        UserInfo user = (UserInfo) session.getAttribute("user");
+        userInfo.setUserType(user.getUserType());
+        PageDto<UserInfo> userInfoPageDto = userService.listUser(userInfo,pageDto);
         return ResultVo.build("0","success",userInfoPageDto);
     }
 

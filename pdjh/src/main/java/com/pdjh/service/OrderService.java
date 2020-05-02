@@ -3,6 +3,7 @@ package com.pdjh.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.pdjh.base.PageDto;
 import com.pdjh.entity.Order;
+import com.pdjh.entity.UserInfo;
 import com.sun.tools.corba.se.idl.constExpr.Or;
 
 import java.util.List;
@@ -13,6 +14,13 @@ import java.util.List;
  * @Description:
  */
 public interface OrderService extends IService<Order> {
+
+    /**
+     * 客户拍的号
+     * @param userInfo
+     * @return  客户所在排号位数
+     */
+    int qryCustomerRank(UserInfo userInfo);
 
     /**
      * 客户进行订单评级
