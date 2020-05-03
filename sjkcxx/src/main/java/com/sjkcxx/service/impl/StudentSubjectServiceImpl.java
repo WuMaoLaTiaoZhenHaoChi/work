@@ -2,9 +2,13 @@ package com.sjkcxx.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sjkcxx.base.PageDto;
+import com.sjkcxx.entity.PracticeSubject;
 import com.sjkcxx.entity.StudentSubject;
+import com.sjkcxx.mapper.PracticeSubjectMapper;
 import com.sjkcxx.mapper.StudentSubjectMapper;
+import com.sjkcxx.service.PracticeSubjectService;
 import com.sjkcxx.service.StudentSubjectService;
+import com.sjkcxx.util.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +24,41 @@ public class StudentSubjectServiceImpl extends ServiceImpl<StudentSubjectMapper,
 
     @Autowired
     private StudentSubjectMapper studentSubjectMapper;
+
+    @Autowired
+    private PracticeSubjectMapper subjectMapper;
+
+    //学生签到
+    @Override
+    public int studentSign(StudentSubject studentSubject) {
+        int flag = -1;              //-1 不能签到，0:已经签过到了
+        String subjectNum = studentSubject.getSubjectNum();
+        PracticeSubject subject = subjectMapper.selectById(subjectNum);
+
+        String subjectStartTime = subject.getSubjectStartTime().replaceAll("-","");
+        String subjectEndTime = subject.getSubjectEndTime().replaceAll("-","");
+        String now = DateUtils.getDate("yyyyMMdd");
+        int startTime = Integer.parseInt(subjectStartTime);
+        int endTime = Integer.parseInt(subjectEndTime);
+        int nowTime = Integer.parseInt(now);
+
+        if (nowTime < startTime || nowTime > endTime){
+            //不能签到
+            return flag;
+        }
+        StudentSubject studentSubjectTemp = studentSubjectMapper.selectById(studentSubject.getStudentSubjectNum());
+        String signDate = studentSubjectTemp.getSignDate();
+        if (signDate != null){
+            signDate = signDate.replaceAll("-","");
+            if (now.equals(signDate) ){
+                return 0;       //今天已经签到过了
+            }
+        }
+        studentSubjectTemp.setSignTime(studentSubjectTemp.getSignTime() + 1);
+        studentSubjectTemp.setSignDate(now);
+        studentSubjectMapper.updateById(studentSubjectTemp);
+        return 1;
+    }
 
     /**
      * 上传作业

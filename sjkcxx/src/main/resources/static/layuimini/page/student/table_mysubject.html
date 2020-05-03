@@ -145,8 +145,9 @@
         <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
 
         <script type="text/html" id="currentTableBar">
-            <a class="layui-btn layui-btn-xs" lay-event="view">查看详情</a>
+            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="sign">签到</a>
             <a class="layui-btn layui-btn-xs data-count-edit" lay-event="editRate">评价</a>
+            <a class="layui-btn layui-btn-xs" lay-event="view">查看详情</a>
         </script>
 
     </div>
@@ -228,6 +229,8 @@
                 {type: "checkbox", width: 50, fixed: "left"},
                 {field: 'subjectName', width: 150, title: '课程名称'},
                 {field: 'teacherName', width: 150, title: '教师姓名'},
+                {field: 'signDate', width: 150, title: '签到时间'},
+                {field: 'signTime', width: 150, title: '签到次数'},
                 {field: 'subjectStatic', width: 150, title: '课程状态'},
                 {field: 'subjectGrade', width: 150, title: '分数'},
                 {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
@@ -252,7 +255,7 @@
                 },
                 success: function (res) {
                     var resData = res.data;
-                    if (res.code == 0) {
+                    if (res.code == '0') {
                         layer.success("查询成功");
                     } else {
                         layer.msg(res.msg);
@@ -309,9 +312,43 @@
             } else if (obj.event === 'upload') {
 
                 uploadInst.reload();
+            }else if (obj.event === 'sign') {
+                if (data.subjectStatic === '已打分' || data.subjectStatic === '已结束，已评价'){
+                    layer.alert("此课程已经结束，无法签到");
+                }else {
+                    sign(data);
+                }
+                return false;
             }
         });
 
+
+        //签到
+        function sign(data) {
+            var studentSubjectNum = data.studentSubjectNum;
+            var subjectNum = data.subjectNum;
+            $.ajax({
+                url: "/subject/student/sign",
+                method: "put",
+                data: {
+                    studentSubjectNum: studentSubjectNum,
+                    subjectNum: subjectNum,
+                    studentNum: studentNum,
+                },
+                success: function (res) {
+                    if (res.code === '200'){
+                        layer.alert(res.msg)
+                    } else {
+                        layer.alert('暂不能签到')
+                    }
+                    tableIns.reload();
+                },
+                error: function () {
+                    layer.alert("系统出错，请联系管理员");
+                }
+            });
+            return false;
+        }
 
         //查看学科信息
         function openSelectLayer(data) {
@@ -405,7 +442,7 @@
             var params = $("#dataFrmUpdate").serialize();
             $.post(url, params, function (res) {
                 layer.msg(res.msg);
-                if (res.code == 200) {
+                if (res.code == '200') {
                     tableIns.reload();
                 }
                 layer.close(mainIndex);

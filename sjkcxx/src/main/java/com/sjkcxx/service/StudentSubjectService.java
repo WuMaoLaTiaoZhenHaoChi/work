@@ -12,6 +12,13 @@ import com.sjkcxx.mapper.StudentSubjectMapper;
  * @Description:学生成绩相关业务
  */
 public interface StudentSubjectService extends IService<StudentSubject> {
+
+    /**
+     * 学生签到
+     * @param studentSubject
+     * @return
+     */
+    int studentSign(StudentSubject studentSubject);
     /**
      * 上传作业
      * @param studentSubject：学生成绩信息

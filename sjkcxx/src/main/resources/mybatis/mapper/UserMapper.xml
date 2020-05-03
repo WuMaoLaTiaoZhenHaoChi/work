@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjkcxx.mapper.UserMapper">
+
+
+    <!--查询结果-->
+    <select id="selectUserList" resultType="com.sjkcxx.entity.UserInfo">
+        SELECT * FROM user_info
+        <where>
+            <if test=" userInfo.userType != null and userInfo.userType != '' ">
+                AND user_type <![CDATA[ < ]]> #{userInfo.userType}
+            </if>
+        </where>
+        LIMIT #{pageDto.current},#{pageDto.limit};
+    </select>
+
+</mapper>

@@ -186,7 +186,7 @@
                 },
                 success:function(res){
                     console.log(res);
-                    if (res.code == 200){
+                    if (res.code == '200'){
                         sessionStorage.setItem("userName",res.data.userName);
                         sessionStorage.setItem("userNum",res.data.userNum);
                         window.location.href = "/index";

@@ -25,7 +25,7 @@ public interface PracticeSubjectService extends IService<PracticeSubject> {
      * @param studentSubject：学生成绩信息
      * @return：成功标识符 0：失败，1：成功
      */
-    int studentSelectSubject(PracticeSubject practiceSubject, StudentSubject studentSubject);
+    Object studentSelectSubject(PracticeSubject practiceSubject, StudentSubject studentSubject);
     /**
      * 学生多条件查询已审核学科信息
      * @param practiceSubject：学科信息

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * @Author: duant
  * @Date: 2020/4/15 21:12
@@ -45,8 +47,10 @@ public class UserController {
 
     //用户列表
     @GetMapping("/listUser")
-    public ResultVo listUser(PageDto pageDto){
-        PageDto<UserInfo> userInfoPageDto = userService.listUser(pageDto);
+    public ResultVo listUser(UserInfo userInfo, PageDto pageDto, HttpSession session){
+        UserInfo user = (UserInfo) session.getAttribute("user");
+        userInfo.setUserType(user.getUserType());
+        PageDto<UserInfo> userInfoPageDto = userService.listUser(userInfo,pageDto);
         return ResultVo.build("0","success",userInfoPageDto);
     }
 

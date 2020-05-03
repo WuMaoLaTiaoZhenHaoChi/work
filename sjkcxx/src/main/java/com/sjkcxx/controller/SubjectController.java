@@ -42,6 +42,18 @@ public class SubjectController {
         return ResultVo.build("500","审核出错了，请重新操作");
     }
 
+    //学生签到
+    @PutMapping("/student/sign")
+    public ResultVo studentSign(StudentSubject studentSubject){
+        int i = studentSubjectService.studentSign(studentSubject);
+        if (i == -1){
+            return ResultVo.build("200","课程还未开始或已经结课，暂不能签到");
+        }else if (i == 0){
+            return ResultVo.build("200","今天已经签到过了，切勿重复签到");
+        }
+        return ResultVo.build("200","签到成功，请继续保持");
+
+    }
 
     //学生打分
     @PostMapping("/student/studentRateSubject")
@@ -65,6 +77,15 @@ public class SubjectController {
         return ResultVo.build("0", "success", studentSubjectPageDto);
     }
 
+
+    //学生查询所有学科
+    @GetMapping("/student/listAllSubject")
+    public ResultVo studentQueryAllsubject( PracticeSubject practiceSubject,PageDto pageDto) {
+        PageDto<PracticeSubject> practiceSubjectPageDto = practiceSubjectService.studentQuerySubjectLike(practiceSubject, pageDto);
+        return ResultVo.build("0", "success", practiceSubjectPageDto);
+    }
+
+
     //学生自己的课程列表
     @GetMapping("/teacher/listMyStudent")
     public ResultVo teacherListMyStudent(StudentSubject studentSubject,PageDto pageDto,HttpSession session){
@@ -80,11 +101,16 @@ public class SubjectController {
     //选课
     @PostMapping("/student/studentSelectSubject")
     public ResultVo studentSelectSubject(PracticeSubject subject, StudentSubject studentSubject){
-        int i = practiceSubjectService.studentSelectSubject(subject, studentSubject);
-        if (i >= 0){
+        Object obj = practiceSubjectService.studentSelectSubject(subject, studentSubject);
+        if (obj instanceof PracticeSubject){
+            PracticeSubject subject1 = (PracticeSubject)obj;
+            return ResultVo.build("201","课程时间冲突，你已在 [" + subject1.getSubjectStartTime() + "] - ["
+                    + subject1.getSubjectEndTime() + "] 时间段内选择了课程，请重新选择 " );
+        }else if ((int)obj > 0){
             return ResultVo.success();
         }
-        return ResultVo.build("500","课程人数已满，选课失败！");
+        return ResultVo.build("400","选课失败,请联系管理员");
+
     }
 
     //插入课程
@@ -101,13 +127,6 @@ public class SubjectController {
             return ResultVo.success();
         }
         return ResultVo.build("500", "新增课程失败");
-    }
-
-    //学生查询所有学科
-    @GetMapping("/student/listAllSubject")
-    public ResultVo studentQueryAllsubject( PracticeSubject practiceSubject,PageDto pageDto) {
-        PageDto<PracticeSubject> practiceSubjectPageDto = practiceSubjectService.studentQuerySubjectLike(practiceSubject, pageDto);
-        return ResultVo.build("0", "success", practiceSubjectPageDto);
     }
 
 

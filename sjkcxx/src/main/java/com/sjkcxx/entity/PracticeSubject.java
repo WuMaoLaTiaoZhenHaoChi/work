@@ -36,7 +36,8 @@ public class PracticeSubject implements Serializable {
 
     private Integer subjectPeopleMax;       //课程人数
 
-    private String subjectStartTime;        //课程开始时间
+    private String subjectStartTime;        //课程开课日期
+    private String subjectEndTime;        //课程结束时间
 
     private String subjectRequire;          //课程要求
 
@@ -47,5 +48,8 @@ public class PracticeSubject implements Serializable {
     private String teacherName;             //教师姓名
 
     private String inputTime;               //录入时间
+
+
+    private String sortType;                //排序规则
 
 }

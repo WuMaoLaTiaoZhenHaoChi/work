@@ -18,7 +18,7 @@ public interface UserService extends IService<UserInfo> {
      * @param pageDto:分页条件
      * @return：用户分页数据集合
      */
-    PageDto<UserInfo> listUser(PageDto pageDto);
+    PageDto<UserInfo> listUser(UserInfo userInfo,PageDto pageDto);
 
     /**
      * 移除用户

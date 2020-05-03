@@ -2,6 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sjkcxx.mapper.StudentSubjectMapper">
 
+    <!--查询是否有冲突学科-->
+    <select id="selectSubjectTime" resultType="com.sjkcxx.entity.PracticeSubject">
+        SELECT min_start_time AS subject_start_time,max_end_time AS subject_end_time
+        FROM
+            (
+            (SELECT MIN(subject_start_time) min_start_time,MAX(subject_end_time)  max_end_time
+            FROM practice_subject
+            WHERE subject_num
+        IN
+            (SELECT subject_num FROM student_subject WHERE student_num = #{studentSubject.studentNum})
+            ) AS p1
+            )
+        JOIN
+            (SELECT p2.* FROM practice_subject p2 WHERE p2.subject_num = #{studentSubject.subjectNum}) a
+        ON
+            (
+            a.subject_start_time <![CDATA[ < ]]> p1.max_end_time AND a.subject_end_time <![CDATA[ > ]]> p1.min_start_time
+            )
+    </select>
+
+
     <!--查询，有条件-->
     <select id="selectStudentSubjectBySS" resultType="com.sjkcxx.entity.StudentSubject">
         select * from student_subject

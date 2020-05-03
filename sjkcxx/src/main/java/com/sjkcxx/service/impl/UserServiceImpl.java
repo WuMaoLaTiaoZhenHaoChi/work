@@ -36,10 +36,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
 
     //用户列表
     @Override
-    public PageDto<UserInfo> listUser(PageDto pageDto) {
+    public PageDto<UserInfo> listUser(UserInfo userInfo,PageDto pageDto) {
         pageDto.calculateCurrent();
-        List<UserInfo> list = list();
-        int count = count();
+        List<UserInfo> list = userMapper.selectUserList(userInfo,pageDto);
+        int count = list.size();
         pageDto.setData(list);
         pageDto.setCount(count);
         return pageDto;

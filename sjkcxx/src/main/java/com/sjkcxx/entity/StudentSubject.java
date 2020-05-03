@@ -45,4 +45,8 @@ public class StudentSubject implements Serializable {
 
     private String subjectRemark;      //课程评价
 
+    private int signTime;      //签到次数
+
+    private String signDate;    //  签到时间
+
 }

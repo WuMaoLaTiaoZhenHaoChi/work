@@ -2,6 +2,7 @@ package com.sjkcxx.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.sjkcxx.base.PageDto;
+import com.sjkcxx.entity.PracticeSubject;
 import com.sjkcxx.entity.StudentSubject;
 import org.apache.ibatis.annotations.Param;
 
@@ -13,6 +14,13 @@ import java.util.List;
  * @Description:学生-学科表
  */
 public interface StudentSubjectMapper extends BaseMapper<StudentSubject> {
+
+    /**
+     * 查询是否有冲突学科
+     * @param studentSubject
+     * @return
+     */
+    PracticeSubject selectSubjectTime(@Param("studentSubject") StudentSubject studentSubject);
 
     /**
      * 有条件查询

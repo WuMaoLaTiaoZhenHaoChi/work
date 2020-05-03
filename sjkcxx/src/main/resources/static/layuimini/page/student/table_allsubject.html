@@ -37,6 +37,15 @@
                             </div>
                         </div>
                         <div class="layui-inline">
+                            <label class="layui-form-label">排序筛选</label>
+                            <div class="layui-input-inline">
+                                <select name="sortType" lay-verify="required" lay-search="">
+                                    <option value="0" selected>开课日期优先</option>
+                                    <option value="1">选课人数优先</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
                             <button type="submit" class="layui-btn layui-btn-primary" lay-submit
                                     lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索
                             </button>
@@ -103,10 +112,19 @@
 
                 <div class="layui-form-item">
                     <div class="layui-inline">
-                        <label class="layui-form-label">开始日期</label>
+                        <label class="layui-form-label">开课日期</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="subjectStartTime" id="" lay-verify="date"
+                            <input type="text" name="subjectStartTime" lay-verify="date"
                                    readonly="readonly" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">结课日期</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="subjectEndTime" lay-verify="date" placeholder="yyyy-MM-dd"
+                                   autocomplete="off" class="layui-input">
                         </div>
                     </div>
                 </div>
@@ -165,10 +183,11 @@
                     {type: "checkbox", width: 50, fixed: "left"},
                     {field: 'subjectName', width: 150, title: '课程名称'},
                     {field: 'subjectType', width: 150, title: '课程类别'},
+                    {field: 'subjectStartTime', width: 150, title: '开课日期'},
+                    {field: 'subjectEndTime', width: 150, title: '结课日期'},
                     {field: 'subjectPeopleNow', width: 150, title: '已选人数'},
                     {field: 'subjectPeopleMax', width: 150, title: '总人数'},
                     {field: 'teacherName', width: 150, title: '教师姓名'},
-                    {field: 'subjectMain', width: 150, title: '课程简介'},
                     {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
                 ]],
                 limits: [10, 15, 20, 25, 50, 100],
@@ -183,6 +202,7 @@
                 var teacherNum = data.teacherNum;
                 var subjectName = data.subjectName;
                 var subjectType = data.subjectType;
+                var sortType = data.sortType;
                 $.ajax({
                     url: "/subject/teacher/listAllSubject",
                     method: "get",
@@ -190,6 +210,7 @@
                         teacherNum: teacherNum,
                         subjectName: subjectName,
                         subjectType: subjectType,
+                        sortType: sortType,
                     },
                     success: function (res) {
                         var resData = res.data;
@@ -214,6 +235,7 @@
                         teacherNum: teacherNum,
                         subjectName: subjectName,
                         subjectType: subjectType,
+                        sortType: sortType,
                     }
                 }, 'data');
 
@@ -253,7 +275,6 @@
 
             table.on('tool(currentTableFilter)', function (obj) {
                 var data = obj.data;
-                console.log(studentName)
                 var teacherNum = data.teacherNum;
                 var teacherName = data.teacherName;
                 var subjectNum = data.subjectNum;
@@ -283,7 +304,9 @@
 
                                     console.log(res.code)
                                     if (res.code === '200') {
-                                        layer.alert("选择 [" + subjectName+ "] 成功");
+                                        layer.alert("选择 [" + subjectName + "] 成功");
+                                    } else if (res.code === '201') {
+                                        layer.alert(res.msg);
                                     } else {
                                         layer.alert(res.msg);
                                     }

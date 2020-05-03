@@ -46,10 +46,18 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
     //学生选课
     @Transactional
     @Override
-    public int studentSelectSubject(PracticeSubject subject, StudentSubject studentSubject) {
+    public Object studentSelectSubject(PracticeSubject subject, StudentSubject studentSubject) {
         String subjectNum = subject.getSubjectNum();
         if (subjectNum == null || subjectNum.equals(""))
             return -1;
+
+        PracticeSubject practiceSubject = studentSubjectMapper.selectSubjectTime(studentSubject);
+        if (practiceSubject != null){
+            if (practiceSubject.getSubjectStartTime() != null || practiceSubject.getSubjectEndTime() != null){
+                return practiceSubject;
+            }
+        }
+
         Integer subjectPeopleNow = subject.getSubjectPeopleNow();
         Integer subjectPeopleMax = practiceSubjectMapper.selectById(subjectNum).getSubjectPeopleMax();
         if (subjectPeopleNow >= subjectPeopleMax){

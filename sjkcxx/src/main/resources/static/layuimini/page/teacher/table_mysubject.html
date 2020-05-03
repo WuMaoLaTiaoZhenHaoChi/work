@@ -98,8 +98,16 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">开始日期</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="subjectStartTime" id="date" lay-verify="date"
-                                       placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                                <input type="text" name="subjectStartTime" id="subjectStartTime" lay-verify="date"
+                                       readonly="readonly" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">结课日期</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="subjectEndTime" id="subjectEndTime"   lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                     </div>
@@ -168,10 +176,18 @@
 
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">开始日期</label>
+                            <label class="layui-form-label">开课日期</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="subjectStartTime" id="" lay-verify="date"
+                                <input type="text" name="subjectStartTime" lay-verify="date"
                                        readonly="readonly" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">结课日期</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="subjectEndTime"  lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                     </div>
@@ -207,12 +223,22 @@
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
 <script>
-    layui.use(['form', 'table'], function () {
+    layui.use(['form', 'table','laydate'], function () {
         var $ = layui.jquery,
             form = layui.form,
             table = layui.table,
+            laydate = layui.laydate,
             layuimini = layui.layuimini;
         var url;
+
+        //日期
+        laydate.render({
+            elem: '#subjectStartTime'
+        });
+        laydate.render({
+            elem: '#subjectEndTime'
+        });
+
         var tableIns = table.render({
             elem: '#currentTableId',
             url: '/subject/teacher/listMySubject',
@@ -362,7 +388,8 @@
             var params = $("#dataFrmUpdate").serialize();
             $.post(url, params, function (res) {
                 layer.msg(res.msg);
-                if (res.code == 200) {
+                if (res.code == '200') {
+                    layer.msg("修改成功")
                     tableIns.reload();
                 }
                 layer.close(mainIndex);

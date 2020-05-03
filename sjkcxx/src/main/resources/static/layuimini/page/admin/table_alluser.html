@@ -230,7 +230,7 @@
             var params = $("#dataFrmUpdate").serialize();
             $.post(url, params, function (res) {
                 layer.msg(res.msg);
-                if (res.code == 200) {
+                if (res.code == '200') {
                     tableIns.reload();
                 }
                 layer.close(mainIndex);

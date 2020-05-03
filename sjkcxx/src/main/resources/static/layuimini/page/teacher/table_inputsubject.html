@@ -68,7 +68,15 @@
                 <div class="layui-inline">
                     <label class="layui-form-label">开始日期</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="subjectStartTime" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                        <input type="text" name="subjectStartTime" id="subjectStartTime" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">结课日期</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="subjectEndTime" id="subjectEndTime" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -103,10 +111,10 @@
 
         //日期
         laydate.render({
-            elem: '#date'
+            elem: '#subjectStartTime'
         });
         laydate.render({
-            elem: '#date1'
+            elem: '#subjectEndTime'
         });
 
         //创建一个编辑器
@@ -153,12 +161,13 @@
                     subjectMain: data.subjectMain,
                     subjectPeopleMax: data.subjectPeopleMax,
                     subjectStartTime: data.subjectStartTime,
+                    subjectEndTime: data.subjectEndTime,
                     subjectRequire: data.subjectRequire,
                     teacherName:teacherName,
                 },
                 success:function(res){
                     var resData = res.data;
-                    if (res.code == 200){
+                    if (res.code == '200'){
                         layer.alert("新增学科信息成功");
                     } else {
                         layer.alert(res.msg);

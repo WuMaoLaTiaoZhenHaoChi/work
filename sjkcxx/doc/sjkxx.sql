@@ -2,7 +2,8 @@
 SQLyog Ultimate v12.08 (64 bit)
 MySQL - 5.7.29-log : Database - sjkxx
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -28,7 +29,7 @@ CREATE TABLE `practice_subject` (
   `subject_check` varchar(5) DEFAULT '0' COMMENT '是否审核0：未审核 1：已审核',
   `subject_main` varchar(255) DEFAULT NULL COMMENT '课程简介',
   `subject_people_max` int(5) DEFAULT NULL COMMENT '课程人数',
-  `subject_start_time` varchar(50) DEFAULT NULL COMMENT '课程开始时间',
+  `subject_start_time` varchar(50) DEFAULT NULL COMMENT '课程开课日期',
   `subject_require` varchar(255) DEFAULT NULL COMMENT '课程要求',
   `subject_score` float DEFAULT NULL COMMENT '课程评分',
   `teacher_num` varchar(50) DEFAULT NULL COMMENT '教师编号',
