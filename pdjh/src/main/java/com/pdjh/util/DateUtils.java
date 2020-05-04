@@ -287,7 +287,7 @@ public class DateUtils {
 
     /**
      * 计算两个日期之前相隔多少周.
-     * @param start      计算开始时间
+     * @param start      计算开课日期
      * @param end    计算结束时间
      * @return long 相隔周数，向下取整
      * @since 1.0
@@ -321,7 +321,7 @@ public class DateUtils {
      * @param date1
      *            结束时间
      * @param date2
-     *            开始时间
+     *            开课日期
      * @return String 相差的小时数，保留一位小数
      * @since 1.0
      */

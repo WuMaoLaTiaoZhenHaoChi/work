@@ -14,4 +14,16 @@
         LIMIT #{pageDto.current},#{pageDto.limit};
     </select>
 
+
+    <!--查询结果-->
+    <select id="countUserList" resultType="Integer">
+        SELECT COUNT(1) FROM user_info
+        <where>
+            <if test=" userInfo.userType != null and userInfo.userType != '' ">
+                AND user_type <![CDATA[ < ]]> #{userInfo.userType}
+            </if>
+        </where>
+        LIMIT #{pageDto.current},#{pageDto.limit};
+    </select>
+
 </mapper>

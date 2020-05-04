@@ -44,10 +44,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
         pageDto.calculateCurrent();
 //        List<UserInfo> list = list();
         List<UserInfo> list = userMapper.selectUserList(userInfo,pageDto);
-        int count = list.size();
+//        int count = list.size();
+        int count = userMapper.countUserList(userInfo,pageDto);
         pageDto.setData(list);
         pageDto.setCount(count);
         return pageDto;
+    }
+
+    //修改密码
+    @Transactional
+    @Override
+    public int edituserPwd(UserInfo userInfo) {
+        userInfo.getUserPwd();
+        return 0;
     }
 
     //删除用户

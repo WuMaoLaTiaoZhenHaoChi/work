@@ -48,6 +48,19 @@ public class OrderController {
     }
 
     /**
+     * 员工查看自己的所有
+     * @param order
+     * @param pageDto
+     * @param session
+     * @return
+     */
+    @GetMapping("/employee/listOrder")
+    public ResultVo employeeOrder(Order order, PageDto pageDto,HttpSession session){
+        pageDto = orderService.listConsumerMyOrder(order, pageDto);
+        return ResultVo.build("0","success",pageDto);
+    }
+
+    /**
      * 员工查看自己的订单
      * @param order
      * @param pageDto

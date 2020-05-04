@@ -2,7 +2,6 @@ package com.pdjh.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.pdjh.base.PageDto;
-import com.pdjh.entity.Order;
 import com.pdjh.entity.UserInfo;
 import org.apache.ibatis.annotations.Param;
 
@@ -20,7 +19,12 @@ public interface UserMapper extends BaseMapper<UserInfo> {
      * @param
      * @return
      */
-    List<Order> selectUserList(@Param("userInfo") UserInfo userInfo, @Param("pageDto") PageDto<Order> pageDto);
+    List selectUserList(@Param("userInfo") UserInfo userInfo, @Param("pageDto") PageDto pageDto);
+
+
+    int countUserList(@Param("userInfo") UserInfo userInfo, @Param("pageDto") PageDto pageDto);
+
+
 
 
 }

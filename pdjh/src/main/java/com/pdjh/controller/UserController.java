@@ -26,13 +26,25 @@ public class UserController {
     private UserService userService;
 
     //编辑用户
+    @PostMapping("/editUserPwd")
+    public ResultVo editUserPwd(UserInfo userInfo,HttpSession session){
+        UserInfo user = (UserInfo) session.getAttribute("user");
+        user.setUserPwd(userInfo.getUserPwd());
+        int i = userService.editUser(user);
+        if (i > 0){
+            return ResultVo.success();
+        }
+        return ResultVo.build("400","修改失败");
+    }
+
+    //编辑用户
     @PostMapping("/editUser")
     public ResultVo editUser(UserInfo userInfo){
         int i = userService.editUser(userInfo);
         if (i > 0){
             return ResultVo.success();
         }
-        return ResultVo.build("400","注册失败");
+        return ResultVo.build("400","修改失败");
     }
 
     //注册用户

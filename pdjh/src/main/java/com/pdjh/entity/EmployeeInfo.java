@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("employee_info")
-public class EmployeeInfo extends UserInfo {
+public class EmployeeInfo {
 
     @TableId(type = IdType.INPUT)
     private String userNum;     //员工编号
@@ -24,5 +24,11 @@ public class EmployeeInfo extends UserInfo {
     private String employeeDept;    //员工部门
 
     private Float employeeGrade;    //员工评分
+
+    private String userName;    //用户姓名
+
+    private String userPwd;     //用户密码
+
+    private String userType;    //用户权限（0：客户，1：银行员工，2：管理员）
 
 }

@@ -14,6 +14,13 @@ public interface UserService extends IService<UserInfo> {
     PageDto<UserInfo> listUser(UserInfo userInfo,PageDto pageDto);
 
     /**
+     * 修改密码
+     * @param userInfo
+     * @return
+     */
+    int edituserPwd(UserInfo userInfo);
+
+    /**
      * 移除用户
      * @param userNum:用户账号
      * @return  成功表示 0：失败，1：成功
