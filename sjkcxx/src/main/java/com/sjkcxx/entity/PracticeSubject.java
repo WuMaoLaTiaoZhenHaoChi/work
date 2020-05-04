@@ -26,6 +26,8 @@ public class PracticeSubject implements Serializable {
 
     private String subjectName;             //课程名称
 
+    private String subjectDepartment;              //院系
+
     private String subjectType;             //课程类别
 
     private String subjectCheck;            //是否审核0：未审核 1：已审核

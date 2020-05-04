@@ -37,6 +37,24 @@
             </div>
 
             <div class="layui-form-item">
+                <label class="layui-form-label">所属院系</label>
+<!--                <div class="layui-input-block">-->
+<!--                    <input type="text" name="subjectDepartment" lay-verify="title" autocomplete="off" placeholder="请输入课程名称" class="layui-input">-->
+<!--                </div>-->
+
+                <div class="layui-input-inline">
+                    <select name="subjectDepartment" lay-verify="required" lay-search="">
+                        <option value="">直接选择或搜索选择</option>
+                        <option value="电子与信息工程学院">电子与信息工程学院</option>
+                        <option value="数学与统计系">数学与统计系</option>
+                        <option value="政治与历史系">政治与历史系</option>
+                        <option value="经济与管理系">经济与管理系</option>
+                        <option value="体育系">体育系</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
                 <div class="layui-inline">
                     <label class="layui-form-label">课程类型</label>
                     <div class="layui-input-inline">
@@ -98,7 +116,7 @@
     </div>
 </div>
 
-<script src="/layuimini//lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js" charset="utf-8"></script>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
@@ -163,6 +181,7 @@
                     subjectStartTime: data.subjectStartTime,
                     subjectEndTime: data.subjectEndTime,
                     subjectRequire: data.subjectRequire,
+                    subjectDepartment: data.subjectDepartment,
                     teacherName:teacherName,
                 },
                 success:function(res){
@@ -188,6 +207,7 @@
             , "subjectPeopleMax": 50
             , "subjectStartTime": "2021-01-01"
             , "subjectRequire": "我爱学习！"
+            , "subjectDepartment": "电信院系！"
         })
 
     });

@@ -15,6 +15,9 @@
             <if test=" subject.subjectType != null and subject.subjectType != '' ">
                 and subject_type=#{subject.subjectType}
             </if>
+            <if test=" subject.subjectDepartment != null and subject.subjectDepartment != '' ">
+                and subject_department=#{subject.subjectDepartment}
+            </if>
             and subject_check = '已通过'
         </where>
 
@@ -43,6 +46,9 @@
             </if>
             <if test=" subject.subjectType != null and subject.subjectType != '' ">
                 and subject_type=#{subject.subjectType}
+            </if>
+            <if test=" subject.subjectDepartment != null and subject.subjectDepartment != '' ">
+                and subject_department=#{subject.subjectDepartment}
             </if>
             and subject_check = '已通过'
         </where>

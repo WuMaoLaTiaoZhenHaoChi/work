@@ -31,6 +31,12 @@
                             </div>
                         </div>
                         <div class="layui-inline">
+                            <label class="layui-form-label">所属院系</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="subjectDepartment" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
                             <label class="layui-form-label">课程类别</label>
                             <div class="layui-input-inline">
                                 <input type="text" name="subjectType" autocomplete="off" class="layui-input">
@@ -76,6 +82,13 @@
                     <div class="layui-input-block">
                         <input type="text" name="subjectName" lay-verify="title" autocomplete="off"
                                readonly="readonly" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">所属院系</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="subjectDepartment" autocomplete="off" readonly="readonly" class="layui-input">
                     </div>
                 </div>
 
@@ -182,11 +195,12 @@
                 cols: [[
                     {type: "checkbox", width: 50, fixed: "left"},
                     {field: 'subjectName', width: 150, title: '课程名称'},
+                    {field: 'subjectDepartment', width: 150, title: '所属院系'},
                     {field: 'subjectType', width: 150, title: '课程类别'},
-                    {field: 'subjectStartTime', width: 150, title: '开课日期'},
-                    {field: 'subjectEndTime', width: 150, title: '结课日期'},
-                    {field: 'subjectPeopleNow', width: 150, title: '已选人数'},
-                    {field: 'subjectPeopleMax', width: 150, title: '总人数'},
+                    {field: 'subjectStartTime', width: 100, title: '开课日期'},
+                    {field: 'subjectEndTime', width: 100, title: '结课日期'},
+                    {field: 'subjectPeopleNow', width: 100, title: '已选人数'},
+                    {field: 'subjectPeopleMax', width: 100, title: '总人数'},
                     {field: 'teacherName', width: 150, title: '教师姓名'},
                     {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
                 ]],
@@ -203,6 +217,7 @@
                 var subjectName = data.subjectName;
                 var subjectType = data.subjectType;
                 var sortType = data.sortType;
+                var subjectDepartment = data.subjectDepartment;
                 $.ajax({
                     url: "/subject/teacher/listAllSubject",
                     method: "get",
@@ -211,6 +226,7 @@
                         subjectName: subjectName,
                         subjectType: subjectType,
                         sortType: sortType,
+                        subjectDepartment: subjectDepartment,
                     },
                     success: function (res) {
                         var resData = res.data;
@@ -236,6 +252,7 @@
                         subjectName: subjectName,
                         subjectType: subjectType,
                         sortType: sortType,
+                        subjectDepartment: subjectDepartment,
                     }
                 }, 'data');
 

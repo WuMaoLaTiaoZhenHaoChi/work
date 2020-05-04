@@ -16,12 +16,16 @@ import java.util.List;
 public interface UserMapper extends BaseMapper<UserInfo> {
 
 
+
     /**
      * 自定义用户
      * @param
      * @return
      */
     List selectUserList(@Param("userInfo") UserInfo userInfo, @Param("pageDto") PageDto pageDto);
+
+
+    int countUserList(@Param("userInfo") UserInfo userInfo, @Param("pageDto") PageDto pageDto);
 
 
 }
