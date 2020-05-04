@@ -125,12 +125,12 @@
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="userNum" lay-verify="required|account" placeholder="用户名或者邮箱"
+                    <input type="text" name="userNum"  placeholder="用户名或者邮箱"
                            autocomplete="off" class="layui-input" >
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-password" for="password"></label>
-                    <input type="password" name="userPwd" lay-verify="required|password" placeholder="密码"
+                    <input type="password" name="userPwd" placeholder="密码"
                            autocomplete="off" class="layui-input" >
                 </div>
                 <div class="layui-form-item">
@@ -239,7 +239,7 @@
                 type: 1,
                 title: '添加用户',
                 content: $("#insertUser"),
-                area: ['65%', '85%'],
+                area: ['100%', '100%'],
                 shade: 0.3, //不显示遮罩
                 skin: 'layui-layer-molv',
                 maxmin: true,

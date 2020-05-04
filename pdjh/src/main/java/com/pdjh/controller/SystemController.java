@@ -38,18 +38,17 @@ public class SystemController {
 
         int rankNum = 0;
 
-        Order order = new Order();
-        order.setCustomerNum(user.getUserNum());
-        order.setOrderFlag("已受理");
-        int i = orderMapper.countOrderByOrder(order);
-        if (i > 0){
-            rankNum = 0;
-        }else {
-            rankNum = orderService.qryCustomerRank(user);
-        }
-
         if (user != null && user.getUserPwd().equals(userInfo.getUserPwd()) && user.getUserType().equals(userInfo.getUserType())){
             request.getSession().setAttribute("user",user);
+            Order order = new Order();
+            order.setCustomerNum(user.getUserNum());
+            order.setOrderFlag("已受理");
+            int i = orderMapper.countOrderByOrder(order);
+            if (i > 0){
+                rankNum = 0;
+            }else {
+                rankNum = orderService.qryCustomerRank(user);
+            }
             return ResultVo.build("200",String.valueOf(rankNum),user);
 //            return ResultVo.success();
         }
