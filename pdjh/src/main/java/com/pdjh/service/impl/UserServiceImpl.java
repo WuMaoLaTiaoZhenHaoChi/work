@@ -70,6 +70,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
             i = CustomerMapper.deleteById(userNum);
         }else if (userType.equals("1")){
             i = EmployeeMapper.deleteById(userNum);
+        }else if (userType.equals("2")){
+            i = 1;
         }
         int userI = userMapper.deleteById(userNum);
         return i & userI;
@@ -94,6 +96,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
             EmployeeInfo EmployeeInfo = EmployeeMapper.selectById(userNum);
             EmployeeInfo.setUserName(userName);
             i  = EmployeeMapper.updateById(EmployeeInfo);
+        } else if (userType.equals("2")){
+            i = 1;
         }
         return userI & i;
     }
@@ -117,6 +121,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
             EmployeeInfo.setUserNum(userNum);
             EmployeeInfo.setUserName(userName);
             i  = EmployeeMapper.insert(EmployeeInfo);
+        }else if (userType.equals("2")){
+            i = 1;
         }
         return userI & i;
     }
