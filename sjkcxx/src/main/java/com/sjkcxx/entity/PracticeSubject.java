@@ -51,6 +51,9 @@ public class PracticeSubject implements Serializable {
 
     private String inputTime;               //录入时间
 
+    private String site;                    //上课场所
+
+    private String equipment;               //所需器材
 
     private String sortType;                //排序规则
 

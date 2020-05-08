@@ -73,6 +73,18 @@
                     <input type="text" name="subjectMain" lay-verify="required" lay-reqtext="课程简介岂能为空？" placeholder="请输入课程简介" autocomplete="off" class="layui-input">
                 </div>
             </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">上课场地</label>
+                <div class="layui-input-block">
+                    <input type="text" name="site" lay-verify="required" placeholder="请输入课程简介" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">所需器材</label>
+                <div class="layui-input-block">
+                    <input type="text" name="equipment" lay-verify="required" placeholder="请输入课程简介" autocomplete="off" class="layui-input">
+                </div>
+            </div>
 
             <div class="layui-form-item">
                 <label class="layui-form-label">课程人数</label>
@@ -142,7 +154,7 @@
         form.verify({
             title: function (value) {
                 if (value.length < 2) {
-                    return '课程标题至少得2个字符啊';
+                    return '课程标题至少得2个字符';
                 }
             },
             subjectPeopleMax: [
@@ -182,6 +194,8 @@
                     subjectEndTime: data.subjectEndTime,
                     subjectRequire: data.subjectRequire,
                     subjectDepartment: data.subjectDepartment,
+                    site: data.site,
+                    equipment: data.equipment,
                     teacherName:teacherName,
                 },
                 success:function(res){
