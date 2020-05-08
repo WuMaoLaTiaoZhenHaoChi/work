@@ -7,7 +7,7 @@ import com.pdjh.entity.UserInfo;
 /**
  * @Author: duant
  * @Date: 2020/3/1 16:30
- * @Description:
+ * @Description:用户操作
  */
 public interface UserService extends IService<UserInfo> {
 
