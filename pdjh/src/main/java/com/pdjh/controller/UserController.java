@@ -32,7 +32,7 @@ public class UserController {
         user.setUserPwd(userInfo.getUserPwd());
         int i = userService.editUser(user);
         if (i > 0){
-            return ResultVo.success();
+            return ResultVo.build("200","修改成功");
         }
         return ResultVo.build("400","修改失败");
     }
@@ -42,7 +42,7 @@ public class UserController {
     public ResultVo editUser(UserInfo userInfo){
         int i = userService.editUser(userInfo);
         if (i > 0){
-            return ResultVo.success();
+            return ResultVo.build("200","修改成功");
         }
         return ResultVo.build("400","修改失败");
     }
@@ -52,7 +52,7 @@ public class UserController {
     public ResultVo registerUser(UserInfo userInfo){
         int i = userService.registerUser(userInfo);
         if (i > 0){
-            return ResultVo.success();
+            return ResultVo.build("200","添加用户成功");
         }
         return ResultVo.build("400","用户已存在，注册失败");
     }
