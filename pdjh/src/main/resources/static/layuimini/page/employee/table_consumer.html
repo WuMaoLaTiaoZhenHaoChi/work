@@ -159,18 +159,18 @@
                 };
             },
             cols: [[
-                {type: "checkbox", width: 50, fixed: "left"},
-                {field: 'userNum', width: 150, title: '用户名', sort: true},
-                {field: 'userName', width: 150, title: '用户姓名', sort: true},
-                {field: 'userPwd', width: 150, title: '用户密码', sort: true},
-                {field: 'userType', width: 150, title: 'ID', sort: true},
+                {type: "checkbox", fixed: "left"},
+                {field: 'userNum', title: '用户名', sort: true},
+                {field: 'userName', title: '用户姓名', sort: true},
+                {field: 'userPwd', title: '用户密码', sort: true},
+                {field: 'userType', title: 'ID', sort: true},
                 {
-                    field: 'customerLevel', width: 100, title: '客户等级',
+                    field: 'customerLevel', title: '客户等级',
                     templet: function (data) {
                         return data.customerLevel === '1' ? '普通客户' : '贵宾客户'
                     }
                 },
-                {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
+                {title: '操作', templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,

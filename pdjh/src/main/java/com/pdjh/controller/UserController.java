@@ -54,7 +54,7 @@ public class UserController {
         if (i > 0){
             return ResultVo.success();
         }
-        return ResultVo.build("400","注册失败");
+        return ResultVo.build("400","用户已存在，注册失败");
     }
 
     //用户列表
