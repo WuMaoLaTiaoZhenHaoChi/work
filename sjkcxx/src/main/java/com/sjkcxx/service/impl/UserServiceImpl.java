@@ -89,6 +89,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
         String userNum = userInfo.getUserNum();
         String userName = userInfo.getUserName();
         String userType = userInfo.getUserType();
+        UserInfo byId = userMapper.selectById(userNum);
+        if (byId != null){
+            return -1;
+        }
         int userI = userMapper.insert(userInfo);
         int i = 0;
         if (userType.equals("0")){
