@@ -70,6 +70,9 @@
             <if test=" subject.subjectCheck!= null and subject.subjectCheck != '' ">
                 and subject_check=#{subject.subjectCheck}
             </if>
+            <if test=" subject.subjectDepartment != null and subject.subjectDepartment != '' ">
+                and subject_department=#{subject.subjectDepartment}
+            </if>
         </where>
         ORDER BY subject_start_time desc LIMIT #{pageDto.current},#{pageDto.limit};
     </select>
@@ -88,6 +91,9 @@
             </if>
             <if test=" subject.subjectCheck!= null and subject.subjectCheck != '' ">
                 and subject_check=#{subject.subjectCheck}
+            </if>
+            <if test=" subject.subjectDepartment != null and subject.subjectDepartment != '' ">
+                and subject_department=#{subject.subjectDepartment}
             </if>
         </where>
     </select>

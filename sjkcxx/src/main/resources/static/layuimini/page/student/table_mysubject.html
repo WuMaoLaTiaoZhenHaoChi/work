@@ -226,14 +226,13 @@
                 };
             },
             cols: [[
-                {type: "checkbox", width: 50, fixed: "left"},
-                {field: 'subjectName', width: 150, title: '课程名称'},
-                {field: 'teacherName', width: 150, title: '教师姓名'},
-                {field: 'signDate', width: 150, title: '签到时间'},
-                {field: 'signTime', width: 150, title: '签到次数'},
-                {field: 'subjectStatic', width: 150, title: '课程状态'},
-                {field: 'subjectGrade', width: 150, title: '分数'},
-                {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
+                {field: 'subjectName', title: '课程名称'},
+                {field: 'teacherName', title: '教师姓名'},
+                {field: 'signDate', title: '签到时间'},
+                {field: 'signTime', title: '签到次数'},
+                {field: 'subjectStatic', title: '课程状态'},
+                {field: 'subjectGrade', title: '分数'},
+                {title: '操作', templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,

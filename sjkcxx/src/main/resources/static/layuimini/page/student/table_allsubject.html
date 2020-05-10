@@ -205,16 +205,15 @@
                     };
                 },
                 cols: [[
-                    {type: "checkbox", width: 50, fixed: "left"},
-                    {field: 'subjectName', width: 150, title: '课程名称'},
-                    {field: 'subjectDepartment', width: 150, title: '所属院系'},
-                    {field: 'subjectType', width: 150, title: '课程类别'},
-                    {field: 'subjectStartTime', width: 100, title: '开课日期'},
-                    {field: 'subjectEndTime', width: 100, title: '结课日期'},
-                    {field: 'subjectPeopleNow', width: 100, title: '已选人数'},
-                    {field: 'subjectPeopleMax', width: 100, title: '总人数'},
-                    {field: 'teacherName', width: 150, title: '教师姓名'},
-                    {title: '操作', minWidth: 50, templet: '#currentTableBar', fixed: "right", align: "center"}
+                    {field: 'subjectName', title: '课程名称'},
+                    {field: 'subjectDepartment', title: '所属院系'},
+                    {field: 'subjectType', title: '课程类别'},
+                    {field: 'subjectStartTime', title: '开课日期'},
+                    {field: 'subjectEndTime', title: '结课日期'},
+                    {field: 'subjectPeopleNow', title: '已选人数'},
+                    {field: 'subjectPeopleMax', title: '总人数'},
+                    {field: 'teacherName', title: '教师姓名'},
+                    {title: '操作', templet: '#currentTableBar', fixed: "right", align: "center"}
                 ]],
                 limits: [10, 15, 20, 25, 50, 100],
                 limit: 15,

@@ -15,15 +15,22 @@
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
+
+        body {
+            background-image: url("layuimini/images/bj1.jpg");
+            height: 100%;
+            width: 100%;
+        }
+
         html, body {
             width: 100%;
             height: 100%;
             overflow: hidden
         }
 
-        body {
-            background: #009688;
-        }
+        /*body {*/
+        /*    background: #009688;*/
+        /*}*/
 
         body:after {
             content: '';
@@ -237,7 +244,7 @@
         function openInserUserLayer(data) {
             mainIndex = layer.open({
                 type: 1,
-                title: '添加用户',
+                title: '注册',
                 content: $("#insertUser"),
                 area: ['100%', '100%'],
                 shade: 0.3, //不显示遮罩

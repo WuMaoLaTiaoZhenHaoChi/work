@@ -14,7 +14,6 @@ import com.pdjh.mapper.CustomerMapper;
 import com.pdjh.mapper.OrderMapper;
 import com.pdjh.service.OrderService;
 import com.pdjh.util.DateUtils;
-import com.sun.tools.corba.se.idl.constExpr.Or;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
