@@ -6,7 +6,7 @@
     <update id="removeOrder" parameterType="com.pdjh.entity.Order">
        UPDATE order_info
        SET order_flag = '已取消'
-       WHERE customer_num = #{order.customerNum}
+       WHERE customer_num = #{order.customerNum} and (order_flag = '未受理' or order_flag = '已受理')
     </update>
 
 

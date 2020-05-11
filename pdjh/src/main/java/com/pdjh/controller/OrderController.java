@@ -28,7 +28,7 @@ public class OrderController {
     public ResultVo rateOrder(Order order){
         int i = orderService.consumberRateOrder(order);
         if (i >= 0){
-            return ResultVo.success();
+            return ResultVo.build("200","评价成功，谢谢您的支持");
         }
         return ResultVo.build("500","评价失败，评分不符合规则");
     }
