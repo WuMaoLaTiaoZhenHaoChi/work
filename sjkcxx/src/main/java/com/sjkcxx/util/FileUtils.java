@@ -1,19 +1,27 @@
 package com.sjkcxx.util;
 
+import cn.afterturn.easypoi.excel.ExcelImportUtil;
+import cn.afterturn.easypoi.excel.entity.ImportParams;
+import com.sjkcxx.entity.UserExcelInfo;
+import com.sjkcxx.entity.UserInfo;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
 import java.net.URLEncoder;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @Author: duant
  * @Date: 2020/4/24 21:31
  * @Description:
  */
-public class FileDownloadUtils {
+public class FileUtils {
 
     private static final String ENCODING = "UTF-8";
     private static final String CONTENT_DISPOSITION = "Content-Disposition";
@@ -60,5 +68,20 @@ public class FileDownloadUtils {
 
         }
     }
+
+
+    //读取excel内容
+    public static List readExcel(File file){
+        ImportParams params = new ImportParams();
+        params.setStartSheetIndex(0);   //sheet页开始
+        params.setHeadRows(1);          //表头
+
+        List<UserExcelInfo> list = ExcelImportUtil.importExcel(
+                file,
+                UserExcelInfo.class, params);
+        System.out.println(list.size());
+        return list;
+    }
+
 
 }

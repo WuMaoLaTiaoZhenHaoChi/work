@@ -3,6 +3,7 @@ package com.sjkcxx.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sjkcxx.base.PageDto;
+import com.sjkcxx.entity.UserExcelInfo;
 import com.sjkcxx.entity.UserInfo;
 import com.sjkcxx.mapper.UserMapper;
 
@@ -12,6 +13,12 @@ import com.sjkcxx.mapper.UserMapper;
  * @Description:
  */
 public interface UserService extends IService<UserInfo> {
+    /**
+     * 批量添加
+     * @param userExcelInfo
+     * @return
+     */
+    int addExcelUser(UserExcelInfo userExcelInfo);
 
     /**
      * 用户列表

@@ -8,11 +8,13 @@ import com.sjkcxx.entity.StudentSubject;
 import com.sjkcxx.mapper.PracticeSubjectMapper;
 import com.sjkcxx.mapper.StudentSubjectMapper;
 import com.sjkcxx.service.PracticeSubjectService;
+import com.sjkcxx.util.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,6 +29,22 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
     private PracticeSubjectMapper practiceSubjectMapper;
     @Autowired
     private StudentSubjectMapper studentSubjectMapper;
+
+    //场地冲突
+    @Override
+    public int inputSubject(PracticeSubject practiceSubject) {
+        int startTime = Integer.parseInt(practiceSubject.getSubjectStartTime().replaceAll("-",""));
+        int endTime = Integer.parseInt(practiceSubject.getSubjectEndTime().replaceAll("-",""));
+        List<PracticeSubject> list = practiceSubjectMapper.selectSubjectByDate(practiceSubject);
+        for (PracticeSubject subject : list){
+            int start = Integer.parseInt(subject.getSubjectStartTime().replaceAll("-",""));
+            int end = Integer.parseInt(subject.getSubjectEndTime().replaceAll("-",""));
+            if ((startTime >= start && startTime <= end) || (startTime <= start && endTime > start) || (endTime >= start && endTime < end)){
+                return -1;
+            }
+        }
+        return 0;
+    }
 
     //移除学科信息，逻辑删除
     @Override
@@ -72,7 +90,8 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
         }
 
         Integer subjectPeopleNow = subject.getSubjectPeopleNow();
-        Integer subjectPeopleMax = practiceSubjectMapper.selectById(subjectNum).getSubjectPeopleMax();
+        PracticeSubject subjectTemp = practiceSubjectMapper.selectById(subjectNum);
+        Integer subjectPeopleMax = subjectTemp.getSubjectPeopleMax();
         if (subjectPeopleNow >= subjectPeopleMax){
             return -1;
         }
@@ -82,6 +101,14 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
         //更新学科信息
         int i = practiceSubjectMapper.updateSubjectPeopleNow(subject);
         //插入
+        String subjectStartTime = subjectTemp.getSubjectStartTime();
+        String subjectEndTime = subjectTemp.getSubjectEndTime();
+
+        Date startDate = DateUtils.parseDate(subjectStartTime);
+        Date endDate = DateUtils.parseDate(subjectEndTime);
+        int daysBetween = (int) DateUtils.getDaysBetween(startDate, endDate);
+
+        studentSubject.setSignTimeCount(daysBetween);
         studentSubject.setSubjectName(studentSubject.getSubjectName());
         studentSubject.setTeacherNum(teacherNum);
         studentSubject.setStudentSubjectNum(subjectNum + studentSubject.getStudentNum());

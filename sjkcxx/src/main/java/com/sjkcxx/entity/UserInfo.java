@@ -29,4 +29,8 @@ public class UserInfo implements Serializable {
 
     private String userType;
 
+    private String userSpecialty;
+
+    private String userClass;
+
 }

@@ -2,6 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sjkcxx.mapper.PracticeSubjectMapper">
 
+
+    <!--学生查询，有条件 已审核-->
+    <select id="selectSubjectByDate" resultType="com.sjkcxx.entity.PracticeSubject">
+        select * from practice_subject
+        where site = #{subject.site}
+
+    </select>
+
     <!--学生查询，有条件 已审核-->
     <select id="studentSelectSubjectBySubject" resultType="com.sjkcxx.entity.PracticeSubject">
         select * from practice_subject

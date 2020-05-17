@@ -15,6 +15,13 @@ import java.util.List;
 public interface PracticeSubjectMapper extends BaseMapper<PracticeSubject> {
 
     /**
+     * 查询场地是否冲突
+     * @param subject
+     * @return
+     */
+    List selectSubjectByDate(@Param("subject") PracticeSubject subject);
+
+    /**
      * 更新学科已选人数
      * @param subject
      * @return

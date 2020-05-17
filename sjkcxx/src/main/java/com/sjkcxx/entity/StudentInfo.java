@@ -23,6 +23,5 @@ public class StudentInfo extends UserInfo {
 
     private String userName;
 
-    private String studentSpecialtyNum;
 
 }

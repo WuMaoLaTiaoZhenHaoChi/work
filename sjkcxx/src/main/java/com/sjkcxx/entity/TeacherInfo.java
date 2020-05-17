@@ -33,7 +33,5 @@ public class TeacherInfo extends UserInfo {
 
     private String teacherProfessional;
 
-    private String teacherSpecialtyNum;
-
 
 }

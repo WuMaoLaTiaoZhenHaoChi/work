@@ -130,6 +130,10 @@ public class SubjectController {
         if (subject != null) {
             return ResultVo.build("500", "课程编码不能重复");
         }
+        int i = practiceSubjectService.inputSubject(practiceSubject);
+        if (i == -1){
+            return ResultVo.build("500", "场地冲突，请重新输入场地");
+        }
         UserInfo user = (UserInfo) session.getAttribute("user");
         practiceSubject.setTeacherNum(user.getUserNum());
         boolean b = practiceSubjectService.save(practiceSubject);

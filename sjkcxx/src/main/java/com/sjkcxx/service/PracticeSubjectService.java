@@ -15,6 +15,13 @@ import java.util.List;
 public interface PracticeSubjectService extends IService<PracticeSubject> {
 
     /**
+     * 录入课程
+     * @param practiceSubject
+     * @return
+     */
+    int inputSubject(PracticeSubject practiceSubject);
+
+    /**
      * 移除课程
      * @param practiceSubject
      * @return

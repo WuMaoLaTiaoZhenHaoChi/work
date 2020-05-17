@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sjkcxx.base.PageDto;
 import com.sjkcxx.entity.StudentInfo;
 import com.sjkcxx.entity.TeacherInfo;
+import com.sjkcxx.entity.UserExcelInfo;
 import com.sjkcxx.entity.UserInfo;
 import com.sjkcxx.mapper.StudentMapper;
 import com.sjkcxx.mapper.TeacherMapper;
@@ -33,6 +34,35 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
 
     @Autowired
     private StudentMapper studentMapper;
+
+    @Transactional
+    @Override
+    public int addExcelUser(UserExcelInfo userExcelInfo) {
+        String userNum = userExcelInfo.getUserNum();
+        String userName = userExcelInfo.getUserName();
+        String userType = userExcelInfo.getUserType();
+        UserInfo byId = userMapper.selectById(userNum);
+        if (byId != null){
+            return -1;
+        }
+        UserInfo userInfo = userExcelInfo.getUserInfo();
+        int userI = userMapper.insert(userInfo);
+        int i = 0;
+        if (userType.equals("0")){
+            StudentInfo studentInfo = new StudentInfo();
+            studentInfo.setUserNum(userNum);
+            studentInfo.setUserName(userName);
+            i = studentMapper.insert(studentInfo);
+        } else if (userType.equals("1")){
+            TeacherInfo teacherInfo = new TeacherInfo();
+            teacherInfo.setUserNum(userNum);
+            teacherInfo.setUserName(userName);
+            i  = teacherMapper.insert(teacherInfo);
+        } else {
+            return 1;
+        }
+        return userI & i;
+    }
 
     //用户列表
     @Override
@@ -73,11 +103,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
         if (userType.equals("0")){
             StudentInfo studentInfo = studentMapper.selectById(userNum);
             studentInfo.setUserName(userName);
+            studentInfo.setUserName(userName);
             i = studentMapper.updateById(studentInfo);
         } else if (userType.equals("1")){
             TeacherInfo teacherInfo = teacherMapper.selectById(userNum);
             teacherInfo.setUserName(userName);
+            teacherInfo.setUserName(userName);
             i  = teacherMapper.updateById(teacherInfo);
+        } else {
+            return 1;
         }
         return userI & i;
     }
@@ -105,6 +139,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserInfo> implement
             teacherInfo.setUserNum(userNum);
             teacherInfo.setUserName(userName);
             i  = teacherMapper.insert(teacherInfo);
+        }else {
+            return 1;
         }
         return userI & i;
     }

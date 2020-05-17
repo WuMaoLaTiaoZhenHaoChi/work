@@ -47,6 +47,8 @@ public class StudentSubject implements Serializable {
 
     private int signTime;      //签到次数
 
+    private int signTimeCount;  //签到总次数
+
     private String signDate;    //  签到时间
 
 }
