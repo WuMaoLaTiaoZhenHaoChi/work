@@ -113,6 +113,16 @@ public class SubjectController {
 
     }
 
+    //移除课程信息
+    @RequestMapping("/teacher/removeSubject")
+    public ResultVo removeSubject(PracticeSubject practiceSubject, HttpSession session){
+        int i = practiceSubjectService.removeSubject(practiceSubject);
+        if (i > 0){
+            return ResultVo.build("200","此学科已被成功移除");
+        }
+        return ResultVo.build("500", "移除课程失败");
+    }
+
     //插入课程
     @RequestMapping("/teacher/insertSubject")
     public ResultVo inserPrtoject(PracticeSubject practiceSubject, HttpSession session) {

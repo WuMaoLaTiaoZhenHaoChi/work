@@ -28,6 +28,19 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
     @Autowired
     private StudentSubjectMapper studentSubjectMapper;
 
+    //移除学科信息，逻辑删除
+    @Override
+    public int removeSubject(PracticeSubject practiceSubject) {
+        String subjectNum = practiceSubject.getSubjectNum();
+        PracticeSubject subject = practiceSubjectMapper.selectById(subjectNum);
+        if (subject.getSubjectPeopleNow() > 0){
+            return -1;
+        }
+        subject.setSubjectCheck("已移除");
+        int i = practiceSubjectMapper.updateById(subject);
+        return i;
+    }
+
     //审核课程
     @Override
     public int adminCheckSubject(PracticeSubject practiceSubject) {

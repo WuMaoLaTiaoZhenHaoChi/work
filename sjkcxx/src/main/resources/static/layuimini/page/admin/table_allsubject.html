@@ -311,6 +311,10 @@
                     layer.alert('课程 [' + subjectName + '] 未通过审核，请等待教师重新提交后再重新审核');
                     return false;
                 }
+                if (data.subjectCheck === '已移除') {
+                    layer.alert('课程 [' + subjectName + '] 已被教师移除，无法进行审核操作');
+                    return false;
+                }
                 //审核
                 if (obj.event === 'checkOn') {
                     subjectCheck = '已通过';

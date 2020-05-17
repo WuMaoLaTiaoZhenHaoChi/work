@@ -13,6 +13,14 @@ import java.util.List;
  * @Description:实践课程service
  */
 public interface PracticeSubjectService extends IService<PracticeSubject> {
+
+    /**
+     * 移除课程
+     * @param practiceSubject
+     * @return
+     */
+    int removeSubject(PracticeSubject practiceSubject);
+
     /**
      * 审核课程
      * @param practiceSubject：学科信息

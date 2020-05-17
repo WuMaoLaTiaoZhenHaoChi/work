@@ -412,8 +412,34 @@
                 }
                 openUpdateLayer(data);
             } else if (obj.event === 'delete') {
-                layer.confirm('真的删除行么', function (index) {
-                    obj.del();
+                var subjectNum = data.subjectNum
+                var subjectName = data.subjectName
+                var subjectCheack = data.subjectCheck
+                layer.confirm('确定移除此学科么', function (index) {
+                    if (subjectCheack === '未审核'){
+                        $.ajax({
+                            url: "/subject/teacher/removeSubject",
+                            method: "delete",
+                            data: {
+                                subjectNum: subjectNum,
+                            },
+                            success: function (res) {
+                                console.log(res.code)
+                                if (res.code === '200') {
+                                    layer.alert("移除课程 [" + subjectName + "] 成功");
+                                } else {
+                                    layer.alert(res.msg);
+                                }
+                                tableIns.reload();
+                            },
+                            error: function () {
+                                layer.alert("移除 [" + subjectName + "] 学科失败，请联系管理员咨询");
+                            }
+                        });
+
+                    } else {
+                        layer.alert("只可移除课程状态为未审核的课程哦");
+                    }
                     layer.close(index);
                 });
             } else if (obj.event === 'select') {
