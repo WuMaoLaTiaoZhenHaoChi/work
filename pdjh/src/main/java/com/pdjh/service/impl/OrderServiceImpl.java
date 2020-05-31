@@ -48,6 +48,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     public int consumberRateOrder(Order order) {
         if (order.getOrderGrade() == null || order.getOrderGrade().equals(""))
             return -1;
+        order.setOrderFlag("已评价");
         int i = orderMapper.updateConsumerOrderFlag(order);
         return i;
     }

@@ -106,7 +106,7 @@ public class PracticeSubjectServiceImpl extends ServiceImpl<PracticeSubjectMappe
 
         Date startDate = DateUtils.parseDate(subjectStartTime);
         Date endDate = DateUtils.parseDate(subjectEndTime);
-        int daysBetween = (int) DateUtils.getDaysBetween(startDate, endDate);
+        int daysBetween = (int) DateUtils.getDaysBetween(startDate, endDate) + 1;
 
         studentSubject.setSignTimeCount(daysBetween);
         studentSubject.setSubjectName(studentSubject.getSubjectName());
