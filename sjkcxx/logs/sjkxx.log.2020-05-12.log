@@ -1,0 +1,20 @@
+2020-05-12 20:37:11.931 [main] INFO  com.sjkcxx.SjkcxxApplication - Starting SjkcxxApplication on DTT with PID 11188 (started by 小霸王 in D:\My Documents\java_workspace\Intellij\work\sjkcxx)
+2020-05-12 20:37:11.946 [main] INFO  com.sjkcxx.SjkcxxApplication - No active profile set, falling back to default profiles: default
+2020-05-12 20:37:13.067 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+2020-05-12 20:37:13.067 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2020-05-12 20:37:13.067 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-05-12 20:37:13.067 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-05-12 20:37:13.302 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-05-12 20:37:13.302 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-05-12 20:37:13.302 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1309 ms
+2020-05-12 20:37:14.431 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-12 20:37:14.493 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-05-12 20:37:14.634 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2020-05-12 20:37:14.665 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+2020-05-12 20:37:14.665 [main] INFO  com.sjkcxx.SjkcxxApplication - Started SjkcxxApplication in 3.181 seconds (JVM running for 4.482)
+2020-05-12 20:37:17.301 [http-nio-8083-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1588572578,1588642952,1589075305] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-05-12 20:37:17.301 [http-nio-8083-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-12 20:37:17.301 [http-nio-8083-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-12 20:37:17.301 [http-nio-8083-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2020-05-12 20:37:55.982 [http-nio-8083-exec-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
