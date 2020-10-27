@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+
+Spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver              # mysql驱动包
+    url: jdbc:mysql://173.82.154.230:3306/work?useUnicode=true&characterEncoding=utf-8&useSSL=false              # 数据库名称
+    username: work
+    password: duantong123
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+
+
